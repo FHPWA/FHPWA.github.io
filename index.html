@@ -17,6 +17,8 @@
 	}
 	</script>
 	
+	
+	
 
 
 	<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
@@ -48,7 +50,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
 <meta charset="utf-8">
-<title>Bl4ckC4T V1.0 (Web)</title>
+<title>Bl4ckC4T V1.1 (Web)</title>
 <style>
 
 
@@ -57,13 +59,13 @@
 </head>
 
 
-<body onload="brython(1)">
+<body>
 
 <div class="" id="">
 	<img src="favicon/apple-icon-72x72.png" alt="Bl4ckC4T">
-	<h1>Bl4ckC4T OTP Version 1.0 (Web Edition)</h1>
-	<p>Bl4ckC4T OTP Version 1.0 (Web Edition) uses the One Time Pad (OTP) encryption method. This requires the use of a pre-shared key to encrypt plain text. This is a form of Symmetric Encryption and is therefore not 
-	recomended to be used as a primary form of encryption. </p>
+	<h1>Bl4ckC4T OTP Version 1.1 (Web Edition)</h1>
+	<p>Bl4ckC4T OTP Version 1.1 (Web Edition) uses the One Time Pad (OTP) encryption method. This requires the use of a pre-shared key to encrypt plain text. This is a form of Symmetric Encryption and is therefore not 
+	recomended to be used as a primary form of encryption. Now using JavaScript instead of python. </p>
     <form>
 	<p>Key:</p>
 	<textarea rows="2" cols="50" id="fieldkey"></textarea>
@@ -76,38 +78,14 @@
 	<p>Output:</p>
 	<textarea rows="4" cols="50" id="output"></textarea>
 	</form> 
-	<button id="startbutton">--- Run ---</button>
-    <script type="text/python3" id="script0">
-    from browser import document, alert
-
-    def start(ev):
-		keystring = ''.join(document["fieldkey"].value.split())
-		choice = document["rad"].checked
-
-		outstring = ""
-		inputstring = document["input"].value
-		for index in range(len(inputstring)):
-			#alert(keystring)
-			if index >= len(keystring):
-				keystring += keystring
-			if choice == "True":
-				charint = ord(inputstring[index]) + ord(keystring[index]) - 1
-			else:
-				charint = ord(inputstring[index]) - ord(keystring[index]) + 1
-			outstring += chr(charint)
-		document["output"].textContent = outstring
-
-	
-
-    document["startbutton"].bind("click", start)
-    </script>
+	<button onclick="start()">--- Run ---</button>
+    
 
     
 </div>
 
 
-<script src="brython.js"></script>
-<script src="brython_stdlib.js"></script>
+<script type="text/javascript" src="otp.js"></script>
 
 </body>
 
