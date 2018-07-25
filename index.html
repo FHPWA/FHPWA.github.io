@@ -1,0 +1,114 @@
+<html>
+
+<head>
+	
+	<script>
+	if (‘serviceWorker’ in navigator) { 
+	  window.addEventListener(‘load’, function() {   
+		navigator.serviceWorker.register(‘/sw.js’).then(
+		  function(registration) { 
+			// Registration was successful
+			console.log(‘ServiceWorker registration successful with scope: ‘, registration.scope); }, 
+		  function(err) { 
+			// registration failed :( 
+			console.log(‘ServiceWorker registration failed: ‘, err); 
+		  }); 
+	  });
+	}
+	</script>
+	
+
+
+	<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+	<link rel="manifest" href="/manifest.json">
+	
+	
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	
+	
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="application-name" content="Bl4ckC4T">
+	<meta name="apple-mobile-web-app-title" content="Bl4ckC4T">
+	<meta name="msapplication-starturl" content="/index.html">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+<meta charset="utf-8">
+<title>Bl4ckC4T V1.0 (Web)</title>
+<style>
+
+
+</style>
+
+</head>
+
+
+<body onload="brython(1)">
+
+<div class="" id="">
+	<img src="favicon/apple-icon-72x72.png" alt="Bl4ckC4T">
+	<h1>Bl4ckC4T OTP Version 1.0 (Web Edition)</h1>
+	<p>Bl4ckC4T OTP Version 1.0 (Web Edition) uses the One Time Pad (OTP) encryption method. This requires the use of a pre-shared key to encrypt plain text. This is a form of Symmetric Encryption and is therefore not 
+	recomended to be used as a primary form of encryption. </p>
+    <form>
+	<p>Key:</p>
+	<textarea rows="2" cols="50" id="fieldkey"></textarea>
+	<p>Input:</p>
+	<textarea rows="4" cols="50" id="input"></textarea>
+	<p>Encrypt or Decrypt:</p>
+	<input type="radio" name="var" value="1" id="rad" checked="checked" > Encrypt<br>
+	<input type="radio" name="var" value="2" > Decrypt<br>
+	
+	<p>Output:</p>
+	<textarea rows="4" cols="50" id="output"></textarea>
+	</form> 
+	<button id="startbutton">--- Run ---</button>
+    <script type="text/python3" id="script0">
+    from browser import document, alert
+
+    def start(ev):
+		keystring = ''.join(document["fieldkey"].value.split())
+		choice = document["rad"].checked
+
+		outstring = ""
+		inputstring = document["input"].value
+		for index in range(len(inputstring)):
+			#alert(keystring)
+			if index >= len(keystring):
+				keystring += keystring
+			if choice == "True":
+				charint = ord(inputstring[index]) + ord(keystring[index]) - 1
+			else:
+				charint = ord(inputstring[index]) - ord(keystring[index]) + 1
+			outstring += chr(charint)
+		document["output"].textContent = outstring
+
+	
+
+    document["startbutton"].bind("click", start)
+    </script>
+
+    
+</div>
+
+
+<script src="brython.js"></script>
+<script src="brython_stdlib.js"></script>
+
+</body>
+
+</html>
