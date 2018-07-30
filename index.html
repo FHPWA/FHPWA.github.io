@@ -2,20 +2,23 @@
 <html>
 
 <head>
-	<script>
-	if (‘serviceWorker’ in navigator) { 
-	  window.addEventListener(‘load’, function() {   
-		navigator.serviceWorker.register(‘/sw.js’).then(
+
+
+	<script type="text/javascript" >
+	if ("serviceWorker" in navigator) { 
+	  window.addEventListener("load", function() {   
+		navigator.serviceWorker.register("/sw.js").then(
 		  function(registration) { 
 			// Registration was successful
-			console.log(‘ServiceWorker registration successful with scope: ‘, registration.scope); }, 
+			console.log("ServiceWorker registration successful with scope: ", registration.scope); }, 
 		  function(err) { 
 			// registration failed :( 
-			console.log(‘ServiceWorker registration failed: ‘, err); 
+			console.log("ServiceWorker registration failed: ", err); 
 		  }); 
 	  });
 	}
 	</script>
+																			
 	<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
@@ -44,6 +47,7 @@
 	<link rel="stylesheet" type="text/css" href="theme.css">
 	<link rel="manifest" href="/manifest.json">
 	<title>BlackC4t OTP V1.3</title>
+	
 
 </head>
 
@@ -113,9 +117,9 @@
 	<script type="text/javascript" src="otp.js"></script>
 	
 	<!-- jquery-3 -->
-	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript"  src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 	<!-- my script -->
-	<script src="script.js"></script>
+	<script type="text/javascript"  src="script.js"></script>
 	
 
 </body>
