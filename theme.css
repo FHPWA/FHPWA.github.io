@@ -1,0 +1,269 @@
+/*I have included this to fix everything that is wrong with the world...*/
+
+html {
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  word-wrap: inherit;
+}
+
+/* Clear margin and padding defaults 
+*/
+body{
+	margin: 0px;
+	padding: 0px;
+}
+
+/* Setup margins for text and set the font family - use browser defined text sizes - they know best for that
+*/
+h1,h2,h3,h4,h5,h6,p{
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	font-family: "Open Sans", Helvetica, Verdana, sans-serif;
+}
+
+/* To improve rendering - remove the top margin from h1
+*/
+/*
+h1{
+	margin-top: 0em;
+}
+*/
+
+/* Setup a container for the navbar
+*/
+.navigation{ 
+	width: 100%;
+	padding: 0px;
+	position: fixed;
+	z-index: 999;
+	overflow: hidden;
+}
+
+/* And because it's fixed, create a buffer so content isn't hidden 
+*/
+.navigation-buffer, .footer-buffer{
+	width: 100%;
+	height: 3em;	
+}
+.footer-buffer{
+	height: 6em;	
+}
+
+/* Define a section, this will expand to fill the whole page. meaning content is in horizontal 'stripes'
+*/
+.section, .section-footer{
+	width: 100%;
+	padding: 0px;
+	overflow: auto;
+}
+.section-footer{
+	position: fixed;
+	bottom: 0px;
+}
+
+/* Centre content when the page is greater than 1000px wide 
+*/
+nav, .content, .header, .footer{
+	max-width: 1000px;
+	min-width: 1px;
+	margin: auto;
+	padding: 5px 10px;
+	overflow: hidden;
+}
+
+/* Justify the text to keep it looking tidy
+*/
+.content p{
+	text-align: justify;
+}
+
+/* Define an image - this will resize as the screen does so the page is adaptive 
+*/
+
+.fixed-img{
+	padding: 2px 20px 2px 20px;
+}
+
+
+.content-img{
+	width: 40%;
+	padding: 2px 20px 2px 20px;
+}
+
+/* Define a wide image - this will allways take up the width of the screen
+*/
+.content-img-wide{
+	width: 100%;
+	padding: 2px 0px 2px 0px;
+}
+
+/* Increase the width of images for tablet devices and other 'medium' form factors 
+*/
+@media only screen and (max-width: 800px) {
+	.content-img{
+		width: 50%;	
+	}	
+}
+
+/* Make regular images wide for smartphones and any device considered 'small'
+*/
+@media only screen and (max-width: 600px) {
+	.content-img{
+		width: 100%;
+		padding: 2px 0px 2px 0px;
+	}	
+}
+
+/* Make all of the actual images (inside the image containers fill the container) Give these a max height so the whole screen isn't taken up.
+*/
+.content-img img, .content-img-wide img, .fixed-img img{
+	border-radius: 8px;
+	max-height: 450px;
+	display: block;
+}
+.content-img img, .content-img-wide img{
+	width: 100%;
+	margin: 0 auto;
+}
+
+/* Pull content (though it's intended for images) to the rhs and lhs respectively 
+*/
+.right{
+	position: relative;
+	float: right;
+	padding-right: 0px;
+}
+
+.left{
+	position: relative;
+	float: left;
+	padding-left: 0px;
+}
+
+/* Define colours to be used in this document 
+*/
+.c-red{
+	background-color: #F44336;
+	color: #EFEFEF; /*for dark colours*/
+}
+
+.c-blue{
+	background-color: #1673B6;
+	color: #222222; /*for light colours*/
+}
+
+.c-grey{
+	background-color: #ECECEA;
+	color: #222222;
+}
+
+.c-black{
+	background-color: #000000;
+	color: #EFEFEF;
+}
+.c-white{
+	background-color: #FFFFFF;
+	color: #222222;
+}
+
+.c-red a{
+	color: #EFEFEF; /*for dark colours*/
+}
+
+.c-blue a{
+	color: #222222; /*for light colours*/
+}
+
+.c-grey a{
+	color: #222222;
+}
+
+.c-black a{
+	color: #EFEFEF;
+}
+.c-white a{
+	color: #222222;
+}
+
+/* Define the nav - like the good ol' days use lists as jquery is used to make the navbar adaptive
+*/
+nav{
+	position:relative;
+	overflow: hidden;
+}
+
+nav ul{
+	display: inline-block;
+	list-style:none;
+	min-width: 1px;
+	padding: 0px;
+	margin: 0px;
+	max-height: 2em;
+}
+
+nav ul li{
+	display:inline-block;
+	margin: 0.4em 1em 0.4em 0.4em;
+}
+
+nav ul li a, #overflow{
+	text-decoration: none;
+	font-size: 1.2rem;
+	font-weight: bold;
+	
+}
+
+#nav-content li:nth-of-type(1){
+	margin-left: 0px;
+}
+
+nav ul li a:hover, #overflow:hover{
+	text-decoration: underline;
+}
+
+.nav-overflow li{
+	display:block;
+}
+
+#overflow {
+  display: none;
+}
+#overflow:hover{
+	cursor: pointer;
+}
+
+
+
+/* Modify the default style for forms making them look like they are not from 2003...
+*/
+form{
+	border-width: 0px;
+	border-style: solid;
+	border-radius: 8px;
+	padding: 8px;
+	margin-bottom: 10px;
+	background-color: #ECECEA;
+	min-width: 10px;
+}
+
+
+button{
+	border: 0px solid #222222;
+	width: 100%;
+	border-radius: 8px;
+	padding: 8px;
+	background-color: #ECECEA;
+	cursor: pointer;
+}
+
+form textarea{
+	width: 100%;
+	min-width: 10px;
+}
+
+
+

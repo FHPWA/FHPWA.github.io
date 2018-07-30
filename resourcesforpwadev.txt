@@ -1,3 +1,5 @@
 https://medium.com/samsung-internet-dev/a-beginners-guide-to-making-progressive-web-apps-beb56224948e
 https://www.favicon-generator.org/
 https://tomitm.github.io/appmanifest/
+
+https://www.sitepoint.com/retrofit-your-website-as-a-progressive-web-app/
