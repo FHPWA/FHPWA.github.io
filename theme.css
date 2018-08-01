@@ -15,26 +15,24 @@ html {
 body{
 	margin: 0px;
 	padding: 0px;
+	font-size: calc(12px + 0.5vw);
+  	line-height: calc(1em + 0.5vw);
+  	/*margin: .5em; */
 }
 
 /* Setup margins for text and set the font family - use browser defined text sizes - they know best for that
 */
-h1,h2,h3,h4,h5,h6,p{
+h1,h2,h3,h4,h5,h6,p,span,button{
+	/*
 	margin-top: 0.5em;
 	margin-bottom: 0.5em;
-	font-family: "Open Sans", Helvetica, Verdana, sans-serif;
+	*/
+	/*font-family: "Open Sans", Helvetica, Verdana, sans-serif;*/
+	font-family: Verdana, sans-serif;
 }
-
-/* To improve rendering - remove the top margin from h1
-*/
-/*
-h1{
-	margin-top: 0em;
-}
-*/
 
 /* Setup a container for the navbar
-*/
+
 .navigation{ 
 	width: 100%;
 	padding: 0px;
@@ -42,6 +40,7 @@ h1{
 	z-index: 999;
 	overflow: hidden;
 }
+*/
 
 /* And because it's fixed, create a buffer so content isn't hidden 
 */
@@ -55,20 +54,28 @@ h1{
 
 /* Define a section, this will expand to fill the whole page. meaning content is in horizontal 'stripes'
 */
-.section, .section-footer{
+.section, .section-footer, .section-nav{
 	width: 100%;
 	padding: 0px;
 	overflow: auto;
 }
-.section-footer{
+.section-footer, .section-nav{
 	position: fixed;
+	z-index: 99;
+	
+}
+.section-footer{
 	bottom: 0px;
+}
+.section-nav{
+	top: 0px;
 }
 
 /* Centre content when the page is greater than 1000px wide 
 */
 nav, .content, .header, .footer{
-	max-width: 1000px;
+	/*max-width: 1000px;*/
+	max-width: 50em;
 	min-width: 1px;
 	margin: auto;
 	padding: 5px 10px;
@@ -84,14 +91,13 @@ nav, .content, .header, .footer{
 /* Define an image - this will resize as the screen does so the page is adaptive 
 */
 
-.fixed-img{
+.scale-img, .fixed-img, .content-img{
 	padding: 2px 20px 2px 20px;
 }
 
 
 .content-img{
 	width: 40%;
-	padding: 2px 20px 2px 20px;
 }
 
 /* Define a wide image - this will allways take up the width of the screen
@@ -120,12 +126,12 @@ nav, .content, .header, .footer{
 
 /* Make all of the actual images (inside the image containers fill the container) Give these a max height so the whole screen isn't taken up.
 */
-.content-img img, .content-img-wide img, .fixed-img img{
-	border-radius: 8px;
+.content-img img, .content-img-wide img, .fixed-img img, .scale-img img{
+	border-radius: 0.5em;
 	max-height: 450px;
 	display: block;
 }
-.content-img img, .content-img-wide img{
+.content-img img, .content-img-wide img, .scale-img img{
 	width: 100%;
 	margin: 0 auto;
 }
@@ -207,13 +213,14 @@ nav ul{
 
 nav ul li{
 	display:inline-block;
-	margin: 0.4em 1em 0.4em 0.4em;
+	margin: 0.4em 2em 0.4em 0.4em;
 }
 
 nav ul li a, #overflow{
 	text-decoration: none;
-	font-size: 1.2rem;
+	/*font-size: 1em;
 	font-weight: bold;
+	*/
 	
 }
 
@@ -243,21 +250,21 @@ nav ul li a:hover, #overflow:hover{
 form{
 	border-width: 0px;
 	border-style: solid;
-	border-radius: 8px;
-	padding: 8px;
-	margin-bottom: 10px;
+	border-radius: 0.5em;
+	padding: 0.5em;
+	margin-bottom: 0.5em;
 	background-color: #ECECEA;
-	min-width: 10px;
+	min-width: 1px;
 }
-
 
 button{
 	border: 0px solid #222222;
 	width: 100%;
-	border-radius: 8px;
-	padding: 8px;
+	border-radius: 0.5em;
+	padding: 0.5em;
 	background-color: #ECECEA;
 	cursor: pointer;
+	font-size: 1em;
 }
 
 form textarea{
