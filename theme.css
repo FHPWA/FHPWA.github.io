@@ -16,18 +16,13 @@ body{
 	margin: 0px;
 	padding: 0px;
 	font-size: calc(12px + 0.5vw);
-  	//line-height: calc(1em + 0.5vw);
-  	/*margin: .5em; */
 }
 
 /* Setup margins for text and set the font family - use browser defined text sizes - they know best for that
 */
 h1,h2,h3,h4,h5,h6,p,span,button{
-	/*
-	margin-top: 0.5em;
+	margin-top: 0.3em;
 	margin-bottom: 0.5em;
-	*/
-	/*font-family: "Open Sans", Helvetica, Verdana, sans-serif;*/
 	font-family: Verdana, sans-serif;
 }
 
@@ -156,9 +151,15 @@ nav, .content, .header, .footer{
 	background-color: #F44336;
 	color: #EFEFEF; /*for dark colours*/
 }
+.c-red a{
+	color: #EFEFEF; /*for dark colours*/
+}
 
 .c-blue{
 	background-color: #1673B6;
+	color: #222222; /*for light colours*/
+}
+.c-blue a{
 	color: #222222; /*for light colours*/
 }
 
@@ -166,74 +167,74 @@ nav, .content, .header, .footer{
 	background-color: #ECECEA;
 	color: #222222;
 }
+.c-grey a{
+	color: #222222;
+}
 
 .c-black{
 	background-color: #000000;
 	color: #EFEFEF;
 }
+.c-black a{
+	color: #EFEFEF;
+}
+
 .c-white{
 	background-color: #FFFFFF;
 	color: #222222;
-}
-
-.c-red a{
-	color: #EFEFEF; /*for dark colours*/
-}
-
-.c-blue a{
-	color: #222222; /*for light colours*/
-}
-
-.c-grey a{
-	color: #222222;
-}
-
-.c-black a{
-	color: #EFEFEF;
 }
 .c-white a{
 	color: #222222;
 }
 
-/* Define the nav - like the good ol' days use lists as jquery is used to make the navbar adaptive
+
+/* Define the nav
 */
+
 nav{
 	position:relative;
 	overflow: hidden;
+
 }
 
 nav ul{
 	display: inline-block;
 	list-style:none;
 	min-width: 1px;
-	padding: 0px;
-	margin: 0px;
-	max-height: 2em;
+	padding: 0em;
+	margin: 0em;
+	
 }
 
 nav ul li{
 	display:inline-block;
-	margin: 0.4em 2em 0.4em 0.4em;
+	
 }
 
 nav ul li a, #overflow{
 	text-decoration: none;
-	/*font-size: 1em;
-	font-weight: bold;
-	*/
-	
-}
-
-#nav-content li:nth-of-type(1){
-	margin-left: 0px;
+	padding: .6em;
+	background-color: #7f7f7f7f;
+	border-radius: 5em;	
 }
 
 nav ul li a:hover, #overflow:hover{
-	text-decoration: underline;
+	background-color: #afafaf7f;	
+}
+
+#nav-content li{
+	padding: 1em;
+	padding-right: 0.3em;
+
+}
+#nav-content li:nth-of-type(1){
+	padding-left: 0em;
 }
 
 .nav-overflow li{
 	display:block;
+	padding: 1em;
+	padding-left: 0em;
 }
 
 #overflow {
@@ -242,7 +243,6 @@ nav ul li a:hover, #overflow:hover{
 #overflow:hover{
 	cursor: pointer;
 }
-
 
 
 /* Modify the default style for forms making them look like they are not from 2003...
