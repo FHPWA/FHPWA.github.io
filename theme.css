@@ -245,7 +245,7 @@ form{
 	border-radius: 0.5em;
 	padding: 0.5em;
 	margin-bottom: 0.5em;
-	background-color: #ECECEA;
+	background-color: rgba(127,127,127,0.5);
 	min-width: 1px;
 }
 
@@ -254,14 +254,18 @@ button{
 	width: 100%;
 	border-radius: 0.5em;
 	padding: 0.5em;
-	background-color: #ECECEA;
+	background-color: rgba(127,127,127,0.5);
 	cursor: pointer;
 	font-size: 1em;
+}
+button:hover{
+	background-color:rgba(195,195,195,0.5);	
 }
 
 form textarea{
 	width: 100%;
 	min-width: 10px;
+	font-size: 1em;
 }
 
 
