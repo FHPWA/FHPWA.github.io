@@ -214,12 +214,12 @@ nav ul li{
 nav ul li a, #overflow{
 	text-decoration: none;
 	padding: .6em;
-	background-color: #7f7f7f7f;
+	background-color: rgba(127,127,127,0.5);
 	border-radius: 5em;	
 }
 
 nav ul li a:hover, #overflow:hover{
-	background-color: #afafaf7f;	
+	background-color:rgba(195,195,195,0.5);	
 }
 
 #nav-content li{
