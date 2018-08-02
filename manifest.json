@@ -1,6 +1,6 @@
 {
-  "name": "Bl4ckC4t",
-  "short_name": "Bl4ckC4t",
+  "name": "BlackC4t",
+  "short_name": "BlackC4t",
   "lang": "en-GB",
   "start_url": "/index.html",
   "display": "standalone",
@@ -14,22 +14,10 @@
    "density": "1.0"
   },
   {
-   "src": "/favicon/android-icon-72x72.png",
-   "sizes": "72x72",
-   "type": "image/png",
-   "density": "1.5"
-  },
-  {
    "src": "/favicon/android-icon-96x96.png",
    "sizes": "96x96",
    "type": "image/png",
    "density": "2.0"
-  },
-  {
-   "src": "/favicon/android-icon-144x144.png",
-   "sizes": "144x144",
-   "type": "image/png",
-   "density": "3.0"
   },
   {
    "src": "//android-icon-192x192.png",
