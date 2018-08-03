@@ -183,7 +183,6 @@ nav, .content, .header, .footer{
 nav{
 	position:relative;
 	overflow: hidden;
-
 }
 
 nav ul{
@@ -197,7 +196,7 @@ nav ul{
 
 nav ul li{
 	display:inline-block;
-	
+	padding: 1em 1em 1em 0em ;	
 }
 
 nav ul li a, #overflow{
@@ -209,31 +208,19 @@ nav ul li a, #overflow{
 
 nav ul li a:hover, #overflow:hover{
 	background-color:rgba(195,195,195,0.5);	
+	cursor: pointer;
 }
 
 #nav-content{
 	max-height: 3em;
 }
 
-#nav-content li{
-	padding: 1em;
-	padding-right: 0.3em;
-}
-#nav-content li:nth-of-type(1){
-	padding-left: 0em;
-}
-
 .nav-overflow li{
 	display:block;
-	padding: 1em;
-	padding-left: 0em;
 }
 
 #overflow {
-  display: none;
-}
-#overflow:hover{
-	cursor: pointer;
+  	display: none;
 }
 
 
