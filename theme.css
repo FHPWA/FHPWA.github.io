@@ -181,6 +181,14 @@ nav, .content, .header, .footer{
 	color: #222222;
 }
 
+.c-shibe{
+	background-color: #cda780;
+	color: #222222;
+}
+.c-shibe a{
+	color: #222222;
+}
+
 
 /* Define the nav
 */
