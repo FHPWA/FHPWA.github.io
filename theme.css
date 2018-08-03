@@ -26,6 +26,10 @@ h1,h2,h3,h4,h5,h6,p,span{
 	font-family: Verdana, sans-serif;
 }
 
+label{
+	display: none;
+}
+
 /* And because it's fixed, create a buffer so content isn't hidden 
 */
 .navigation-buffer, .footer-buffer{
@@ -33,7 +37,7 @@ h1,h2,h3,h4,h5,h6,p,span{
 	height: 3.5em;	
 }
 .footer-buffer{
-	height: 6em;	
+	height: 5em;	
 }
 
 /* Define a section, this will expand to fill the whole page. meaning content is in horizontal 'stripes'
@@ -50,6 +54,7 @@ h1,h2,h3,h4,h5,h6,p,span{
 }
 .section-footer{
 	bottom: 0px;
+	height: 5em;
 }
 .section-nav{
 	top: 0px;
@@ -137,7 +142,7 @@ nav, .content, .header, .footer{
 /* Define colours to be used in this document 
 */
 .c-red{
-	background-color: #F44336;
+	background-color: rgb(143, 20, 12);
 	color: #EFEFEF; /*for dark colours*/
 }
 .c-red a{
@@ -202,12 +207,12 @@ nav ul li{
 nav ul li a, #overflow{
 	text-decoration: none;
 	padding: .6em;
-	background-color: rgba(127,127,127,0.5);
+	background-color: rgba(127,127,127,0.4);
 	border-radius: 5em;	
 }
 
 nav ul li a:hover, #overflow:hover{
-	background-color:rgba(195,195,195,0.5);	
+	background-color:rgba(195,195,195,0.4);	
 	cursor: pointer;
 }
 
@@ -232,7 +237,7 @@ form{
 	border-radius: 0.5em;
 	padding: 0.5em;
 	margin-bottom: 0.5em;
-	background-color: rgba(127,127,127,0.5);
+	background-color: rgba(127,127,127,0.7);
 	min-width: 1px;
 }
 
@@ -241,12 +246,12 @@ button{
 	width: 100%;
 	border-radius: 0.5em;
 	padding: 0.5em;
-	background-color: rgba(127,127,127,0.5);
+	background-color: rgba(127,127,127,0.7);
 	cursor: pointer;
 	font-size: 1em;
 }
 button:hover{
-	background-color:rgba(195,195,195,0.5);	
+	background-color:rgba(195,195,195,0.7);	
 }
 
 form textarea{
