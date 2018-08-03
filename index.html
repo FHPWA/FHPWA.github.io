@@ -18,11 +18,14 @@
 	}
 	</script>
 	
+	<meta name="Description" content="Author: FredHappyface; Category: Cryptography, 
+	Proof of concept; Cost: Free">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="theme-color" content="#000000"/>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="theme.css">
 	<link rel="manifest" href="/manifest.json">
-	<title>BlackC4t OTP V1.3</title>
+	<title>BlackC4t OTP</title>
 	
 
 </head>
@@ -65,13 +68,18 @@
 		the page speed.</p>
 		<form>
 			<p>Key:</p>
+			<label for="fieldkey"> Input Key </label>
 			<textarea rows="2" cols="1" id="fieldkey"></textarea>
 			<p>Input:</p>
+			<label for="input"> Input Plain-text </label>
 			<textarea rows="4" cols="1" id="input"></textarea>
 			<p>Encrypt or Decrypt:</p>
+			<label for="rad"> Encrypt text </label>
 			<input type="radio" name="var" value="1" id="rad" checked="checked" > <span>Encrypt</span><br>
-			<input type="radio" name="var" value="2" > <span>Decrypt</span><br>
+			<label for="rad-other"> Decrypt text </label>
+			<input type="radio" name="var" value="2" id="rad-other"> <span>Decrypt</span><br>
 			<p>Output:</p>
+			<label for="output"> Output </label>
 			<textarea rows="4" cols="1" id="output"></textarea>
 		</form> 
 		<button onclick="start()">--- Run ---</button>
