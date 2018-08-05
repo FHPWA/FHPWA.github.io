@@ -34,10 +34,10 @@ label{
 */
 .navigation-buffer, .footer-buffer{
 	width: 100%;
-	height: 3.5em;	
+	height: 4em;	
 }
 .footer-buffer{
-	height: 5em;	
+	height: 5.2em;	
 }
 
 /* Define a section, this will expand to fill the whole page. meaning content is in horizontal 'stripes'
@@ -55,7 +55,7 @@ label{
 }
 .section-footer{
 	bottom: 0px;
-	height: 5em;
+	height: 5.2em;
 }
 .section-nav{
 	top: 0px;
@@ -255,6 +255,7 @@ button{
 	width: 100%;
 	border-radius: 0.5em;
 	padding: 0.5em;
+	margin-bottom: 0.5em;
 	background-color: rgba(127,127,127,0.7);
 	cursor: pointer;
 	font-size: 1em;
@@ -273,5 +274,8 @@ form textarea{
 	border: none;
 }
 
-
+.button-pair{
+	column-count: 2;
+	column-gap: 1em;
+}
 

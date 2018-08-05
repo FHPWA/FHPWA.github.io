@@ -1,5 +1,12 @@
-
+function copy(){
 	
+	document.getElementById("output").select();
+	document.execCommand('copy');
+	window.getSelection().removeAllRanges();
+}
+
+
+
 $(document).ready(function(){
 	
 	
