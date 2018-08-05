@@ -50,6 +50,7 @@ label{
 .section-footer, .section-nav{
 	position: fixed;
 	z-index: 99;
+	overflow: hidden;
 	
 }
 .section-footer{
