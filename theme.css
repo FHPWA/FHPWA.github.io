@@ -67,7 +67,7 @@ nav, .content, .header, .footer{
 	max-width: 50em;
 	min-width: 1px;
 	margin: auto;
-	padding: 0.25em 0.5em;
+	padding: .5em 1em;
 	overflow: hidden;
 }
 
@@ -209,14 +209,14 @@ nav ul{
 
 nav ul li{
 	display:inline-block;
-	padding: 1em 1em 1em 0em ;	
+	padding: 1em 0em 1em 0em ;	
 }
 
 nav ul li a, #overflow{
 	text-decoration: none;
-	padding: .6em;
+	padding: .5em;
 	background-color: rgba(127,127,127,0.4);
-	border-radius: 5em;	
+	border-radius: 1em;	
 }
 
 nav ul li a:hover, #overflow:hover{
@@ -266,6 +266,10 @@ form textarea{
 	width: 100%;
 	min-width: 10px;
 	font-size: 1em;
+	border-radius: .5em;
+	resize: none;
+	overflow: auto;
+	border: none;
 }
 
 
