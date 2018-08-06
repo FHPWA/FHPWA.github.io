@@ -275,7 +275,6 @@ form textarea{
 }
 
 .button-pair{
-	display: flex;
 	column-count: 2;
 	column-gap: 1em;
 }
