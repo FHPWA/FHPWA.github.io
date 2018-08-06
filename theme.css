@@ -276,6 +276,6 @@ form textarea{
 
 .button-pair{
 	column-count: 2;
-	column-gap: 1em;
+	//column-gap: 1em;
 }
 
