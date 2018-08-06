@@ -266,6 +266,7 @@ button:hover{
 }
 
 form textarea{
+	display: block;
 	width: 100%;
 	min-width: 10px;
 	font-size: 1em;
@@ -276,8 +277,7 @@ form textarea{
 }
 
 .button-pair{
-	-webkit-column-count: 2;
 	column-count: 2;
-	//column-gap: 1em;
+	column-gap: 1em;
 }
 
