@@ -251,6 +251,7 @@ form{
 }
 
 button{
+	display: block;
 	border: 0px;
 	width: 100%;
 	border-radius: 0.5em;
@@ -266,7 +267,7 @@ button:hover{
 }
 
 form textarea{
-	display: block;
+	
 	width: 100%;
 	min-width: 10px;
 	font-size: 1em;
