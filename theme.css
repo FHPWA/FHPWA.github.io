@@ -145,6 +145,7 @@ nav, .content, .header, .footer{
 .c-red{
 	background-color: rgb(143, 20, 12);
 	color: #EFEFEF; /*for dark colours*/
+	border-bottom-color: #EFEFEF;
 }
 .c-red a{
 	color: #EFEFEF; /*for dark colours*/
@@ -153,6 +154,7 @@ nav, .content, .header, .footer{
 .c-blue{
 	background-color: #1673B6;
 	color: #222222; /*for light colours*/
+	border-bottom-color: #222222;
 }
 .c-blue a{
 	color: #222222; /*for light colours*/
@@ -161,6 +163,7 @@ nav, .content, .header, .footer{
 .c-grey{
 	background-color: #ECECEA;
 	color: #222222;
+	border-bottom-color: #222222;
 }
 .c-grey a{
 	color: #222222;
@@ -169,6 +172,7 @@ nav, .content, .header, .footer{
 .c-black{
 	background-color: #000000;
 	color: #EFEFEF;
+	border-bottom-color: #EFEFEF;
 }
 .c-black a{
 	color: #EFEFEF;
@@ -177,6 +181,7 @@ nav, .content, .header, .footer{
 .c-white{
 	background-color: #FFFFFF;
 	color: #222222;
+	border-bottom-color: #222222;
 }
 .c-white a{
 	color: #222222;
@@ -185,6 +190,7 @@ nav, .content, .header, .footer{
 .c-shibe{
 	background-color: #cda780;
 	color: #222222;
+	border-bottom-color: #222222;
 }
 .c-shibe a{
 	color: #222222;
@@ -210,18 +216,32 @@ nav ul{
 
 nav ul li{
 	display:inline-block;
+	/*
 	padding: 1em 0em 1em 0em ;	
+	*/
+	padding: 0.5em 1em 0.5em 0em ;
 }
 
 nav ul li a, #overflow{
 	text-decoration: none;
+	/*
 	padding: .5em;
 	background-color: rgba(127,127,127,0.4);
 	border-radius: 1em;	
+	*/
+	padding: 0.3em;
+	padding-bottom: 0.6em;
+	border-bottom-style: none;
+	
 }
 
-nav ul li a:hover, #overflow:hover{
+nav ul li a:hover, #overflow:hover, nav ul li a.current{
+	/*
 	background-color:rgba(195,195,195,0.4);	
+	*/
+	//text-decoration: underline;
+	border-bottom-style: solid;
+	
 	cursor: pointer;
 }
 
