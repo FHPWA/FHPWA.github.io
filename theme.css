@@ -259,6 +259,7 @@ button{
 	background-color: rgba(127,127,127,0.7);
 	cursor: pointer;
 	font-size: 1em;
+	break-inside: avoid-column;
 }
 button:hover{
 	background-color:rgba(195,195,195,0.7);	
