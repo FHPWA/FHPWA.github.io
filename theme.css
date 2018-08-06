@@ -20,15 +20,13 @@ body{
 
 /* Setup margins for text and set the font family - use browser defined text sizes - they know best for that
 */
-h1,h2,h3,h4,h5,h6,p,span{
+h1,h2,h3,h4,h5,h6,p,span,label{
 	margin-top: 0.3em;
 	margin-bottom: 0.5em;
 	font-family: Verdana, sans-serif;
 }
 
-label{
-	display: none;
-}
+
 
 /* And because it's fixed, create a buffer so content isn't hidden 
 */
@@ -302,3 +300,63 @@ form textarea{
 	column-gap: 1em;
 }
 
+/* The container */
+.css-radio {
+    display: block;
+    position: relative;
+    padding-left: 1.5em;
+    margin-bottom: 0px;
+    cursor: pointer;
+    font-size: 1em;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.css-radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: -0.1em;
+    left: 0;
+    height: 1em;
+    width: 1em;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.css-radio:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.css-radio input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.css-radio input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.css-radio .checkmark:after {
+ 	top: 0.25em;
+	left: 0.25em;
+	width: 0.5em;
+	height: 0.5em;
+	border-radius: 50%;
+	background: white;
+}
