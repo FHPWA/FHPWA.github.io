@@ -72,6 +72,8 @@ function start() {
 	}
 	else{
 		
+		document.getElementById("privatelabel").innerHTML  = "<p>Click to Show Private Key Exponent...</p>";
+		
 		// generate new keys 
 
 	
