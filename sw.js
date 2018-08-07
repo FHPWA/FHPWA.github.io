@@ -11,12 +11,14 @@ const URLS = [
   'index.html',
   'otp.html',
   '2kotp.html',
+  'public.html',
   './', 
   'theme.css',
   'scripts/jquery-3.3.1.min.js',
   'scripts/script.js',
   'scripts/otp.js',
-  'scripts/2kotp.js'
+  'scripts/2kotp.js',
+  'scripts/public.js'
 ];
 
 // The install handler takes care of precaching the resources we always need.
