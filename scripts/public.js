@@ -128,8 +128,6 @@ function start() {
 	document.getElementById("public").value = publicKeyExponent;
 	globalPrivateKeyExponent = privateKeyExponent;
 	
-	
-	
 
 }
 
