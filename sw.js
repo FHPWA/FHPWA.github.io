@@ -23,6 +23,7 @@ const URLS = [
 
 // The install handler takes care of precaching the resources we always need.
 self.addEventListener('install', event => {
+  self.skipWaiting();
   event.waitUntil(
     caches.open(PRECACHE_ID)
       .then(cache => cache.addAll(URLS))
