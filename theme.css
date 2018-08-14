@@ -35,7 +35,7 @@ h1,h2,h3,h4,h5,h6,p,span,label,a{
 	height: 4em;	
 }
 .footer-buffer{
-	height: 5.2em;	
+	height: 0em;	
 }
 
 /* Define a section, this will expand to fill the whole page. meaning content is in horizontal 'stripes'
@@ -45,28 +45,25 @@ h1,h2,h3,h4,h5,h6,p,span,label,a{
 	padding: 0px;
 	overflow: auto;
 }
-.section-footer, .section-nav{
+.section-nav{
 	position: fixed;
 	z-index: 99;
 	overflow: hidden;
 	
 }
-.section-footer{
-	bottom: 0px;
-	height: 5.2em;
-}
+
 .section-nav{
 	top: 0px;
 }
 
 /* Centre content when the page is greater than 1000px wide 
 */
-nav, .content, .header, .footer{
+nav, .content, .footer{
 	/*max-width: 1000px;*/
-	max-width: 50em;
+	max-width: 55em;
 	min-width: 1px;
 	margin: auto;
-	padding: .5em 1em;
+	padding: 1em;
 	overflow: hidden;
 }
 
@@ -214,19 +211,11 @@ nav ul{
 
 nav ul li{
 	display:inline-block;
-	/*
-	padding: 1em 0em 1em 0em ;	
-	*/
 	padding: 0.5em 1em 0.5em 0em ;
 }
 
 nav ul li a, #overflow{
 	text-decoration: none;
-	/*
-	padding: .5em;
-	background-color: rgba(127,127,127,0.4);
-	border-radius: 1em;	
-	*/
 	padding: 0.7em 0.3em;
 	border-bottom-width: 0.1em;
 	border-bottom-style: none;
@@ -239,9 +228,6 @@ nav ul li a.current{
 }
 
 nav ul li a:hover, #overflow:hover, nav ul li a.current{
-	/*
-	background-color:rgba(195,195,195,0.4);	
-	*/
 	border-bottom-style: solid;
 	cursor: pointer;
 }
@@ -333,19 +319,6 @@ form textarea{
 	border-radius: 50%;
 }
 
-/* On mouse-over, add a grey background color */
-/*
-.css-radio:hover input ~ .checkmark {
-    background-color: #ccc;
-}
-*/
-
-/* When the radio button is checked, add a blue background */
-/*
-.css-radio input:checked ~ .checkmark {
-    background-color: #2196F3;
-}
-*/
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
 .checkmark:after {
