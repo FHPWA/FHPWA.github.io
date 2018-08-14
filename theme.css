@@ -45,6 +45,12 @@ h1,h2,h3,h4,h5,h6,p,span,label,a{
 	padding: 0px;
 	overflow: auto;
 }
+
+.set-bottom{
+	position:absolute;
+	bottom: 0;
+}
+
 .section-nav{
 	position: fixed;
 	z-index: 99;
@@ -56,6 +62,10 @@ h1,h2,h3,h4,h5,h6,p,span,label,a{
 	top: 0px;
 }
 
+
+
+
+
 /* Centre content when the page is greater than 1000px wide 
 */
 nav, .content, .footer{
@@ -66,6 +76,8 @@ nav, .content, .footer{
 	padding: 1em;
 	overflow: hidden;
 }
+
+
 
 /* Justify the text to keep it looking tidy
 */
