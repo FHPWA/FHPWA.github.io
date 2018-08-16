@@ -94,13 +94,13 @@ function start() {
 
 
 		do {
-			prime0 = generatePrime(256,512);
+			prime0 = generatePrime(64,256);
 			isprime = isPrime(prime0);
 		}
 		while (isprime== false);
 
 		do {
-			prime1 = generatePrime(256,512);
+			prime1 = generatePrime(64,256);
 			isprime = isPrime(prime1);
 		}
 		while (isprime== false);
