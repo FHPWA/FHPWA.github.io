@@ -13,6 +13,11 @@ function isPrime(x){
 	return true;
 }
 
+// Generates a number that might be prime
+function generatePrime(min, max){
+	return getRandomInt(Math.floor(min/2),Math.floor(max/2))*2 + 1;
+}
+
 // finds the Highest Common Factor or argument a and arguement b
 function highestCommonFactor(a, b){
     if (b === 0){
@@ -58,6 +63,7 @@ function start() {
 	
 	// check for existing keys 
 	var check = document.getElementById("mod").value.replace(/\s/g,'');
+	
 	if(check != ""){
 		
 		// get them 
@@ -81,8 +87,23 @@ function start() {
 		//These can be static for now 
 		//- these are used to calculate the keyModulus and the eulerTotient
 
+		/*
 		var prime0 = 11;	
 		var prime1 = 19;
+		*/
+
+
+		do {
+			prime0 = generatePrime(256,512);
+			isprime = isPrime(prime0);
+		}
+		while (isprime== false);
+
+		do {
+			prime1 = generatePrime(256,512);
+			isprime = isPrime(prime1);
+		}
+		while (isprime== false);
 
 
 		//Generate the key modulus - this is used in the encryption and decryption methods 
