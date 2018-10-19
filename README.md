@@ -2,7 +2,10 @@
 
 This website exists to provide a proof of concept for various encryption methods and password generators that are written in Javascript. 
 
+Find the site on https://FredHappyface.github.io
 
+# Language information 
+FredHappyface.github.io is built with HTML5, CSS3, JavaScript and JQuery3.3.1
 
 # Changelog:
   * **Version 1.0:** First release, consisted of one page only (index.html) and used brython to encrypt
