@@ -18,4 +18,8 @@ This website exists to provide a proof of concept for various encryption methods
   * **20180806.0:** Buttons should now display side by side in chrome
   * **20180806.3:** Navbar overhaul and improvement to the look of radio buttons
   * **20180807.0:** Public key encryption page added and an update to the service worker
-  * **20180807.1:** Added Password Generator
+  * **20180808.1:** Added Password Generator
+  * **20180814.0:** Improved the design of the site 
+  * **20180816.0:** Public Key Cryptography now uses random seed prime numbers to improve the quality of the encryption
+  * **20181016.0:** Improved the look of forms and used an alternative solution for the footer on password.html
+  * **20181019.0:** Updated index.html changelog and tweaked font size on larger displays 
