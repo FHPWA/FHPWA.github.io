@@ -9,7 +9,6 @@ const RUNTIME = 'runtime';
 // A list of local resources we always want to be cached.
 const URLS = [
   'index.html',
-  'otp.html',
   '2kotp.html',
   'public.html',
   'password.html',

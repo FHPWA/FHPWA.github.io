@@ -25,29 +25,33 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="theme.css">
 	<link rel="manifest" href="/manifest.json">
-	<title>BlackC4t PKC</title>
-	
+	<title>BlackC4t</title>
+
 	<link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="images/icons/ms-icon-144x144.png">
 	<meta name="msapplication-starturl" content="/index.html">
+	
 
 </head>
 
 <body>
 
+	
+	
+
 	<div class="section-nav c-black">
 	
 		<div class="section">
 		<div class="content">
-			<div class="left">
+			<div class="left" >
 				<h2>BlackC4t</h2>
 			</div>
-			<a href="info.html">
-			<div class="scale-img right" style="width: 3.5em;">
-				<img src="images/round_info_white_48dp.png" alt="Information">
+			
+			<div class="scale-img right" style="width: 3.5em;" onclick="window.history.back()">
+				<img src="images/round_keyboard_backspace_white_48dp.png" alt="Back">
 			</div>
-			</a>
+			
 		</div>
 		</div>
 	
@@ -72,55 +76,46 @@
 		<div class="scale-img left" style="width: 4.5em;">
 		<img src="images/icon-512x512.png" alt="BlackC4t">
 		</div>
-		<h1>BlackC4t PKC</h1>
+		<h1>Welcome to BlackC4t!</h1>
 	
-		<p>BlackC4t PKC (Public Key Cryptography) uses asymmetric encryption, but bear in mind that this is proof of concept. </p>
-
-
+		<p>This website exists to provide a proof of concept for various encryption methods and 
+			password generators that are written in Javascript. 
+		</p>
+		
 	</div>
 	</div>
 
 	<div class="section c-grey">
 	<div class="content" >
-
-
-		<form>
-			<label for="input"><p>Input Plain-text:</p></label>
-			<textarea rows="4" cols="1" id="input"></textarea>
-			<p>Encrypt or Decrypt:</p>
-			<label class="css-radio" for="encrypt"><p>Encrypt text </p>
-				<input type="radio" name="var" value="1" id="encrypt" checked="checked" >
-				<span class="checkmark"></span>
-			</label>
-			<label class="css-radio" for="decrypt"><p>Decrypt text </p>
-				<input type="radio" name="var" value="2" id="decrypt">
-				<span class="checkmark"></span>
-			</label>
-
-			<label for="mod"><p>Modulus:</p></label>
-			<textarea rows="1" cols="1" id="mod"></textarea>
-			<label for="public"><p>Public Key Exponent:</p></label>
-			<textarea rows="1" cols="1" id="public"></textarea>
-			<label for="private" onclick="showPrivate()" id="privatelabel"><p>Click to Show Private Key Exponent...</p></label>
-			<textarea rows="1" cols="1" id="private"></textarea>
-			
-
-
-
-			<label for="output"><p> Output:</p></label>
-			<textarea rows="4" cols="1" id="output"></textarea>
-		</form> 
-		<div class="button-pair">
-		<button onclick="start()">&#127939; Run</button>
-		<button onclick="copy()">&#128203; Copy Output </button>
-		</div>
-
+		
+		<h2>Changelog:</h2>
+		<p><b>Version 1.0: </b>First release, consisted of one page only (index.html) and used brython
+		to encrypt</p>
+		<p><b>Version 1.1: </b>Moved to javascript to improve page load times.</p>
+		<p><b>Version 1.3: </b>For some reason there is no Version 1.2. Added CSS, JavaScript and 
+			a manifest file with the aim of making the site a portable web app</p>
+		<p><b>20180802: </b>Removed a redundant file, improved the navbar, improved the form, successfully implemented pwa functionality </p>
+		<p><b>20180803.1: </b>Removed icons and tidied up html and CSS</p>
+		<p><b>20180803.2: </b>Improved accessibility, pwa and seo</p>
+		<p><b>20180803.3: </b>index.html is now the homepage. WhiteCat released</p>
+		<p><b>20180803.5: </b>WhiteCat renamed to Shibe, with a complementary theme. Updated the service worker </p>
+		<p><b>20180805.0: </b>most scripts now live in scripts/. Modified textarea, navbar, page padding and added offline jquery</p>
+		<p><b>20180805.1: </b>Copy button added</p>
+		<p><b>20180806.0: </b>Buttons should now display side by side in chrome</p>
+		<p><b>20180806.3: </b>Navbar overhaul and improvement to the look of radio buttons</p>
+		<p><b>20180807.0: </b>Public key encryption page added and an update to the service worker</p>
+		<p><b>20180808.1: </b>Added Password Generator</p>
+		<p><b>20180814.0: </b>Improved the design of the site </p>
+		<p><b>20180816.0: </b>Public Key Cryptography now uses random seed prime numbers to improve the quality of the encryption</p>
+		<p><b>20181016.0: </b>Improved the look of forms and used an alternative solution for the footer on password.html</p>
+		<p><b>20181019.0: </b>Updated index.html changelog and tweaked font size on larger displays </p>
+		
 	</div>
 	</div>
 
+	
 
-
-	<script type="text/javascript" src="scripts/public.js"></script>
+	
 	
 	<script type="text/javascript"  src="scripts/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript"  src="scripts/script.js"></script> 

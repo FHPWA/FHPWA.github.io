@@ -12,9 +12,9 @@ function start() {
             keystring += keystring;
         }
         if ((choice === true)) {
-            charint = inputstring.charCodeAt(index) + keystring.charCodeAt(index) - 1;
+            charint = inputstring.charCodeAt(index) + keystring.charCodeAt(index);
         } else {
-            charint = inputstring.charCodeAt(index) - keystring.charCodeAt(index) + 1;
+            charint = inputstring.charCodeAt(index) - keystring.charCodeAt(index);
         }
         outstring += String.fromCharCode(charint);
         //console.log("Input: " + inputstring[index]);
