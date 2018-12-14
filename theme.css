@@ -146,6 +146,10 @@ nav, .content{
 	padding-left: 0px;
 }
 
+.nav-icons{
+	padding: 0em;
+	padding-bottom: 0.5em;
+}
 
 
 
@@ -241,9 +245,12 @@ form textarea, form input{
 	
 }
 
-.button-pair{
+.item-pair, .button-pair{
 	column-count: 2;
 	column-gap: 1em;
+	
+}
+.button-pair{
 	margin-top: 0.5em;
 }
 
