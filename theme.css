@@ -16,9 +16,7 @@ body{
 	margin: 0em;
 	padding: 0em;
 	font-size: calc(12px + 0.4vw);
-	/*background-color: #000000;*/
-	color: #EFEFEF;
-	border-bottom-color: #EFEFEF;
+	
 }
 
 /* Setup margins for text and set the font family - use browser defined text sizes - they know best for that
@@ -90,7 +88,7 @@ nav, .content{
 */
 
 .scale-img, .fixed-img, .content-img{
-	padding: 2px 20px 2px 20px;
+	padding: 0.1em 1em;
 }
 
 
@@ -102,7 +100,7 @@ nav, .content{
 */
 .content-img-wide{
 	width: 100%;
-	padding: 2px 0px 2px 0px;
+	padding: 0.1em 0em;
 }
 
 /* Increase the width of images for tablet devices and other 'medium' form factors 
@@ -118,7 +116,7 @@ nav, .content{
 @media only screen and (max-width: 600px) {
 	.content-img{
 		width: 100%;
-		padding: 2px 0px 2px 0px;
+		padding: 0.1em 0em;
 	}	
 }
 
@@ -148,61 +146,7 @@ nav, .content{
 	padding-left: 0px;
 }
 
-/* Define colours to be used in this document 
-*/
-.c-red{
-	background-color: rgb(143, 20, 12);
-	color: #EFEFEF; /*for dark colours*/
-	border-bottom-color: #EFEFEF;
-}
-.c-red a{
-	color: #EFEFEF; /*for dark colours*/
-}
 
-.c-blue{
-	background-color: #1673B6;
-	color: #222222; /*for light colours*/
-	border-bottom-color: #222222;
-}
-.c-blue a{
-	color: #222222; /*for light colours*/
-}
-
-.c-grey{
-	background-color: #ECECEA;
-	color: #222222;
-	border-bottom-color: #222222;
-}
-.c-grey a{
-	color: #222222;
-}
-
-.c-black{
-	background-color: #000000;
-	color: #EFEFEF;
-	border-bottom-color: #EFEFEF;
-}
-.c-black a{
-	color: #EFEFEF;
-}
-
-.c-white{
-	background-color: #FFFFFF;
-	color: #222222;
-	border-bottom-color: #222222;
-}
-.c-white a{
-	color: #222222;
-}
-
-.c-shibe{
-	background-color: #cda780;
-	color: #222222;
-	border-bottom-color: #222222;
-}
-.c-shibe a{
-	color: #222222;
-}
 
 
 /* Define the nav
@@ -272,7 +216,6 @@ button{
 	display: block;
 	border-width: 0.1em;
 	border-style: solid;
-	border-color: #000000;
 	width: 100%;
 	border-radius: 0.5em;
 	padding: 0.5em;
@@ -290,11 +233,11 @@ form textarea, form input{
 	font-size: 1em;
 	border-width: 0.1em;
 	border-style: solid;
-	border-color: #000000;
 	border-radius: .5em;
 	padding: .5em;
 	resize: none;
 	overflow: auto;
+	background-color: rgba(0,0,0,0);
 	
 }
 
@@ -326,13 +269,11 @@ form textarea, form input{
 .checkmark {
 	border-width: 0.1em;
 	border-style: solid;
-	border-color: #000000;
     position: absolute;
     top: -0.15em;
     left: 0;
     height: 1em;
     width: 1em;
-    background-color: #FFFFFF;
 	border-radius: 50%;
 }
 
@@ -356,5 +297,4 @@ form textarea, form input{
 	width: 0.5em;
 	height: 0.5em;
 	border-radius: 50%;
-	background: #000000;
 }

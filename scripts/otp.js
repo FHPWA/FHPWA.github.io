@@ -5,7 +5,7 @@ function start() {
 	
     outstring = "";
 	inputstring = document.getElementById("input").value;
-    //inputlength = inputstring.length;
+    
     inputlength = inputstring.normalize().length;
     for (var index = 0; (index < inputlength); index += 1) {
         if ((index >= keystring.length)) {
@@ -17,8 +17,7 @@ function start() {
             charint = inputstring.charCodeAt(index) - keystring.charCodeAt(index);
         }
         outstring += String.fromCharCode(charint);
-        //console.log("Input: " + inputstring[index]);
-        //console.log("Output: " + String.fromCharCode(charint));
+        
         
     }
 	document.getElementById("output").value = outstring;

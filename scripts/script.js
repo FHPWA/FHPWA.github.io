@@ -1,15 +1,91 @@
+/*
+Default data. Use this if there is no other data
+*/
+var DEFAULT = {
+	theme: 'light',
+    text: 'med'
+};
+
+var data;
+
+/*
+Copy the contents of the output element
+*/
 function copy(){
-	
 	document.getElementById("output").select();
 	document.execCommand('copy');
 	window.getSelection().removeAllRanges();
 }
 
+/*
+Does the current browser support local storage?
+*/
+function hasLocalStorage() {
+	var test = 'test';
+	try {
+		localStorage.setItem(test, test);
+		localStorage.removeItem(test);
+		return true;
+	}
+	catch (e) {
+		console.log('Your Browser does not support local storage');
+		return false;
+	}
+}
+
+/*
+Save data onto local storage
+*/
+function save() {
+	if(hasLocalStorage()) {
+		localStorage.setItem('com.fredhappyface.blackc4t', JSON.stringify(data));
+	}
+
+}
+
+/*
+Load data from local storage
+*/
+function load() {
+
+	if(hasLocalStorage() && localStorage.getItem('com.fredhappyface.blackc4t') !== null) {
+		data = JSON.parse(localStorage.getItem('com.fredhappyface.blackc4t'));
+		return;
+  
+	  } else {
+  
+		  console.log('Your Browser does not support local storage or no data saved. Loading default data.');
+		data = DEFAULT;
+		  return ;
+  
+	  }
+  
+  }
 
 
+
+/*
+Set the theme
+*/
+function setTheme(){
+	document.getElementById('theme').setAttribute('href', 'theme/' + data.theme + '.css');
+	save();
+}
+
+
+/*
+Wait until the document is ready
+*/
 $(document).ready(function(){
 	
-	
+	// read data from local storage
+	load();
+
+	// set the theme to the appropriate css 
+	setTheme();
+
+
+	// Hide the overflow element
 	$('.nav-overflow').hide();
 	
 	
