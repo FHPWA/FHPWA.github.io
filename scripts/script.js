@@ -3,7 +3,7 @@ Default data. Use this if there is no other data
 */
 var DEFAULT = {
 	theme: 'light',
-    text: 'med'
+	text: 'med'
 };
 
 var data;
@@ -11,7 +11,7 @@ var data;
 /*
 Copy the contents of the output element
 */
-function copy(){
+function copy() {
 	document.getElementById("output").select();
 	document.execCommand('copy');
 	window.getSelection().removeAllRanges();
@@ -37,7 +37,7 @@ function hasLocalStorage() {
 Save data onto local storage
 */
 function save() {
-	if(hasLocalStorage()) {
+	if (hasLocalStorage()) {
 		localStorage.setItem('com.fredhappyface.blackc4t', JSON.stringify(data));
 	}
 
@@ -48,31 +48,25 @@ Load data from local storage
 */
 function load() {
 
-	if(hasLocalStorage() && localStorage.getItem('com.fredhappyface.blackc4t') !== null) {
+	if (hasLocalStorage() && localStorage.getItem('com.fredhappyface.blackc4t') !== null) {
 		data = JSON.parse(localStorage.getItem('com.fredhappyface.blackc4t'));
 		return;
-  
-	  } else {
-  
-		  console.log('Your Browser does not support local storage or no data saved. Loading default data.');
+	} else {
+		console.log('Your Browser does not support local storage or no data saved. Loading default data.');
 		data = DEFAULT;
-		  return ;
-  
-	  }
-  
-  }
+		return;
+	}
+}
 
 
 
 /*
 Set the theme
 */
-function setTheme(){
-	if (document.getElementById('theme') == null){
-		document.head.innerHTML += '<link rel="stylesheet" href="theme/' + data.theme + '.css"  id="theme">';
-		
+function setTheme() {
+	if (document.getElementById('theme') == null) {
+		document.head.innerHTML += '<link rel="stylesheet" href="css/theme/' + data.theme + '.css"  id="theme">';
 	}
-	console.log(document.getElementById('theme'));
 	save();
 }
 
@@ -80,8 +74,8 @@ function setTheme(){
 /*
 Wait until the document is ready
 */
-$(document).ready(function(){
-	
+$(document).ready(function () {
+
 	// read data from local storage
 	load();
 
@@ -91,79 +85,79 @@ $(document).ready(function(){
 
 	// Hide the overflow element
 	$('.nav-overflow').hide();
-	
-	
+
+
 	overflowWidth = $('.nav-overflow').outerWidth(true);
 	var resizeTimer;
-	
+
 	var navWidth = $('#nav').width();
 	var contentWidth = $('#nav-content').outerWidth(true);
 	var more = $('#overflow').outerWidth(true);
-	while((contentWidth + more + 20)> navWidth){
+	while ((contentWidth + more + 20) > navWidth) {
 		$('#nav-content li:last').prependTo('.nav-overflow');
 		contentWidth = $('#nav-content').outerWidth(true);
 	}
-	
+
 	var noElementOverflow = $('.nav-overflow li').length;
-	if(noElementOverflow>0){
+	if (noElementOverflow > 0) {
 		$('#overflow').show();
 	}
 
-	
-	function resizeFunction(){
+
+	function resizeFunction() {
 		var navWidth = $('#nav').width();
 		var contentWidth = $('#nav-content').outerWidth(true);
 		var more = $('#overflow').outerWidth(true);
-		
+
 		// shrink the page 
-		while((contentWidth + more + 20)> navWidth){
+		while ((contentWidth + more + 20) > navWidth) {
 			$('#nav-content li:last').remove().prependTo('.nav-overflow');
 			contentWidth = $('#nav-content').outerWidth(true);
 		}
-		
+
 		// enlarge the page 
 		var overflowWidth = $('.nav-overflow').outerWidth(true);
-		
+
 		var noElementOverflow = $('.nav-overflow li').length;
-		while (((contentWidth + more + overflowWidth) < navWidth) && noElementOverflow > 0){ 
+		while (((contentWidth + more + overflowWidth) < navWidth) && noElementOverflow > 0) {
 			$('.nav-overflow li:first').remove().appendTo('#nav-content');
 			contentWidth = $('#nav-content').outerWidth(true);
 			noElementOverflow = $('.nav-overflow li').length;
 		}
-		
+
 		var noElementOverflow = $('.nav-overflow li').length;
-		if(noElementOverflow>0){
+		if (noElementOverflow > 0) {
 			$('#overflow').show();
 		}
-		else{
+		else {
 			$('#overflow').hide();
 		}
-		
+
 	}
-	
-	
-	$('#overflow').click(function(){
+
+
+	$('#overflow').click(function () {
 		$('.nav-overflow').toggle();
 	});
-	
-	
-	
-	
-	$(window).resize(function(){
+
+
+
+
+	$(window).resize(function () {
 		clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(resizeFunction, 250);
-    });
+		resizeTimer = setTimeout(resizeFunction, 250);
+	});
 
-    resizeFunction();
-		
-		
-		
-		
-		
-
-	
-	
+	resizeFunction();
 
 
 
-})	
+
+
+
+
+
+
+
+
+});

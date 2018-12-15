@@ -3,85 +3,84 @@
 
 <head>
 
-	<script type="text/javascript" >
-	if ("serviceWorker" in navigator) {
-	  window.addEventListener("load", function() {
-	    navigator.serviceWorker.register("/sw.js").then(
-			function(registration) { 
-			// Registration was successful
-			console.log("ServiceWorker registration successful with scope: ", registration.scope); }, 
-			function(err) { 
-			// registration failed :( 
-				console.log("ServiceWorker registration failed: ", err); 
+		<meta charset="utf-8">
+
+	<script>
+		if ("serviceWorker" in navigator) {
+			window.addEventListener("load", function () {
+				navigator.serviceWorker.register("/sw.js").then(
+					function (registration) {
+						// Registration was successful
+						console.log("ServiceWorker registration successful with scope: ", registration.scope);
+					},
+					function (err) {
+						// registration failed :( 
+						console.log("ServiceWorker registration failed: ", err);
+					});
 			});
-	  });
-	}
+		}
 
-	var DEFAULT = {
-	theme: 'light',
-    text: 'med'
-};
+		var DEFAULT = {
+			theme: 'light',
+			text: 'med'
+		};
 
-	var data;
-	/* read data from local storage */
-	if(localStorage.getItem('com.fredhappyface.blackc4t') !== null) {
-		data = JSON.parse(localStorage.getItem('com.fredhappyface.blackc4t'));
-	} 
-	else {
-		console.log('Your Browser does not support local storage or no data saved. Loading default data.');
-		data = DEFAULT;
-	}
+		var data;
+		/* read data from local storage */
+		if (localStorage.getItem('com.fredhappyface.blackc4t') !== null) {
+			data = JSON.parse(localStorage.getItem('com.fredhappyface.blackc4t'));
+		}
+		else {
+			console.log('Your Browser does not support local storage or no data saved. Loading default data.');
+			data = DEFAULT;
+		}
 
-	// set the theme to the appropriate css 
-    document.head.innerHTML += '<link rel="stylesheet" href="theme/' + data.theme + '.css"  id="theme">';
+		// set the theme to the appropriate css 
+		document.head.innerHTML += '<link rel="stylesheet" href="css/theme/' + data.theme + '.css"  id="theme">';
 	</script>
-	
+
 	<meta name="Description" content="Author: FredHappyface; Category: Cryptography, 
 	Proof of concept; Cost: Free">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="theme-color" content="#000000"/>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="theme/theme.css">
-
-	<link rel="preload" href="theme/black.css" as="style">
-	<link rel="preload" href="theme/dark.css" as="style">
-	<link rel="preload" href="theme/light.css" as="style">
+	<meta name="theme-color" content="#000000" />
+	
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 
 	<link rel="manifest" href="/manifest.json">
 	<title>BlackC4t 2K-OTP</title>
 
-	<link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/appicons/favicon-32x32.png">
 	<meta name="msapplication-TileColor" content="#ffffff">
-	<meta name="msapplication-TileImage" content="images/icons/ms-icon-144x144.png">
+	<meta name="msapplication-TileImage" content="images/appicons/ms-icon-144x144.png">
 	<meta name="msapplication-starturl" content="/index.html">
-	
+
 
 </head>
 
 <body>
 
 	<div class="section-nav c-shibe">
-	
-		<div class="section">
-		<div class="content">
-			<div class="left">
-				<h2>BlackC4t</h2>
-			</div>
-			<div class="item-pair right">
-				<a href="info.html">
-				<div class="scale-img nav-icons" style="width: 2.5em;">
-					<img src="images/round_info_black_48dp.png" alt="Information">
+
+		<div class="appbar">
+			<div class="content">
+				<div class="left">
+					<h2>BlackC4t</h2>
 				</div>
-				</a>
-				<a href="settings.html">
-					<div class="scale-img nav-icons" style="width: 2.5em;">
-						<img src="images/round_settings_black_48dp.png" alt="Information">
-					</div>
-				</a>
+				<div class="item-pair right">
+					<a href="info.html">
+						<div class="scale-img nav-icons" style="width: 2.5em;">
+							<img src="images/pageicons/round_info_black_48dp.png" alt="Information">
+						</div>
+					</a>
+					<a href="settings.html">
+						<div class="scale-img nav-icons" style="width: 2.5em;">
+							<img src="images/pageicons/round_settings_black_48dp.png" alt="Settings">
+						</div>
+					</a>
+				</div>
 			</div>
 		</div>
-		</div>
-	
+
 		<nav id="nav">
 			<ul id="nav-content">
 				<li><a href="index.html">One Time Pad</a> </li>
@@ -94,53 +93,69 @@
 			</ul>
 		</nav>
 	</div>
-	
+
 	<div class="navigation-buffer">
 	</div>
 
 	<div class="section c-primary">
-	<div class="content" >
-		<div class="content-img-wide">
-		<img src="images/shiba-inu-wide.jpg" alt="Shiba Inu">
-		</div>
-		<h1>Two Key (Shibe)</h1>
-	
-
-		<form>
-			<label for="fieldkey"><p> Key:</p></label>
-			<input type="text" placeholder="Input Key 1" rows="2" cols="1" id="fieldkey"></input>
-			<label for="fieldkey"><p> Second Key</p></label>
-			<input type="text" placeholder="Input Key 2" rows="2" cols="1" id="fieldkey2"></input>
-			<label for="input"><p> Message:</p></label>
-			<textarea placeholder="Input Message" rows="4" cols="1" id="input"></textarea>
-			<p>Encrypt or Decrypt:</p>
-			<label class="css-radio" for="rad"><p>Encrypt text </p>
-				<input type="radio" name="var" value="1" id="rad" checked="checked" >
-				<span class="checkmark"></span>
-			</label>
-			<label class="css-radio" for="rad-other"><p>Decrypt text </p>
-				<input type="radio" name="var" value="2" id="rad-other">
-				<span class="checkmark"></span>
-			</label>
-			<label for="output"><p> Output:</p></label>
-			<textarea rows="4" cols="1" id="output"></textarea>
-		</form> 
-
-		<div class="button-pair">
-			<button onclick="start()">&#127939; Run</button>
-			<button onclick="copy()">&#128203; Copy Output </button>
+		<div class="content">
+			<div class="content-img-wide">
+				<img src="images/page/shiba-inu-wide.jpg" alt="Shiba Inu">
 			</div>
+			<h1>Two Key (Shibe)</h1>
+
+		</div>
 	</div>
+
+	<div class="section c-primary">
+		<div class="content">
+
+
+			<form>
+				<label for="fieldkey">
+					Key:
+				</label>
+				<input type="text" placeholder="Input Key 1" id="fieldkey">
+				<label for="fieldkey">
+					Second Key
+				</label>
+				<input type="text" placeholder="Input Key 2" id="fieldkey2">
+				<label for="input">
+					 Message:
+				</label>
+				<textarea placeholder="Input Message" rows="4" cols="1" id="input"></textarea>
+				<p>Encrypt or Decrypt:</p>
+				<label class="css-radio" for="rad">
+					Encrypt text 
+					<input type="radio" name="var" value="1" id="rad" checked="checked">
+					<span class="checkmark"></span>
+				</label>
+				<label class="css-radio" for="rad-other">
+					Decrypt text 
+					<input type="radio" name="var" value="2" id="rad-other">
+					<span class="checkmark"></span>
+				</label>
+				<label for="output">
+					Output:
+				</label>
+				<textarea rows="4" cols="1" id="output"></textarea>
+			</form>
+
+			<div class="button-pair">
+				<button onclick="start()">&#127939; Run</button>
+				<button onclick="copy()">&#128203; Copy Output </button>
+			</div>
+		</div>
 	</div>
 
 
-	
 
-	<script type="text/javascript" src="scripts/2kotp.js"></script>
-	
-	<script type="text/javascript"  src="scripts/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript"  src="scripts/script.js"></script> 
-	
+
+	<script src="scripts/2kotp.js"></script>
+
+	<script src="scripts/jquery-3.3.1.min.js"></script>
+	<script src="scripts/script.js"></script>
+
 
 </body>
 

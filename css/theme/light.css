@@ -1,0 +1,118 @@
+/* Light Theme */
+
+/* 
+Set the background to white and the text colour to (nearly) black
+*/
+
+body {
+	background-color: #ffffff;
+	color: #222222;
+	border-bottom-color: #222222;
+}
+
+/* 
+Define colours to be used in this document 
+*/
+
+.c-primary {
+	background-color: #FFFFFF;
+	color: #222222;
+	border-bottom-color: #222222;
+}
+
+.c-primary a {
+	color: #222222;
+}
+
+.c-secondary {
+	background-color: #ECECEA;
+	color: #222222;
+	border-bottom-color: #222222;
+}
+
+.c-secondary a {
+	color: #222222;
+}
+
+.c-appbar {
+	background-color: #000000;
+	color: #EFEFEF;
+	border-bottom-color: #EFEFEF;
+}
+
+.c-appbar a {
+	color: #EFEFEF;
+}
+
+.c-shibe {
+	background-color: #cda780;
+	color: #222222;
+	border-bottom-color: #222222;
+}
+
+.c-shibe a {
+	color: #222222;
+}
+
+/* Define popular colours, if this css style is used in other projects */
+
+.c-red {
+	background-color: #8F140C;
+	color: #EFEFEF;
+	/*for dark colours*/
+	border-bottom-color: #EFEFEF;
+}
+
+.c-red a {
+	color: #EFEFEF;
+	/*for dark colours*/
+}
+
+.c-blue {
+	background-color: #1673B6;
+	color: #222222;
+	/*for light colours*/
+	border-bottom-color: #222222;
+}
+
+.c-blue a {
+	color: #222222;
+	/*for light colours*/
+}
+
+.c-grey {
+	background-color: #ECECEA;
+	color: #222222;
+	border-bottom-color: #222222;
+}
+
+.c-grey a {
+	color: #222222;
+}
+
+
+
+/* Colour form elements (and related) */
+
+button {
+	border-color: #000000;
+	color: #000000;
+}
+
+form textarea, form input {
+	border-color: #000000;
+	color: #000000;
+}
+
+/* Colour the custom radio button */
+
+.checkmark {
+	border-color: #000000;
+	background-color: #ffffff;
+}
+
+/* Colour the indicator (dot/circle) */
+
+.css-radio .checkmark:after {
+	background: #000000;
+}
