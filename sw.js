@@ -3,7 +3,7 @@
 // Names of the two caches used in this version of the service worker.
 // Change when you update any of the local resources, which will
 // in turn trigger the install event again.
-const PRECACHE_ID = 'precache-v20181214.3';
+const PRECACHE_ID = 'precache-v20181215';
 const RUNTIME = 'runtime';
 
 // A list of local resources we always want to be cached.
@@ -13,12 +13,17 @@ const URLS = [
   'public.html',
   'password.html',
   './', 
-  'theme.css',
+  'theme/theme.css',
+  'theme/light.css',
+  'theme/dark.css',
+  'theme/black.css',
   'scripts/jquery-3.3.1.min.js',
   'scripts/script.js',
   'scripts/otp.js',
   'scripts/2kotp.js',
   'scripts/public.js',
+  'scripts/password.js',
+  'scripts/settings.js',
   'resources/10k.txt'
 ];
 

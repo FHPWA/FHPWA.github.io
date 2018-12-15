@@ -16,6 +16,20 @@
 			});
 	  });
 	}
+
+	var data;
+	/* read data from local storage */
+	if(localStorage.getItem('com.fredhappyface.blackc4t') !== null) {
+		data = JSON.parse(localStorage.getItem('com.fredhappyface.blackc4t'));
+	} 
+	else {
+		console.log('Your Browser does not support local storage or no data saved. Loading default data.');
+		data = DEFAULT;
+	}
+
+	// set the theme to the appropriate css 
+    document.head.innerHTML += '<link rel="stylesheet" href="theme/' + data.theme + '.css"  id="theme">';
+
 	</script>
 	
 	<meta name="Description" content="Author: FredHappyface; Category: Cryptography, 
@@ -23,9 +37,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="theme-color" content="#000000"/>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="theme.css">
-
-	<link rel="stylesheet" type="text/css" href="" id="theme">
+	<link rel="stylesheet" type="text/css" href="theme/theme.css">
 
 	<link rel="preload" href="theme/black.css" as="style">
 	<link rel="preload" href="theme/dark.css" as="style">
@@ -88,7 +100,7 @@
 	<div class="section c-secondary">
 	<div class="content" >
 		<div class="scale-img left" style="width: 4.5em;">
-		<img src="images/icon-512x512.png" alt="BlackC4t">
+		<img src="images/blackc4t.svg" alt="BlackC4t">
 		</div>
 		
 		<h1> One Time Pad</h1>

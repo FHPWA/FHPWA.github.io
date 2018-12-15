@@ -68,7 +68,11 @@ function load() {
 Set the theme
 */
 function setTheme(){
-	document.getElementById('theme').setAttribute('href', 'theme/' + data.theme + '.css');
+	if (document.getElementById('theme') == null){
+		document.head.innerHTML += '<link rel="stylesheet" href="theme/' + data.theme + '.css"  id="theme">';
+		
+	}
+	console.log(document.getElementById('theme'));
 	save();
 }
 

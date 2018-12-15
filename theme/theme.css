@@ -1,0 +1,307 @@
+/*I have included this to fix everything that is wrong with the world...*/
+
+html {
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  word-wrap: inherit;
+}
+
+/* Clear margin and padding defaults 
+*/
+body{
+	margin: 0em;
+	padding: 0em;
+	font-size: calc(12px + 0.4vw);
+	
+}
+
+/* Setup margins for text and set the font family - use browser defined text sizes - they know best for that
+*/
+h1,h2,h3,h4,h5,h6,p,span,label,a{
+	margin-top: 0.3em;
+	margin-bottom: 0.5em;
+	font-family: Verdana, sans-serif;
+}
+
+
+
+/* And because it's fixed, create a buffer so content isn't hidden 
+*/
+.navigation-buffer{
+	width: 100%;
+	height: 9em;	
+}
+
+
+/* Define a section, this will expand to fill the whole page. meaning content is in horizontal 'stripes'
+*/
+.section, .section-footer, .section-nav{
+	width: 100%;
+	padding: 0px;
+	overflow: auto;
+}
+
+.set-bottom{
+	position:absolute;
+	bottom: 0;
+}
+
+.section-nav{
+	position: fixed;
+	z-index: 99;
+	overflow: hidden;
+	
+}
+
+.section-nav{
+	top: 0px;
+}
+
+
+
+
+
+/* Centre content when the page is greater than 1000px wide 
+*/
+nav, .content{
+	/*max-width: 1000px;*/
+	max-width: 55em;
+	min-width: 1px;
+	margin: auto;
+	padding: 1em;
+	overflow: hidden;
+}
+
+
+
+/* Justify the text to keep it looking tidy
+*/
+.content p{
+	text-align: justify;
+}
+
+/* Define an image - this will resize as the screen does so the page is adaptive 
+*/
+
+.scale-img, .fixed-img, .content-img{
+	padding: 0.1em 1em;
+}
+
+
+.content-img{
+	width: 40%;
+}
+
+/* Define a wide image - this will allways take up the width of the screen
+*/
+.content-img-wide{
+	width: 100%;
+	padding: 0.1em 0em;
+}
+
+/* Increase the width of images for tablet devices and other 'medium' form factors 
+*/
+@media only screen and (max-width: 800px) {
+	.content-img{
+		width: 50%;	
+	}	
+}
+
+/* Make regular images wide for smartphones and any device considered 'small'
+*/
+@media only screen and (max-width: 600px) {
+	.content-img{
+		width: 100%;
+		padding: 0.1em 0em;
+	}	
+}
+
+/* Make all of the actual images (inside the image containers fill the container) Give these a max height so the whole screen isn't taken up.
+*/
+.content-img img, .content-img-wide img, .fixed-img img, .scale-img img{
+	border-radius: 0.5em;
+	max-height: 450px;
+	display: block;
+}
+.content-img img, .content-img-wide img, .scale-img img{
+	width: 100%;
+	margin: 0 auto;
+}
+
+/* Pull content (though it's intended for images) to the rhs and lhs respectively 
+*/
+.right{
+	position: relative;
+	float: right;
+	padding-right: 0px;
+}
+
+.left{
+	position: relative;
+	float: left;
+	padding-left: 0px;
+}
+
+.nav-icons{
+	padding: 0em;
+	padding-bottom: 0.5em;
+}
+
+
+
+/* Define the nav
+*/
+
+nav{
+	position:relative;
+	overflow: hidden;
+}
+
+nav ul{
+	display: inline-block;
+	list-style:none;
+	min-width: 1px;
+	padding: 0em;
+	margin: 0em;
+	
+}
+
+nav ul li{
+	display:inline-block;
+	padding: 0.5em 1em 0.5em 0em ;
+}
+
+nav ul li a, #overflow{
+	text-decoration: none;
+	padding: 0.7em 0.3em;
+	border-bottom-width: 0.1em;
+	border-bottom-style: none;
+	
+}
+
+nav ul li a.current{
+	padding-bottom: 0.5em;
+	border-bottom-width: 0.3em;
+}
+
+nav ul li a:hover, #overflow:hover, nav ul li a.current{
+	border-bottom-style: solid;
+	cursor: pointer;
+}
+
+#nav-content{
+	max-height: 3em;
+}
+
+.nav-overflow li{
+	display:block;
+	padding-top: 1em;
+}
+
+#overflow {
+  	display: none;
+}
+
+
+/* Modify the default style for forms making them look like they are not from 2003...
+*/
+form{
+	border-width: 0px;
+	border-style: solid;
+	border-radius: 0.5em;
+	min-width: 1px;
+}
+
+button{
+	display: block;
+	border-width: 0.1em;
+	border-style: solid;
+	width: 100%;
+	border-radius: 0.5em;
+	padding: 0.5em;
+	margin-bottom: 0.5em;
+	cursor: pointer;
+	font-size: 1em;
+	break-inside: avoid-column;
+	background-color: rgba(0,0,0,0);
+}
+
+form textarea, form input{
+	
+	width: 100%;
+	min-width: 10px;
+	font-size: 1em;
+	border-width: 0.1em;
+	border-style: solid;
+	border-radius: .5em;
+	padding: .5em;
+	resize: none;
+	overflow: auto;
+	background-color: rgba(0,0,0,0);
+	
+}
+
+.item-pair, .button-pair{
+	column-count: 2;
+	column-gap: 1em;
+	
+}
+.button-pair{
+	margin-top: 0.5em;
+}
+
+/* The container */
+.css-radio {
+    display: block;
+    position: relative;
+    padding-left: 1.5em;
+    margin-bottom: 0px;
+    cursor: pointer;
+    font-size: 1em;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.css-radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+	border-width: 0.1em;
+	border-style: solid;
+    position: absolute;
+    top: -0.15em;
+    left: 0;
+    height: 1em;
+    width: 1em;
+	border-radius: 50%;
+}
+
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.css-radio input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.css-radio .checkmark:after {
+ 	top: 0.15em;
+	left: 0.15em;
+	width: 0.5em;
+	height: 0.5em;
+	border-radius: 50%;
+}
