@@ -64,7 +64,17 @@ function load() {
 
 
 
-
+/*
+Set the theme
+*/
+function setTheme(){
+	if (document.getElementById('theme') == null){
+		document.head.innerHTML += '<link rel="stylesheet" href="theme/' + data.theme + '.css"  id="theme">';
+		
+	}
+	console.log(document.getElementById('theme'));
+	save();
+}
 
 
 /*
@@ -72,7 +82,11 @@ Wait until the document is ready
 */
 $(document).ready(function(){
 	
-	save()
+	// read data from local storage
+	load();
+
+	// set the theme to the appropriate css 
+	setTheme();
 
 
 	// Hide the overflow element
