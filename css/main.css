@@ -68,7 +68,6 @@ form label{
 */
 
 nav, .content {
-	/*max-width: 1000px;*/
 	max-width: 55em;
 	min-width: 1px;
 	margin: auto;
@@ -135,7 +134,7 @@ nav, .content {
 	margin: 0 auto;
 }
 
-/* Pull content (though it's intended for images) to the rhs and lhs respectively 
+/* Pull content to the rhs and lhs respectively 
 */
 
 .right {
@@ -150,6 +149,9 @@ nav, .content {
 	padding-left: 0px;
 }
 
+/*
+Define container for nav icons
+*/
 .nav-icons {
 	padding: 0em;
 	padding-bottom: 0.5em;
@@ -209,38 +211,34 @@ nav ul li a:hover, #overflow:hover, nav ul li a.current {
 /* Modify the default style for forms making them look like they are not from 2003...
 */
 
-form {
-	border-width: 0px;
+form, button, form textarea, form input {
 	border-style: solid;
 	border-radius: 0.5em;
-	min-width: 1px;
+	width: 100%;
+	font-size: 1em;
+	background-color: rgba(0, 0, 0, 0);
+
+}
+
+button, form textarea, form input{
+	border-width: 0.1em;
+	padding: 0.5em;
+}
+
+form{
+	border-width: 0em;
 }
 
 button {
 	display: block;
-	border-width: 0.1em;
-	border-style: solid;
-	width: 100%;
-	border-radius: 0.5em;
-	padding: 0.5em;
 	margin-bottom: 0.5em;
 	cursor: pointer;
-	font-size: 1em;
 	break-inside: avoid-column;
-	background-color: rgba(0, 0, 0, 0);
 }
 
 form textarea, form input {
-	width: 100%;
-	min-width: 10px;
-	font-size: 1em;
-	border-width: 0.1em;
-	border-style: solid;
-	border-radius: .5em;
-	padding: .5em;
 	resize: none;
 	overflow: auto;
-	background-color: rgba(0, 0, 0, 0);
 }
 
 .item-pair, .button-pair {
@@ -267,8 +265,7 @@ form textarea, form input {
 /* Hide the browser's default radio button */
 
 .css-radio input {
-	position: absolute;
-	opacity: 0;
+	display: none;
 	cursor: pointer;
 }
 
