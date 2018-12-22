@@ -37,6 +37,10 @@
 
 		// set the theme to the appropriate css 
 		document.head.innerHTML += '<link rel="stylesheet" href="css/theme/' + data.theme + '.css"  id="theme">';
+
+		// set the text size
+		var declaration = document.styleSheets[0].cssRules[0].style;
+		declaration.setProperty("--text-mod", data.text)
 	</script>
 
 	<meta name="Description" content="Author: FredHappyface; Category: Cryptography, 
@@ -47,7 +51,7 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
 	<link rel="manifest" href="/manifest.json">
-	<title>BlackC4t PKC</title>
+	<title>BlackC4t Public Key</title>
 
 	<link rel="apple-touch-icon" href="images/appicons/icon-192x192.png">
 

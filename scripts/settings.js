@@ -10,7 +10,6 @@ function saveTheme() {
 			break;
 		}
 	}
-	console.log(theme);
 	switch (theme) {
 		case "1":
 			data.theme = "light";
@@ -28,6 +27,7 @@ function saveTheme() {
 
 			break;
 	}
+	location.reload();
 
 }
 
@@ -42,7 +42,6 @@ function saveText() {
 			break;
 		}
 	}
-	console.log(text);
 	switch (text) {
 		case "1":
 			data.text = "0.75";
@@ -60,6 +59,7 @@ function saveText() {
 
 			break;
 	}
+	location.reload();
 
 }
 

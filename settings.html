@@ -37,6 +37,10 @@
 
 		// set the theme to the appropriate css 
 		document.head.innerHTML += '<link rel="stylesheet" href="css/theme/' + data.theme + '.css"  id="theme">';
+
+		// set the text size
+		var declaration = document.styleSheets[0].cssRules[0].style;
+		declaration.setProperty("--text-mod", data.text)
 	</script>
 
 	<meta name="Description" content="Author: FredHappyface; Category: Cryptography, 
@@ -97,7 +101,7 @@
 			</div>
 			<h1>Settings</h1>
 
-			<p>Leave this page to apply settings</p>
+			<p>Click or tap the save button to update changes </p>
 
 		</div>
 	</div>
@@ -121,7 +125,32 @@
 				<span class="checkmark"></span>
 			</label>
 			<div class="button">
-				<button onclick="saveTheme()">&#127939; Save</button>
+				<button onclick="saveTheme()">&#128190; Save Theme</button>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="section c-primary">
+		<div class="content">
+			<h2>Text Size:</h2>
+			<label class="css-radio" for="small">
+				Small  
+				<input type="radio" name="textR" value="1" id="small" checked="checked">
+				<span class="checkmark"></span>
+			</label>
+			<label class="css-radio" for="med">
+				Medium
+				<input type="radio" name="textR" value="2" id="med">
+				<span class="checkmark"></span>
+			</label>
+			<label class="css-radio" for="large">
+				Large 
+				<input type="radio" name="textR" value="3" id="large">
+				<span class="checkmark"></span>
+			</label>
+			<div class="button">
+				<button onclick="saveText()">&#128190; Save Text Size</button>
 			</div>
 
 		</div>

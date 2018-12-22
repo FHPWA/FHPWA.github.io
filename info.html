@@ -37,6 +37,10 @@
 
 		// set the theme to the appropriate css 
 		document.head.innerHTML += '<link rel="stylesheet" href="css/theme/' + data.theme + '.css"  id="theme">';
+
+		// set the text size
+		var declaration = document.styleSheets[0].cssRules[0].style;
+		declaration.setProperty("--text-mod", data.text)
 	</script>
 
 	<meta name="Description" content="Author: FredHappyface; Category: Cryptography, 
@@ -146,6 +150,7 @@
 
 			<p><b></b></p>
 
+			<p><b>20181222.1: </b>Settings are applied instantly, text size setting is applied to all pages. </p>
 			<p><b>20181222.0: </b>Buttons spacing improved on settings. Text is non-selectable giving the page a more "app-like" feel. New Dev Settings page is used to test changes that cannot be tested locally </p>
 			<p><b>20181220.1: </b>Fix ms-edge form rendering bug</p>
 			<p><b>20181220.0: </b>Now iOS installable</p>
