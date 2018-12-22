@@ -3,7 +3,7 @@ Default data. Use this if there is no other data
 */
 var DEFAULT = {
 	theme: 'light',
-	text: 'med'
+	text: '1'
 };
 
 var data;

@@ -31,3 +31,35 @@ function saveTheme() {
 
 }
 
+function saveText() {
+	var radios = document.getElementsByName('textR');
+
+	var text = 0;
+
+	for (var i = 0, length = radios.length; i < length; i++) {
+		if (radios[i].checked) {
+			text = radios[i].value;
+			break;
+		}
+	}
+	console.log(text);
+	switch (text) {
+		case "1":
+			data.text = "0.75";
+			save();
+
+			break;
+		case "2":
+			data.text = "1";
+			save();
+
+			break;
+		case "3":
+			data.text = "1.5";
+			save();
+
+			break;
+	}
+
+}
+

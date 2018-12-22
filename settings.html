@@ -4,7 +4,7 @@
 <head>
 
 		<meta charset="utf-8">
-
+	
 	<script>
 		if ("serviceWorker" in navigator) {
 			window.addEventListener("load", function () {
@@ -22,7 +22,7 @@
 
 		var DEFAULT = {
 			theme: 'light',
-			text: 'med'
+			text: '1'
 		};
 
 		var data;
@@ -120,7 +120,18 @@
 				<input type="radio" name="themeR" value="3" id="black">
 				<span class="checkmark"></span>
 			</label>
-			<button onclick="saveTheme()">&#127939; Save</button>
+			<div class="button">
+				<button onclick="saveTheme()">&#127939; Save</button>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="section c-secondary">
+		<div class="content">
+			<h2>Experiments:</h2>
+			
+			<a href="devsettings.html">Experiments - Proceed With Caution</a>
 
 		</div>
 	</div>

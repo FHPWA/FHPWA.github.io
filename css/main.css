@@ -1,3 +1,7 @@
+:root{
+	--text-mod: 1;
+}
+
 /*I have included this to fix everything that is wrong with the world...*/
 
 html {
@@ -15,9 +19,11 @@ html {
 */
 
 body {
+	-ms-user-select: none;
+	user-select: none;
 	margin: 0em;
 	padding: 0em;
-	font-size: calc(12px + 0.4vw);
+	font-size: calc((12px + 0.4vw)* var(--text-mod));
 }
 
 /* Setup margins for text and set the font family - use browser defined text sizes - they know best for that
@@ -246,9 +252,10 @@ form textarea, form input {
 	column-gap: 1em;
 }
 
-.button-pair {
+.button-pair, .button {
 	margin-top: 0.5em;
 }
+
 
 /* The container */
 
