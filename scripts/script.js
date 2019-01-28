@@ -72,92 +72,89 @@ function setTheme() {
 
 
 /*
-Wait until the document is ready
+Resize the navbar when the page is resized 
 */
-$(document).ready(function () {
-
-	// read data from local storage
-	load();
-
-	// set the theme to the appropriate css 
-	setTheme();
-
-
-	// Hide the overflow element
-	$('.nav-overflow').hide();
-
-
-	overflowWidth = $('.nav-overflow').outerWidth(true);
-	var resizeTimer;
-
+function resizeFunction() {
+	// Get the width of the nav bar and the content and the "more" button
 	var navWidth = $('#nav').width();
 	var contentWidth = $('#nav-content').outerWidth(true);
 	var more = $('#overflow').outerWidth(true);
+
+	// Get the width of the overflow menu and the number of elements in the overflow menu 
+	var overflowWidth = $('#nav-overflow').outerWidth(true);
+	var noElementOverflow = $('#nav-overflow li').length;
+
+	// shrink the page 
 	while ((contentWidth + more + 20) > navWidth) {
-		$('#nav-content li:last').prependTo('.nav-overflow');
+		$('#nav-content li:last').remove().prependTo('#nav-overflow');
 		contentWidth = $('#nav-content').outerWidth(true);
 	}
 
-	var noElementOverflow = $('.nav-overflow li').length;
+	// enlarge the page 
+	while (((contentWidth + more + overflowWidth) < navWidth) && noElementOverflow > 0) {
+		$('#nav-overflow li:first').remove().appendTo('#nav-content');
+		contentWidth = $('#nav-content').outerWidth(true);
+		noElementOverflow = $('#nav-overflow li').length;
+	}
+
+	/*
+	If there are items in the overflow menu then show the overflow button 
+	*/
+	var noElementOverflow = $('#nav-overflow li').length;
 	if (noElementOverflow > 0) {
 		$('#overflow').show();
 	}
-
-
-	function resizeFunction() {
-		var navWidth = $('#nav').width();
-		var contentWidth = $('#nav-content').outerWidth(true);
-		var more = $('#overflow').outerWidth(true);
-
-		// shrink the page 
-		while ((contentWidth + more + 20) > navWidth) {
-			$('#nav-content li:last').remove().prependTo('.nav-overflow');
-			contentWidth = $('#nav-content').outerWidth(true);
-		}
-
-		// enlarge the page 
-		var overflowWidth = $('.nav-overflow').outerWidth(true);
-
-		var noElementOverflow = $('.nav-overflow li').length;
-		while (((contentWidth + more + overflowWidth) < navWidth) && noElementOverflow > 0) {
-			$('.nav-overflow li:first').remove().appendTo('#nav-content');
-			contentWidth = $('#nav-content').outerWidth(true);
-			noElementOverflow = $('.nav-overflow li').length;
-		}
-
-		var noElementOverflow = $('.nav-overflow li').length;
-		if (noElementOverflow > 0) {
-			$('#overflow').show();
-		}
-		else {
-			$('#overflow').hide();
-		}
-
+	else {
+		$('#overflow').hide();
 	}
 
+}
 
-	$('#overflow').click(function () {
-		$('.nav-overflow').toggle();
-	});
+/*
+Gets an elements outer width
+*/
+function outerWidth(el) {
+	var width = el.offsetWidth;
+	var style = getComputedStyle(el);
+	width += parseInt(style.marginLeft) + parseInt(style.marginRight);
+	return width;
+}
+
+/*
+Run this (the document should be ready)
+*/
+
+// read data from local storage
+load();
+
+// set the theme to the appropriate css 
+setTheme();
+
+// Declare a resize timer variable 
+var resizeTimer;
+
+// Hide the overflow element
 
 
 
-
-	$(window).resize(function () {
-		clearTimeout(resizeTimer);
-		resizeTimer = setTimeout(resizeFunction, 250);
-	});
-
-	resizeFunction();
+document.getElementById("nav-overflow").style.display = 'none';
 
 
+document.getElementById("overflow").onclick = function() {
+	var navOverflow = document.getElementById("nav-overflow");
+	if (navOverflow.style.display === "none") {
+		navOverflow.style.display = "block";
+	} else {
+		navOverflow.style.display = "none";
+	}
+};
+
+window.onresize = function(event) {
+    clearTimeout(resizeTimer);
+	resizeTimer = setTimeout(resizeFunction(), 250);
+};
 
 
+resizeFunction();
 
 
-
-
-
-
-
-});
