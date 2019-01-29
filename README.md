@@ -9,7 +9,13 @@ FredHappyface.github.io is built with HTML5, CSS3, JavaScript and JQuery3.3.1
 
 # Changelog:
 
-
+* **20190129.1:** Removed redundant icons from site
+* **20190129.0:** Updated android icons, removed some icons from manifest
+* **20190128.2:** Added screenshots directory for appscope
+* **20190128.1:** Settings, info and back icons are now svgs. Images have been optimised
+* **20190128.0:** Changes to text size should work across pages, minimum text size of 16 for iOS devices to prevent forced 
+	zoom. Tidied up script.js
+* **20181222.1:** Settings are applied instantly, text size setting is applied to all pages. 
 * **20181222.0:** Buttons spacing improved on settings. Text is non-selectable giving the page a more "app-like" feel. New Dev Settings page is used to test changes that cannot be tested locally 
 * **20181220.1:** Fix ms-edge form rendering bug
 * **20181220.0:** Now iOS installable
