@@ -12,10 +12,31 @@ var data;
 Copy the contents of the output element
 */
 function copy() {
-	document.getElementById("output").select();
-	document.execCommand('copy');
+	var stringToCopy = document.getElementById("output").value;
+	copyToClipboard(stringToCopy);
 	window.getSelection().removeAllRanges();
 }
+
+async function
+copyToClipboard(stringToCopy){
+	if(navigator.clipboard){
+		try{
+			await navigator.clipboard.writeText(stringToCopy);
+			showToast("Successfully Copied");
+		} catch(err){
+			showToast("Failed to Copy")
+		}
+		
+	}
+}
+
+function showToast(message) {
+	var toast = document.getElementById("toast-notification");
+	var toastText = document.getElementById("toast-text");
+	toastText.innerHTML = message;
+	toast.className += " show";
+	setTimeout(function(){ toast.className = toast.className.replace(" show", ""); }, 3000);
+  }
 
 /*
 Does the current browser support local storage?

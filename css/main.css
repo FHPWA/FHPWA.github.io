@@ -1,28 +1,21 @@
 :root{
 	--text-mod: 1;
-}
-
-/*I have included this to fix everything that is wrong with the world...*/
-
-html {
-	box-sizing: border-box;
-	word-wrap: break-word;
+	--z-index-on-top: 99;
+	--bottom-margin: 2em;
+	--rounding: 1em;
 }
 
 *, *:before, *:after {
-	box-sizing: inherit;
-	word-wrap: inherit;
-	font-family: inherit;
-}
-
-/* Clear margin and padding defaults 
-*/
-
-body {
+	font-family: Verdana, sans-serif;
+	box-sizing: border-box;
+	word-wrap: break-word;
 	-ms-user-select: none;
 	user-select: none;
 	margin: 0em;
 	padding: 0em;
+}
+
+body {
 	font-size: calc((12px + 0.4vw)* var(--text-mod));
 }
 
@@ -37,17 +30,14 @@ body {
 /* Setup margins for text and set the font family - use browser defined text sizes - they know best for that
 */
 
-h1, h2, h3, h4, h5, h6, p, span, form label, a {
+h1, h2, h3, h4, h5, h6, p, span, form label, a, input{
 	margin-top: 0.3em;
 	margin-bottom: 0.5em;
-	font-family: Verdana, sans-serif;
 }
+
 form label{
 	display: inline-block;
 }
-
-/* And because it's fixed, create a buffer so content isn't hidden 
-*/
 
 .navigation-buffer {
 	width: 100%;
@@ -57,33 +47,27 @@ form label{
 /* Define a section, this will expand to fill the whole page. meaning content is in horizontal 'stripes'
 */
 
-.section, .section-nav, .appbar {
+.section, .section-nav, .appbar, #toast-notification {
 	width: 100%;
 	padding: 0px;
 	overflow: auto;
 }
 
-.set-bottom {
-	position: absolute;
-	bottom: 0;
-}
-
-.section-nav {
+.section-nav, #toast-notification {
 	position: fixed;
-	z-index: 99;
-	overflow: hidden;
+	z-index: var(--z-index-on-top);
 }
 
-.section-nav {
-	top: 0px;
+#toast-notification{
+	bottom: var(--bottom-margin);
+	border: .1em;
+	border-style: solid;
 }
 
-/* Centre content when the page is greater than 1000px wide 
+/* Centre content when the page is greater than 55em wide 
 */
-
 nav, .content {
 	max-width: 55em;
-	min-width: 1px;
 	margin: auto;
 	padding: 1em;
 	overflow: hidden;
@@ -91,7 +75,6 @@ nav, .content {
 
 /* Justify the text to keep it looking tidy
 */
-
 .content p {
 	text-align: justify;
 }
@@ -107,7 +90,7 @@ nav, .content {
 	width: 40%;
 }
 
-/* Define a wide image - this will allways take up the width of the screen
+/* Define a wide image - this will always take up the width of the screen
 */
 
 .content-img-wide {
@@ -150,17 +133,16 @@ nav, .content {
 
 /* Pull content to the rhs and lhs respectively 
 */
-
-.right {
+.right{
 	position: relative;
+	padding-right: 0em;
 	float: right;
-	padding-right: 0px;
 }
 
 .left {
 	position: relative;
+	padding-left: 0em;
 	float: left;
-	padding-left: 0px;
 }
 
 /*
@@ -222,9 +204,33 @@ nav ul li a:hover, #overflow:hover, nav ul li a.current {
 	display: none;
 }
 
+
+#toast-notification {
+	visibility: hidden;  
+	margin: 0 auto;
+	text-align: center; 
+	border-radius: 20em; 
+	position: fixed; 
+	z-index: var(--z-index-on-top); 
+  }
+  
+  #toast-notification.show {
+	visibility: visible;
+	animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  /* Animations to fade the snackbar in and out */
+  @keyframes fadein {
+	from {bottom: 0; opacity: 0;}
+	to {bottom: var(--bottom-margin); opacity: 1;}
+  }
+  @keyframes fadeout {
+	from {bottom: var(--bottom-margin); opacity: 1;}
+	to {bottom: 0; opacity: 0;}
+  }
+
 /* Modify the default style for forms making them look like they are not from 2003...
 */
-
 form, button, form textarea, form input {
 	border-style: solid;
 	border-radius: 0.5em;
@@ -321,25 +327,3 @@ form textarea, form input {
 	border-radius: 50%;
 }
 
-/* 
-White and black do not have themed variants
-*/
-.c-black {
-	background-color: #000000;
-	color: #EFEFEF;
-	border-bottom-color: #EFEFEF;
-}
-
-.c-black a {
-	color: #EFEFEF;
-}
-
-.c-white {
-	background-color: #FFFFFF;
-	color: #222222;
-	border-bottom-color: #222222;
-}
-
-.c-white a {
-	color: #222222;
-}
