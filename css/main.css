@@ -107,7 +107,7 @@ nav, .section__content {
 /* Increase the width of images for tablet devices and other 'medium' form factors 
 */
 
-@media only screen and (max-width: calc(var(--const-max-content-width)/ 2)) {
+@media only screen and (max-width: 55em) {
 	.img--content {
 		width: 50%;
 	}
@@ -116,7 +116,7 @@ nav, .section__content {
 /* Make regular images wide for smartphones and any device considered 'small'
 */
 
-@media only screen and (max-width: calc(var(--const-max-content-width)/ 4)) {
+@media only screen and (max-width: 20em) {
 	.img--content {
 		width: 100%;
 		padding: 0.1em 0em;
