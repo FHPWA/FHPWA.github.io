@@ -9,6 +9,7 @@ FredHappyface.github.io is built with HTML5, CSS3, JavaScript and JQuery3.3.1
 
 # Changelog:
 
+* **20190502.1:** Bug fix and updated service worker
 * **20190502.0:** Used BEM naming conventions for CSS
 * **20190423.0:** Updated jQuery from 3.3.1 to 3.4.0
 * **20190422.0:** >Copy works on iOS, use of toast notification
@@ -17,7 +18,7 @@ FredHappyface.github.io is built with HTML5, CSS3, JavaScript and JQuery3.3.1
 * **20190128.2:** Added screenshots directory for appscope
 * **20190128.1:** Settings, info and back icons are now svgs. Images have been optimised
 * **20190128.0:** Changes to text size should work across pages, minimum text size of 16 for iOS devices to prevent forced 
-	zoom. Tidied up script.js
+zoom. Tidied up script.js
 * **20181222.1:** Settings are applied instantly, text size setting is applied to all pages. 
 * **20181222.0:** Buttons spacing improved on settings. Text is non-selectable giving the page a more "app-like" feel. New Dev Settings page is used to test changes that cannot be tested locally 
 * **20181220.1:** Fix ms-edge form rendering bug
