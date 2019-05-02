@@ -10,7 +10,7 @@ body {
 }
 
 /* Dark background colours */ 
-.c-appbar, .c-toast, .c-appbar a, .c-toast a{
+.c-app-bar, .c-toast, .c-app-bar a, .c-toast a{
 	color: #EFEFEF;
 }
 
@@ -28,7 +28,7 @@ body {
 	background-color: #ECECEA;
 }
 
-.c-appbar, .c-toast {
+.c-app-bar, .c-toast {
 	background-color: #000000;
 }
 
@@ -50,13 +50,13 @@ form textarea, form input {
 
 /* Colour the custom radio button */
 
-.checkmark {
+.check-mark {
 	border-color: #000000;
 	background-color: #ffffff;
 }
 
 /* Colour the indicator (dot/circle) */
 
-.css-radio .checkmark:after {
+.css-radio .check-mark:after {
 	background: #000000;
 }

@@ -72,38 +72,38 @@
 
 	<div class="section-nav c-shibe">
 
-		<div class="appbar">
-			<div class="content">
-				<div class="left">
-					<h2>BlackC4t</h2>
-				</div>
-				<div class="item-pair right">
-					<a href="info.html">
-						<div class="scale-img nav-icons" style="width: 2.5em;">
-							<img src="images/pageicons/round-info-black-24px.svg" alt="Information">
-						</div>
-					</a>
-					<a href="settings.html">
-						<div class="scale-img nav-icons" style="width: 2.5em;">
-							<img src="images/pageicons/round-settings-black-24px.svg" alt="Settings">
-						</div>
-					</a>
+			<div class="app-bar">
+				<div class="section__content">
+					<div class="left">
+						<h2>BlackC4t</h2>
+					</div>
+					<div class="pair--item right">
+						<a href="info.html">
+							<div class="img--scale app__icon" style="width: 2.5em;">
+								<img src="images/pageicons/round-info-black-24px.svg" alt="Information">
+							</div>
+						</a>
+						<a href="settings.html">
+							<div class="img--scale app__icon" style="width: 2.5em;">
+								<img src="images/pageicons/round-settings-black-24px.svg" alt="settings">
+							</div>
+						</a>
+					</div>
 				</div>
 			</div>
+	
+			<nav id="js-nav">
+				<ul class="nav__content" id="js-nav__content">
+					<li><a href="index.html">One Time Pad</a> </li>
+					<li><a href="2kotp.html" class="current">2Key-One Time Pad</a> </li>
+					<li><a href="public.html">Public Key Cryptography</a> </li>
+					<li><a href="password.html">Password Generator</a> </li>
+				</ul>
+				<a class="overflow" id="js-overflow">More...</a>
+				<ul class="nav__overflow" id="js-nav__overflow">
+				</ul>
+			</nav>
 		</div>
-
-		<nav id="nav">
-			<ul id="nav-content">
-				<li><a href="index.html">One Time Pad</a> </li>
-				<li><a href="2kotp.html" class="current">2Key-One Time Pad</a> </li>
-				<li><a href="public.html">Public Key Cryptography</a> </li>
-				<li><a href="password.html">Password Generator</a> </li>
-			</ul>
-			<a id="overflow">More...</a>
-			<ul id="nav-overflow">
-			</ul>
-		</nav>
-	</div>
 
 	<div class="navigation-buffer">
 	</div>
@@ -112,8 +112,8 @@
 	</div>
 
 	<div class="section c-primary">
-		<div class="content">
-			<div class="content-img-wide">
+		<div class="section__content">
+			<div class="img--content-wide">
 				<img src="images/page/shiba-inu-wide.jpg" alt="Shiba Inu">
 			</div>
 			<h1>Two Key (Shibe)</h1>
@@ -122,7 +122,7 @@
 	</div>
 
 	<div class="section c-primary">
-		<div class="content">
+		<div class="section__content">
 
 
 			<form>
@@ -142,12 +142,12 @@
 				<label class="css-radio" for="rad">
 					Encrypt text 
 					<input type="radio" name="var" value="1" id="rad" checked="checked">
-					<span class="checkmark"></span>
+					<span class="check-mark"></span>
 				</label>
 				<label class="css-radio" for="rad-other">
 					Decrypt text 
 					<input type="radio" name="var" value="2" id="rad-other">
-					<span class="checkmark"></span>
+					<span class="check-mark"></span>
 				</label>
 				<label for="output">
 					Output:
@@ -155,7 +155,7 @@
 				<textarea rows="4" cols="1" id="output"></textarea>
 			</form>
 
-			<div class="button-pair">
+			<div class="pair--button">
 				<button onclick="start()">&#127939; Run</button>
 				<button onclick="copy()">&#128203; Copy Output </button>
 			</div>

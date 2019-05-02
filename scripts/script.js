@@ -97,36 +97,36 @@ Resize the navbar when the page is resized
 */
 function resizeFunction() {
 	// Get the width of the nav bar and the content and the "more" button
-	var navWidth = $('#nav').width();
-	var contentWidth = $('#nav-content').outerWidth(true);
-	var more = $('#overflow').outerWidth(true);
+	var navWidth = $('#js-nav').width();
+	var contentWidth = $('#js-nav__content').outerWidth(true);
+	var more = $('#js-overflow').outerWidth(true);
 
 	// Get the width of the overflow menu and the number of elements in the overflow menu 
-	var overflowWidth = $('#nav-overflow').outerWidth(true);
-	var noElementOverflow = $('#nav-overflow li').length;
+	var overflowWidth = $('#js-nav__overflow').outerWidth(true);
+	var noElementOverflow = $('#js-nav__overflow li').length;
 
 	// shrink the page 
 	while ((contentWidth + more + 20) > navWidth) {
-		$('#nav-content li:last').remove().prependTo('#nav-overflow');
-		contentWidth = $('#nav-content').outerWidth(true);
+		$('#js-nav__content li:last').remove().prependTo('#js-nav__overflow');
+		contentWidth = $('#js-nav__content').outerWidth(true);
 	}
 
 	// enlarge the page 
 	while (((contentWidth + more + overflowWidth) < navWidth) && noElementOverflow > 0) {
-		$('#nav-overflow li:first').remove().appendTo('#nav-content');
-		contentWidth = $('#nav-content').outerWidth(true);
-		noElementOverflow = $('#nav-overflow li').length;
+		$('#js-nav__overflow li:first').remove().appendTo('#js-nav__content');
+		contentWidth = $('#js-nav__content').outerWidth(true);
+		noElementOverflow = $('#js-nav__overflow li').length;
 	}
 
 	/*
 	If there are items in the overflow menu then show the overflow button 
 	*/
-	var noElementOverflow = $('#nav-overflow li').length;
+	var noElementOverflow = $('#js-nav__overflow li').length;
 	if (noElementOverflow > 0) {
-		$('#overflow').show();
+		$('#js-overflow').show();
 	}
 	else {
-		$('#overflow').hide();
+		$('#js-overflow').hide();
 	}
 
 }
@@ -158,11 +158,11 @@ var resizeTimer;
 
 
 
-document.getElementById("nav-overflow").style.display = 'none';
+document.getElementById("js-nav__overflow").style.display = 'none';
 
 
-document.getElementById("overflow").onclick = function() {
-	var navOverflow = document.getElementById("nav-overflow");
+document.getElementById("js-overflow").onclick = function() {
+	var navOverflow = document.getElementById("js-nav__overflow");
 	if (navOverflow.style.display === "none") {
 		navOverflow.style.display = "block";
 	} else {

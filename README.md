@@ -9,6 +9,9 @@ FredHappyface.github.io is built with HTML5, CSS3, JavaScript and JQuery3.3.1
 
 # Changelog:
 
+* **20190502.0:** Used BEM naming conventions for CSS
+* **20190423.0:** Updated jQuery from 3.3.1 to 3.4.0
+* **20190422.0:** >Copy works on iOS, use of toast notification
 * **20190129.1:** Removed redundant icons from site
 * **20190129.0:** Updated android icons, removed some icons from manifest
 * **20190128.2:** Added screenshots directory for appscope

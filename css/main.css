@@ -1,8 +1,14 @@
 :root{
+	/* Variables */
 	--text-mod: 1;
-	--z-index-on-top: 99;
-	--bottom-margin: 2em;
-	--rounding: 1em;
+	/* Variables */
+	--const-element-on-top: 99;
+	--const-toast-bottom-margin: 2em;
+	--const-toast-rounding: 10em;
+	--const-element-rounding: 0.7em;
+	--const-section-rounding: 0.2em;
+	--const-max-content-width: 55em;
+
 }
 
 *, *:before, *:after {
@@ -47,27 +53,29 @@ form label{
 /* Define a section, this will expand to fill the whole page. meaning content is in horizontal 'stripes'
 */
 
-.section, .section-nav, .appbar, #toast-notification {
+.section, .section-nav, .app-bar, #toast-notification {
 	width: 100%;
 	padding: 0px;
 	overflow: auto;
+	border-radius: 0 0 var(--const-section-rounding) var(--const-section-rounding);
 }
 
 .section-nav, #toast-notification {
 	position: fixed;
-	z-index: var(--z-index-on-top);
+	z-index: var(--const-element-on-top);
 }
 
+
 #toast-notification{
-	bottom: var(--bottom-margin);
+	bottom: var(--const-toast-bottom-margin);
 	border: .1em;
 	border-style: solid;
 }
 
 /* Centre content when the page is greater than 55em wide 
 */
-nav, .content {
-	max-width: 55em;
+nav, .section__content {
+	max-width: var(--const-max-content-width);
 	margin: auto;
 	padding: 1em;
 	overflow: hidden;
@@ -75,25 +83,23 @@ nav, .content {
 
 /* Justify the text to keep it looking tidy
 */
-.content p {
+.section__content p {
 	text-align: justify;
 }
 
 /* Define an image - this will resize as the screen does so the page is adaptive 
 */
-
-.scale-img, .fixed-img, .content-img {
+.img--scale, .img--fixed, .img--content {
 	padding: 0.1em 1em;
 }
 
-.content-img {
+.img--content {
 	width: 40%;
 }
 
 /* Define a wide image - this will always take up the width of the screen
 */
-
-.content-img-wide {
+.img--content-wide {
 	width: 100%;
 	padding: 0.1em 0em;
 }
@@ -101,8 +107,8 @@ nav, .content {
 /* Increase the width of images for tablet devices and other 'medium' form factors 
 */
 
-@media only screen and (max-width: 800px) {
-	.content-img {
+@media only screen and (max-width: calc(var(--const-max-content-width)/ 2)) {
+	.img--content {
 		width: 50%;
 	}
 }
@@ -110,8 +116,8 @@ nav, .content {
 /* Make regular images wide for smartphones and any device considered 'small'
 */
 
-@media only screen and (max-width: 600px) {
-	.content-img {
+@media only screen and (max-width: calc(var(--const-max-content-width)/ 4)) {
+	.img--content {
 		width: 100%;
 		padding: 0.1em 0em;
 	}
@@ -120,13 +126,13 @@ nav, .content {
 /* Make all of the actual images (inside the image containers fill the container) Give these a max height so the whole screen isn't taken up.
 */
 
-.content-img img, .content-img-wide img, .fixed-img img, .scale-img img {
-	border-radius: 0.5em;
-	max-height: 450px;
+.img--content img, .img--content-wide img, .img--fixed img, .img--scale img {
+	border-radius: var(--const-element-rounding);
+	max-height: calc(var(--const-max-content-width)/ 2);
 	display: block;
 }
 
-.content-img img, .content-img-wide img, .scale-img img {
+.img--content img, .img--content-wide img, .img--scale img {
 	width: 100%;
 	margin: 0 auto;
 }
@@ -148,7 +154,7 @@ nav, .content {
 /*
 Define container for nav icons
 */
-.nav-icons {
+.app__icon {
 	padding: 0em;
 	padding-bottom: 0.5em;
 }
@@ -174,7 +180,7 @@ nav ul li {
 	padding: 0.5em 1em 0.5em 0em;
 }
 
-nav ul li a, #overflow {
+nav ul li a, .overflow {
 	text-decoration: none;
 	padding: 0.7em 0.3em;
 	border-bottom-width: 0.1em;
@@ -186,21 +192,21 @@ nav ul li a.current {
 	border-bottom-width: 0.3em;
 }
 
-nav ul li a:hover, #overflow:hover, nav ul li a.current {
+nav ul li a:hover, .overflow:hover, nav ul li a.current {
 	border-bottom-style: solid;
 	cursor: pointer;
 }
 
-#nav-content {
+.nav__content {
 	max-height: 3em;
 }
 
-#nav-overflow li {
+.nav__overflow li {
 	display: block;
 	padding-top: 1em;
 }
 
-#overflow {
+.overflow {
 	display: none;
 }
 
@@ -209,23 +215,23 @@ nav ul li a:hover, #overflow:hover, nav ul li a.current {
 	visibility: hidden;  
 	margin: 0 auto;
 	text-align: center; 
-	border-radius: 20em; 
+	border-radius: var(--const-toast-rounding); 
 	position: fixed; 
 	z-index: var(--z-index-on-top); 
   }
   
   #toast-notification.show {
 	visibility: visible;
-	animation: fadein 0.5s, fadeout 0.5s 2.5s;
+	animation: fade-in 0.5s, fade-out 0.5s 2.5s;
   }
   
-  /* Animations to fade the snackbar in and out */
-  @keyframes fadein {
+  /* Animations to fade the toast in and out */
+  @keyframes fade-in {
 	from {bottom: 0; opacity: 0;}
-	to {bottom: var(--bottom-margin); opacity: 1;}
+	to {bottom: var(--const-toast-bottom-margin); opacity: 1;}
   }
-  @keyframes fadeout {
-	from {bottom: var(--bottom-margin); opacity: 1;}
+  @keyframes fade-out {
+	from {bottom: var(--const-toast-bottom-margin); opacity: 1;}
 	to {bottom: 0; opacity: 0;}
   }
 
@@ -233,7 +239,7 @@ nav ul li a:hover, #overflow:hover, nav ul li a.current {
 */
 form, button, form textarea, form input {
 	border-style: solid;
-	border-radius: 0.5em;
+	border-radius: var(--const-element-rounding);
 	width: 100%;
 	font-size: 1em;
 	background-color: rgba(0, 0, 0, 0);
@@ -261,12 +267,12 @@ form textarea, form input {
 	overflow: auto;
 }
 
-.item-pair, .button-pair {
+.pair--item, .pair--button {
 	column-count: 2;
 	column-gap: 1em;
 }
 
-.button-pair, .button {
+.pair--button, .button {
 	margin-top: 0.5em;
 }
 
@@ -292,7 +298,7 @@ form textarea, form input {
 
 /* Create a custom radio button */
 
-.checkmark {
+.check-mark {
 	border-width: 0.1em;
 	border-style: solid;
 	position: absolute;
@@ -305,7 +311,7 @@ form textarea, form input {
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
 
-.checkmark:after {
+.check-mark:after {
 	content: "";
 	position: absolute;
 	display: none;
@@ -313,13 +319,13 @@ form textarea, form input {
 
 /* Show the indicator (dot/circle) when checked */
 
-.css-radio input:checked~.checkmark:after {
+.css-radio input:checked~.check-mark:after {
 	display: block;
 }
 
 /* Style the indicator (dot/circle) */
 
-.css-radio .checkmark:after {
+.css-radio .check-mark:after {
 	top: 0.15em;
 	left: 0.15em;
 	width: 0.5em;

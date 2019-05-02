@@ -70,33 +70,31 @@
 
 <body>
 
-	<div class="section-nav c-appbar">
+	<div class="section-nav c-app-bar">
 
-		<div class="appbar">
-			<div class="content">
-				<div class="left">
-					<h2>BlackC4t</h2>
+			<div class="app-bar">
+				<div class="section__content">
+					<div class="left">
+						<h2>BlackC4t</h2>
+					</div>
+					<div class="img--scale app__icon right" style="width: 2.5em;" onclick="window.history.back()">
+						<img src="images/pageicons/round-keyboard_backspace-white-24px.svg" alt="Back">
+					</div>
 				</div>
-
-				<div class="scale-img nav-icons right" style="width: 2.5em;" onclick="window.history.back()">
-					<img src="images/pageicons/round-keyboard_backspace-white-24px.svg" alt="Back">
-				</div>
-
 			</div>
+	
+			<nav id="js-nav">
+				<ul class="nav__content" id="js-nav__content">
+					<li><a href="index.html">One Time Pad</a> </li>
+					<li><a href="2kotp.html">2Key-One Time Pad</a> </li>
+					<li><a href="public.html">Public Key Cryptography</a> </li>
+					<li><a href="password.html">Password Generator</a> </li>
+				</ul>
+				<a class="overflow" id="js-overflow">More...</a>
+				<ul class="nav__overflow" id="js-nav__overflow">
+				</ul>
+			</nav>
 		</div>
-
-		<nav id="nav">
-			<ul id="nav-content">
-				<li><a href="index.html">One Time Pad</a> </li>
-				<li><a href="2kotp.html">2Key-One Time Pad</a> </li>
-				<li><a href="public.html">Public Key Cryptography</a> </li>
-				<li><a href="password.html">Password Generator</a> </li>
-			</ul>
-			<a id="overflow">More...</a>
-			<ul id="nav-overflow">
-			</ul>
-		</nav>
-	</div>
 
 	<div class="navigation-buffer">
 	</div>
@@ -105,8 +103,8 @@
 	</div>
 
 	<div class="section c-primary">
-		<div class="content">
-			<div class="scale-img left" style="width: 4.5em;">
+		<div class="section__content">
+			<div class="img--scale left" style="width: 4.5em;">
 				<img src="images/page/blackc4t.svg" alt="BlackC4t">
 			</div>
 			<h1>About</h1>
@@ -115,7 +113,7 @@
 	</div>
 
 	<div class="section c-primary">
-		<div class="content">
+		<div class="section__content">
 
 			<p>
 				This website exists to provide a proof of concept for various encryption methods and
@@ -152,12 +150,15 @@
 	</div>
 
 	<div class="section c-secondary">
-		<div class="content">
+		<div class="section__content">
 
 			<h2>Changelog:</h2>
 
 			<p><b></b></p>
 
+			<p><b>20190502.0: </b>Used BEM naming conventions for CSS</p>
+			<p><b>20190423.0: </b>Updated jQuery from 3.3.1 to 3.4.0</p>
+			<p><b>20190422.0: </b>Copy works on iOS, use of toast notification</p>
 			<p><b>20190129.1: </b>Removed redundant icons from site</p>
 			<p><b>20190129.0: </b>Updated android icons, removed some icons from manifest</p>
 			<p><b>20190128.2: </b>Added screenshots directory for appscope</p>
