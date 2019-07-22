@@ -141,7 +141,7 @@ Gets an elements outer width
 function outerWidth(el) {
 	var width = el.offsetWidth;
 	var style = getComputedStyle(el);
-	width += parseInt(style.marginLeft) + parseInt(style.marginRight);
+	width += parseInt(style.marginLeft, 10) + parseInt(style.marginRight, 10);
 	return width;
 }
 

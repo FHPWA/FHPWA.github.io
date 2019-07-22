@@ -68,7 +68,7 @@ form label{
 
 #toast-notification{
 	bottom: var(--const-toast-bottom-margin);
-	border: .1em;
+	border: 0.1em;
 	border-style: solid;
 }
 

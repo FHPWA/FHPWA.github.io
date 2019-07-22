@@ -1,7 +1,8 @@
 // Checks if an argument is prime 
 function isPrime(x) {
-    for(let i = 2, s = Math.sqrt(x); i <= s; i++)
-        if(x % i === 0) return false; 
+    for(let i = 2, s = Math.sqrt(x); i <= s; i++){
+		if(x % i === 0) return false; 
+	}
     return x > 1;
 }
 
@@ -38,7 +39,7 @@ function modInverse(a, m) {
 
 // https://stackoverflow.com/questions/5989429/pow-and-mod-function-optimization
 function expmod(base, exp, mod) {
-	if (exp === 0) {return 1};
+	if (exp === 0) {return 1;}
 	if (exp % 2 === 0) {
 		return Math.pow(expmod(base, (exp / 2), mod), 2) % mod;
 	}
