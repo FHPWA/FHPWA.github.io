@@ -2,8 +2,8 @@
 Default data. Use this if there is no other data
 */
 var DEFAULT = {
-	theme: 'light',
-	text: '1'
+	theme: "light",
+	text: "1"
 };
 
 var data;
@@ -11,25 +11,6 @@ var data;
 /*
 Copy the contents of the output element
 */
-function copy() {
-	var stringToCopy = document.getElementById("output").value;
-	copyToClipboard(stringToCopy);
-	window.getSelection().removeAllRanges();
-}
-
-async function
-copyToClipboard(stringToCopy){
-	if(navigator.clipboard){
-		try{
-			await navigator.clipboard.writeText(stringToCopy);
-			showToast("Successfully Copied");
-		} catch(err){
-			showToast("Failed to Copy")
-		}
-		
-	}
-}
-
 function showToast(message) {
 	var toast = document.getElementById("toast-notification");
 	var toastText = document.getElementById("toast-text");
@@ -38,18 +19,41 @@ function showToast(message) {
 	setTimeout(function(){ toast.className = toast.className.replace(" show", ""); }, 3000);
   }
 
+async function
+copyToClipboard(stringToCopy){
+	if(navigator.clipboard){
+		try{
+			await navigator.clipboard.writeText(stringToCopy);
+			showToast("Successfully Copied");
+		} catch(err){
+			showToast("Failed to Copy");
+		}
+		
+	}
+}
+
+function copy() {
+	var stringToCopy = document.getElementById("output").value;
+	copyToClipboard(stringToCopy);
+	window.getSelection().removeAllRanges();
+}
+
+
+
+
+
 /*
 Does the current browser support local storage?
 */
 function hasLocalStorage() {
-	var test = 'test';
+	var test = "test";
 	try {
 		localStorage.setItem(test, test);
 		localStorage.removeItem(test);
 		return true;
 	}
 	catch (e) {
-		console.log('Your Browser does not support local storage');
+		//console.log("Your Browser does not support local storage");
 		return false;
 	}
 }
@@ -59,7 +63,7 @@ Save data onto local storage
 */
 function save() {
 	if (hasLocalStorage()) {
-		localStorage.setItem('com.fredhappyface.blackc4t', JSON.stringify(data));
+		localStorage.setItem("com.fredhappyface.blackc4t", JSON.stringify(data));
 	}
 
 }
@@ -69,11 +73,11 @@ Load data from local storage
 */
 function load() {
 
-	if (hasLocalStorage() && localStorage.getItem('com.fredhappyface.blackc4t') !== null) {
-		data = JSON.parse(localStorage.getItem('com.fredhappyface.blackc4t'));
+	if (hasLocalStorage() && localStorage.getItem("com.fredhappyface.blackc4t") !== null) {
+		data = JSON.parse(localStorage.getItem("com.fredhappyface.blackc4t"));
 		return;
 	} else {
-		console.log('Your Browser does not support local storage or no data saved. Loading default data.');
+		//console.log("Your Browser does not support local storage or no data saved. Loading default data.");
 		data = DEFAULT;
 		return;
 	}
@@ -85,8 +89,8 @@ function load() {
 Set the theme
 */
 function setTheme() {
-	if (document.getElementById('theme') == null) {
-		document.head.innerHTML += '<link rel="stylesheet" href="css/theme/' + data.theme + '.css"  id="theme">';
+	if (document.getElementById("theme") == null) {
+		document.head.innerHTML += '<link rel="stylesheet" href="css/theme/" + data.theme + ".css"  id="theme">';
 	}
 	save();
 }
@@ -97,36 +101,36 @@ Resize the navbar when the page is resized
 */
 function resizeFunction() {
 	// Get the width of the nav bar and the content and the "more" button
-	var navWidth = $('#js-nav').width();
-	var contentWidth = $('#js-nav__content').outerWidth(true);
-	var more = $('#js-overflow').outerWidth(true);
+	var navWidth = $("#js-nav").width();
+	var contentWidth = $("#js-nav__content").outerWidth(true);
+	var more = $("#js-overflow").outerWidth(true);
 
 	// Get the width of the overflow menu and the number of elements in the overflow menu 
-	var overflowWidth = $('#js-nav__overflow').outerWidth(true);
-	var noElementOverflow = $('#js-nav__overflow li').length;
+	var overflowWidth = $("#js-nav__overflow").outerWidth(true);
+	var noElementOverflow = $("#js-nav__overflow li").length;
 
 	// shrink the page 
 	while ((contentWidth + more + 20) > navWidth) {
-		$('#js-nav__content li:last').remove().prependTo('#js-nav__overflow');
-		contentWidth = $('#js-nav__content').outerWidth(true);
+		$("#js-nav__content li:last").remove().prependTo("#js-nav__overflow");
+		contentWidth = $("#js-nav__content").outerWidth(true);
 	}
 
 	// enlarge the page 
 	while (((contentWidth + more + overflowWidth) < navWidth) && noElementOverflow > 0) {
-		$('#js-nav__overflow li:first').remove().appendTo('#js-nav__content');
-		contentWidth = $('#js-nav__content').outerWidth(true);
-		noElementOverflow = $('#js-nav__overflow li').length;
+		$("#js-nav__overflow li:first").remove().appendTo("#js-nav__content");
+		contentWidth = $("#js-nav__content").outerWidth(true);
+		noElementOverflow = $("#js-nav__overflow li").length;
 	}
 
 	/*
 	If there are items in the overflow menu then show the overflow button 
 	*/
-	var noElementOverflow = $('#js-nav__overflow li').length;
+	noElementOverflow = $("#js-nav__overflow li").length;
 	if (noElementOverflow > 0) {
-		$('#js-overflow').show();
+		$("#js-overflow").show();
 	}
 	else {
-		$('#js-overflow').hide();
+		$("#js-overflow").hide();
 	}
 
 }
@@ -158,7 +162,7 @@ var resizeTimer;
 
 
 
-document.getElementById("js-nav__overflow").style.display = 'none';
+document.getElementById("js-nav__overflow").style.display = "none";
 
 
 document.getElementById("js-overflow").onclick = function() {

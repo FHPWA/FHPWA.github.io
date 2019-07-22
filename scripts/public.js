@@ -1,17 +1,13 @@
-// Checks if an arguement is prime 
+// Checks if an argument is prime 
 function isPrime(x) {
-	if (x % 2 === 0 && x > 2) {
-		return false;
-	}
-	var i = 3;
-	var sqrt = Math.sqrt(x);
-	while (i < sqrt) {
-		if (x % i === 0) {
-			return false;
-		}
-		i += 2;
-	}
-	return true;
+    for(let i = 2, s = Math.sqrt(x); i <= s; i++)
+        if(x % i === 0) return false; 
+    return x > 1;
+}
+
+// returns a random integer between min (inclusive) and max (exclusive)
+function getRandomInt(min, max) {
+	return Math.floor(Math.random() * (max - min)) + min;
 }
 
 // Generates a number that might be prime
@@ -32,22 +28,18 @@ function highestCommonFactor(a, b) {
 // calculates the private key exponent from the public key exponent
 function modInverse(a, m) {
 	for (var x = 1; x < m; x++) {
-		if ((a * x) % m == 1) {
+		if ((a * x) % m === 1) {
 			return x;
 		}
 	}
 	return 1;
 }
 
-// returns a random integer between min (inclusive) and max (exclusive)
-function getRandomInt(min, max) {
-	return Math.floor(Math.random() * (max - min)) + min;
-}
 
 // https://stackoverflow.com/questions/5989429/pow-and-mod-function-optimization
 function expmod(base, exp, mod) {
-	if (exp == 0) return 1;
-	if (exp % 2 == 0) {
+	if (exp === 0) {return 1};
+	if (exp % 2 === 0) {
 		return Math.pow(expmod(base, (exp / 2), mod), 2) % mod;
 	}
 	else {
@@ -61,18 +53,20 @@ var globalPrivateKeyExponent;
 
 function start() {
 
+	var prime0, prime1, isprime, keyModulus, publicKeyExponent, privateKeyExponent, outstring, charint, inputlength
+
 
 	// check for existing keys 
-	var check = document.getElementById("mod").value.replace(/\s/g, '');
+	var check = document.getElementById("mod").value.replace(/\s/g, "");
 
-	if (check != "") {
+	if (check !== "") {
 
 		// get them 
 
-		var keyModulus = document.getElementById("mod").value.replace(/\s/g, '');
-		var publicKeyExponent = document.getElementById("public").value.replace(/\s/g, '');
-		var privateKeyExponent = document.getElementById("private").value.replace(/\s/g, '');
-		if (privateKeyExponent == "") {
+		keyModulus = document.getElementById("mod").value.replace(/\s/g, "");
+		publicKeyExponent = document.getElementById("public").value.replace(/\s/g, "");
+		privateKeyExponent = document.getElementById("private").value.replace(/\s/g, "");
+		if (privateKeyExponent === "") {
 			privateKeyExponent = globalPrivateKeyExponent;
 		}
 
@@ -86,32 +80,31 @@ function start() {
 			prime0 = generatePrime(64, 256);
 			isprime = isPrime(prime0);
 		}
-		while (isprime == false);
+		while (isprime === false);
 
 		do {
 			prime1 = generatePrime(64, 256);
 			isprime = isPrime(prime1);
 		}
-		while (isprime == false);
+		while (isprime === false);
 
 
 		//Generate the key modulus - this is used in the encryption and decryption methods 
-		var keyModulus = prime0 * prime1;
+		keyModulus = prime0 * prime1;
 
 		//Generate the euler totient - this is used to generate the private key exponent from the public key exponent 
 		var eulerTotient = (prime0 - 1) * (prime1 - 1);
 
 		//Use Euclid's Algorithm to verify that publicKeyExponent and eulerTotient are coprime
-		var publicKeyExponent;
 		var factor;
 		do {
 			publicKeyExponent = getRandomInt(1, eulerTotient);
 			factor = highestCommonFactor(publicKeyExponent, eulerTotient);
 		}
-		while (factor != 1);
+		while (factor !== 1);
 
 		// calculates the private key exponent from the public key exponent
-		var privateKeyExponent = modInverse(publicKeyExponent, eulerTotient);
+		privateKeyExponent = modInverse(publicKeyExponent, eulerTotient);
 	}
 
 

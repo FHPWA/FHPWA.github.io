@@ -1,7 +1,7 @@
 function start() {
     var charint, choice, inputstring, keystring, keystring2, outstring, inputlength;
-    keystring = document.getElementById("fieldkey").value.replace(/\s/g, '');
-    keystring2 = document.getElementById("fieldkey2").value.replace(/\s/g, '');
+    keystring = document.getElementById("fieldkey").value.replace(/\s/g, "");
+    keystring2 = document.getElementById("fieldkey2").value.replace(/\s/g, "");
     choice = document.getElementById("rad").checked;
 
     outstring = "";

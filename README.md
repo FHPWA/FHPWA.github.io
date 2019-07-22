@@ -1,3 +1,15 @@
+<p float="left">
+<img src="https://img.shields.io/github/languages/top/fredhappyface/FredHappyface.github.io.svg?style=flat-square" alt="Github top language">
+<img src="https://img.shields.io/codacy/grade/15e9d901702e4b58a87681ab39c5ae49.svg?style=flat-square" alt="Codacy grade">
+<img src="https://img.shields.io/codacy/coverage/15e9d901702e4b58a87681ab39c5ae49.svg?style=flat-square" alt="Codacy coverage">
+<img src="https://img.shields.io/github/repo-size/fredhappyface/FredHappyface.github.io.svg?style=flat-square" alt="Repository size">
+<img src="https://img.shields.io/github/issues/fredhappyface/FredHappyface.github.io.svg?style=flat-square" alt="Issues">
+<img src="https://img.shields.io/github/license/fredhappyface/FredHappyface.github.io.svg?style=flat-square" alt="License">
+<img src="https://img.shields.io/github/commit-activity/m/fredhappyface/FredHappyface.github.io.svg?style=flat-square" alt="Commit activity">
+<img src="https://img.shields.io/github/last-commit/fredhappyface/FredHappyface.github.io.svg?style=flat-square" alt="Last commit">
+</p>
+
+
 # FredHappyface.github.io
 
 This website exists to provide a proof of concept for various encryption methods and password generators that are written in Javascript. 
@@ -7,10 +19,10 @@ Find the site on https://FredHappyface.github.io
 <img src="readme-assets/icons/proj-icon.png" alt="Project Icon" width="100">
 
 
-# Language information 
+## Language information 
 FredHappyface.github.io is built with HTML5, CSS3, JavaScript and JQuery3.4.0
 
-# Changelog:
+## Changelog
 
 * **20190502.1:** Bug fix and updated service worker
 * **20190502.0:** Used BEM naming conventions for CSS
@@ -55,9 +67,9 @@ zoom. Tidied up script.js
 * **Version 1.1:** Moved to javascript to improve page load times.
 * **Version 1.0:** First release, consisted of one page only (index.html) and used brython	to encrypt
 
-# Download
-## Clone
-### Using The Command Line 
+## Download
+### Clone
+#### Using The Command Line 
 1. Press the Clone or download button in the top right
 2. Copy the URL (link)
 3. Open the command line and change directory to where you wish to clone to
@@ -68,43 +80,43 @@ $ git clone https://github.com/[user-name]/[repository]
 
 More information can be found at https://help.github.com/en/articles/cloning-a-repository 
 
-### Using GitHub Desktop
+#### Using GitHub Desktop
 1. Press the Clone or download button in the top right
 2. Click open in desktop
 3. Choose the path for where you want and click Clone
 
 More information can be found at https://help.github.com/en/desktop/contributing-to-projects/cloning-a-repository-from-github-to-github-desktop 
 
-## Download Zip File
+### Download Zip File
 
 1. Download this GitHub repository
 2. Extract the zip archive
 3. Copy/ move to the desired location
 
 
-# Licence 
+## Licence 
 MIT License
 Copyright (c) Kieran W
 (See the [LICENSE](/LICENSE.md) for more information.)
 
 
-# Browser Support 
+## Browser Support 
 
-## Supported 
+### Supported 
 This PWA is optimised for the following browsers and has been tested on them:
 
 |Google Chrome|Chromium Based Browsers|Safari|
 |:-:|:-:|:-:|
 | <img src="readme-assets/browsers/chrome.png" alt="Google Chrome" width="200"> | <img src="readme-assets/browsers/chromium.png" alt="Chromuim" width="200"> | <img src="readme-assets/browsers/safari.png" alt="Safari" width="200"> |
 
-## Partial Support
+### Partial Support
 This PWA should function on these browsers but some elements may look odd:
 
 |Firefox|Microsoft Edge|
 |:-:|:-:|
 | <img src="readme-assets/browsers/firefox.png" alt="Firefox" width="200"> | <img src="readme-assets/browsers/ms-edge.png" alt="Microsoft Edge" width="200"> |
 
-## Not Supported 
+### Not Supported 
 This PWA is not supported on these browsers, functionality and visuals may not work as expected:
 
 |Internet Explorer|TOR Browser|Other Browsers|
@@ -113,9 +125,9 @@ This PWA is not supported on these browsers, functionality and visuals may not w
 
 
 
-# Screenshots 
+## Screenshots 
 
-## Desktop 
+### Desktop 
 |Screenshots|
 |:-:|
 | <img src="readme-assets/screenshots/desktop/screenshot-1.png" alt="Screenshot 1" width="600"> |
@@ -124,7 +136,7 @@ This PWA is not supported on these browsers, functionality and visuals may not w
 
 
 
-## Mobile 
+### Mobile 
 |Screenshots| |
 |:-:|:-:|
 | <img src="readme-assets/screenshots/mobile/screenshot-1.png" alt="Screenshot 1" width="300"> | <img src="readme-assets/screenshots/mobile/screenshot-2.png" alt="Screenshot 2" width="300"> |
@@ -132,13 +144,13 @@ This PWA is not supported on these browsers, functionality and visuals may not w
 
 
 
-## Themes 
+### Themes 
 |Light|Dark|Black|
 |:-:|:-:|:-:|
 | <img src="readme-assets/screenshots/themes/theme-1.png" alt="Theme 1" width="200"> | <img src="readme-assets/screenshots/themes/theme-2.png" alt="Theme 2" width="200"> | <img src="readme-assets/screenshots/themes/theme-3.png" alt="Theme 3" width="200"> |
 
 
-# Limited Support
+## Limited Support
 Expect this project to be supported for approximately 6 months (for bug-fixes only).
  Note that this is not guaranteed. Create an issue for bugs
  (as this project is carried out in spare time, you may have 

@@ -2,36 +2,58 @@
 
 const CACHE = "pwabuilder-precache";
 const precacheFiles = [
-  'index.html',
-  '2kotp.html',
-  'public.html',
-  'password.html',
-  'info.html',
-  'settings.html',
-  './',
-  'css/main.css',
-  'css/theme/light.css',
-  'css/theme/dark.css',
-  'css/theme/black.css',
-  'scripts/jquery-3.4.0.min.js',
-  'scripts/script.js',
-  'scripts/otp.js',
-  'scripts/2kotp.js',
-  'scripts/public.js',
-  'scripts/password.js',
-  'scripts/settings.js',
-  'resources/10k.txt'
+  "index.html",
+  "2kotp.html",
+  "public.html",
+  "password.html",
+  "info.html",
+  "settings.html",
+  "./",
+  "css/main.css",
+  "css/theme/light.css",
+  "css/theme/dark.css",
+  "css/theme/black.css",
+  "scripts/jquery-3.4.0.min.js",
+  "scripts/script.js",
+  "scripts/otp.js",
+  "scripts/2kotp.js",
+  "scripts/public.js",
+  "scripts/password.js",
+  "scripts/settings.js",
+  "resources/10k.txt"
 ];
 
-self.addEventListener("install", function (event) {
-  console.log("[PWA Builder] Install Event processing");
 
-  console.log("[PWA Builder] Skip waiting on install");
+function fromCache(request) {
+  // Check to see if you have it in the cache
+  // Return response
+  // If not in the cache, then return
+  return caches.open(CACHE).then(function (cache) {
+    return cache.match(request).then(function (matching) {
+      if (!matching || matching.status === 404) {
+        return Promise.reject("no-match");
+      }
+
+      return matching;
+    });
+  });
+}
+
+function updateCache(request, response) {
+  return caches.open(CACHE).then(function (cache) {
+    return cache.put(request, response);
+  });
+}
+
+self.addEventListener("install", function (event) {
+  //console.log("[PWA Builder] Install Event processing");
+
+  //console.log("[PWA Builder] Skip waiting on install");
   self.skipWaiting();
 
   event.waitUntil(
     caches.open(CACHE).then(function (cache) {
-      console.log("[PWA Builder] Caching pages during install");
+      //console.log("[PWA Builder] Caching pages during install");
       return cache.addAll(precacheFiles);
     })
   );
@@ -39,7 +61,7 @@ self.addEventListener("install", function (event) {
 
 // Allow sw to control of current page
 self.addEventListener("activate", function (event) {
-  console.log("[PWA Builder] Claiming clients for current page");
+  //console.log("[PWA Builder] Claiming clients for current page");
   event.waitUntil(self.clients.claim());
 });
 
@@ -72,30 +94,10 @@ self.addEventListener("fetch", function (event) {
             return response;
           })
           .catch(function (error) {
-            console.log("[PWA Builder] Network request failed and no cache." + error);
+            //console.log("[PWA Builder] Network request failed and no cache." + error);
           });
       }
     )
   );
 });
 
-function fromCache(request) {
-  // Check to see if you have it in the cache
-  // Return response
-  // If not in the cache, then return
-  return caches.open(CACHE).then(function (cache) {
-    return cache.match(request).then(function (matching) {
-      if (!matching || matching.status === 404) {
-        return Promise.reject("no-match");
-      }
-
-      return matching;
-    });
-  });
-}
-
-function updateCache(request, response) {
-  return caches.open(CACHE).then(function (cache) {
-    return cache.put(request, response);
-  });
-}

@@ -1,6 +1,6 @@
 function start() {
     var charint, choice, inputstring, keystring, outstring, inputlength;
-    keystring = document.getElementById("fieldkey").value.replace(/\s/g, '');
+    keystring = document.getElementById("fieldkey").value.replace(/\s/g, "");
     choice = document.getElementById("rad").checked;
 
     outstring = "";

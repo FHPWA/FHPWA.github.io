@@ -1,6 +1,6 @@
 
 function saveTheme() {
-	var radios = document.getElementsByName('themeR');
+	var radios = document.getElementsByName("themeR");
 
 	var theme = 0;
 
@@ -32,7 +32,7 @@ function saveTheme() {
 }
 
 function saveText() {
-	var radios = document.getElementsByName('textR');
+	var radios = document.getElementsByName("textR");
 
 	var text = 0;
 
