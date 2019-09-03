@@ -13,7 +13,6 @@ const precacheFiles = [
   "css/theme/light.css",
   "css/theme/dark.css",
   "css/theme/black.css",
-  "scripts/jquery-3.4.0.min.js",
   "scripts/script.js",
   "scripts/otp.js",
   "scripts/2kotp.js",
@@ -66,7 +65,7 @@ self.addEventListener("activate", function (event) {
 });
 
 // If any fetch fails, it will look for the request in the cache and serve it from there first
-self.addEventListener("fetch", function (event) { 
+self.addEventListener("fetch", function (event) {
   if (event.request.method !== "GET") {return;}
 
   event.respondWith(
@@ -100,4 +99,3 @@ self.addEventListener("fetch", function (event) {
     )
   );
 });
-

@@ -1,6 +1,6 @@
 /* Dark Theme */
 
-/* 
+/*
 Set the background to black and the text colour to (nearly) white
 */
 
@@ -11,7 +11,7 @@ body {
 }
 
 
-/* Dark background colours */ 
+/* Dark background colours */
 .c-primary, .c-secondary, .c-app-bar, .c-toast, .c-primary a, .c-secondary a, .c-app-bar a, .c-toast a  {
 	color: #EFEFEF;
 }

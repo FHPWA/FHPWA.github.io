@@ -13,7 +13,7 @@
 						console.log("ServiceWorker registration successful with scope: ", registration.scope);
 					},
 					function (err) {
-						// registration failed :( 
+						// registration failed :(
 						console.log("ServiceWorker registration failed: ", err);
 					});
 			});
@@ -34,7 +34,7 @@
 			data = DEFAULT;
 		}
 
-		// set the theme to the appropriate css 
+		// set the theme to the appropriate css
 		document.head.innerHTML += '<link rel="stylesheet" href="css/theme/' + data.theme + '.css"  id="theme">';
 
 		// set the text size
@@ -42,14 +42,14 @@
 		declaration.setProperty("--text-mod", data.text)
 	</script>
 
-	<meta name="Description" content="Author: FredHappyface; Category: Cryptography, 
+	<meta name="Description" content="Author: FredHappyface; Category: Cryptography,
 	Proof of concept; Cost: Free">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	
+
 	<!--Android app icon-->
 	<link rel="manifest" href="/manifest.json">
 	<meta name="theme-color" content="#000000" />
-	
+
 	<!--iOS touch icon-->
 	<link rel="apple-touch-icon" href="images/appicons/apple-icon-180x180.png">
 
@@ -64,7 +64,7 @@
 
 	<!--Title-->
 	<title>BlackC4t About</title>
-	
+
 
 </head>
 
@@ -82,7 +82,7 @@
 					</div>
 				</div>
 			</div>
-	
+
 			<nav id="js-nav">
 				<ul class="nav__content" id="js-nav__content">
 					<li><a href="index.html">One Time Pad</a> </li>
@@ -164,10 +164,10 @@
 			<p><b>20190129.0: </b>Updated android icons, removed some icons from manifest</p>
 			<p><b>20190128.2: </b>Added screenshots directory for appscope</p>
 			<p><b>20190128.1: </b>Settings, info and back icons are now svgs. Images have been optimised</p>
-			<p><b>20190128.0: </b>Changes to text size should work across pages, minimum text size of 16 for iOS devices to prevent forced 
+			<p><b>20190128.0: </b>Changes to text size should work across pages, minimum text size of 16 for iOS devices to prevent forced
 				zoom. Tidied up script.js</p>
 			<p><b>20181222.1: </b>Settings are applied instantly, text size setting is applied to all pages. </p>
-			<p><b>20181222.0: </b>Buttons spacing improved on settings. Text is non-selectable giving the page a more "app-like" feel. New Dev 
+			<p><b>20181222.0: </b>Buttons spacing improved on settings. Text is non-selectable giving the page a more "app-like" feel. New Dev
 				Settings page is used to test changes that cannot be tested locally </p>
 			<p><b>20181220.1: </b>Fix ms-edge form rendering bug</p>
 			<p><b>20181220.0: </b>Now iOS installable</p>

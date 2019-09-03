@@ -13,7 +13,7 @@
 						console.log("ServiceWorker registration successful with scope: ", registration.scope);
 					},
 					function (err) {
-						// registration failed :( 
+						// registration failed :(
 						console.log("ServiceWorker registration failed: ", err);
 					});
 			});
@@ -34,7 +34,7 @@
 			data = DEFAULT;
 		}
 
-		// set the theme to the appropriate css 
+		// set the theme to the appropriate css
 		document.head.innerHTML += '<link rel="stylesheet" href="css/theme/' + data.theme + '.css"  id="theme">';
 
 		// set the text size
@@ -42,14 +42,14 @@
 		declaration.setProperty("--text-mod", data.text)
 	</script>
 
-	<meta name="Description" content="Author: FredHappyface; Category: Cryptography, 
+	<meta name="Description" content="Author: FredHappyface; Category: Cryptography,
 	Proof of concept; Cost: Free">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	
+
 	<!--Android app icon-->
 	<link rel="manifest" href="/manifest.json">
 	<meta name="theme-color" content="#000000" />
-	
+
 	<!--iOS touch icon-->
 	<link rel="apple-touch-icon" href="images/appicons/apple-icon-180x180.png">
 
@@ -115,17 +115,17 @@
 		<div class="section__content">
 			<h2>Theme:</h2>
 			<label class="css-radio" for="light">
-				Light Theme 
+				Light Theme
 				<input type="radio" name="themeR" value="1" id="light" checked="checked">
 				<span class="check-mark"></span>
 			</label>
 			<label class="css-radio" for="dark">
-				Dark Theme 
+				Dark Theme
 				<input type="radio" name="themeR" value="2" id="dark">
 				<span class="check-mark"></span>
 			</label>
 			<label class="css-radio" for="black">
-				Black Theme 
+				Black Theme
 				<input type="radio" name="themeR" value="3" id="black">
 				<span class="check-mark"></span>
 			</label>
@@ -140,7 +140,7 @@
 		<div class="section__content">
 			<h2>Text Size:</h2>
 			<label class="css-radio" for="small">
-				Small  
+				Small
 				<input type="radio" name="textR" value="1" id="small" checked="checked">
 				<span class="check-mark"></span>
 			</label>
@@ -150,7 +150,7 @@
 				<span class="check-mark"></span>
 			</label>
 			<label class="css-radio" for="large">
-				Large 
+				Large
 				<input type="radio" name="textR" value="3" id="large">
 				<span class="check-mark"></span>
 			</label>
@@ -161,7 +161,7 @@
 		</div>
 	</div>
 
-	
+
 
 
 	<script src="scripts/jquery-3.4.0.min.js"></script>

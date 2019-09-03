@@ -1,6 +1,6 @@
 /* Black Theme */
 
-/* 
+/*
 Set the background to black and the text colour to (nearly) white
 */
 
@@ -10,8 +10,8 @@ body {
 	border-bottom-color: #EFEFEF;
 }
 
-/* 
-As all elements are black, add a white bottom border 
+/*
+As all elements are black, add a white bottom border
 */
 
 .section, .section-nav {
@@ -20,8 +20,8 @@ As all elements are black, add a white bottom border
 	border-bottom-color: #EFEFEF;
 }
 
-/* 
-Define colours to be used in this document 
+/*
+Define colours to be used in this document
 */
 .c-primary, .c-secondary, .c-app-bar, .c-toast, .c-primary a, .c-secondary a, .c-app-bar a, .c-toast a  {
 	color: #EFEFEF;

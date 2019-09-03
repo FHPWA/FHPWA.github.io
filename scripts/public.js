@@ -1,7 +1,7 @@
-// Checks if an argument is prime 
+// Checks if an argument is prime
 function isPrime(x) {
     for(let i = 2, s = Math.sqrt(x); i <= s; i++){
-		if(x % i === 0) return false; 
+		if(x % i === 0) return false;
 	}
     return x > 1;
 }
@@ -28,7 +28,7 @@ function highestCommonFactor(a, b) {
 
 // calculates the private key exponent from the public key exponent
 function modInverse(a, m) {
-	for (var x = 1; x < m; x++) {
+	for (let x = 1; x < m; x++) {
 		if ((a * x) % m === 1) {
 			return x;
 		}
@@ -50,19 +50,19 @@ function expmod(base, exp, mod) {
 
 
 
-var globalPrivateKeyExponent;
+let globalPrivateKeyExponent;
 
 function start() {
 
-	var prime0, prime1, isprime, keyModulus, publicKeyExponent, privateKeyExponent, outstring, charint, inputlength
+	let prime0, prime1, isprime, keyModulus, publicKeyExponent, privateKeyExponent, outstring, charint, inputlength
 
 
-	// check for existing keys 
-	var check = document.getElementById("mod").value.replace(/\s/g, "");
+	// check for existing keys
+	let check = document.getElementById("mod").value.replace(/\s/g, "");
 
 	if (check !== "") {
 
-		// get them 
+		// get them
 
 		keyModulus = document.getElementById("mod").value.replace(/\s/g, "");
 		publicKeyExponent = document.getElementById("public").value.replace(/\s/g, "");
@@ -76,7 +76,7 @@ function start() {
 
 		document.getElementById("privatelabel").innerHTML = "<p>Click to Show Private Key Exponent...</p>";
 
-		// generate new keys 
+		// generate new keys
 		do {
 			prime0 = generatePrime(64, 256);
 			isprime = isPrime(prime0);
@@ -90,14 +90,14 @@ function start() {
 		while (isprime === false);
 
 
-		//Generate the key modulus - this is used in the encryption and decryption methods 
+		//Generate the key modulus - this is used in the encryption and decryption methods
 		keyModulus = prime0 * prime1;
 
-		//Generate the euler totient - this is used to generate the private key exponent from the public key exponent 
-		var eulerTotient = (prime0 - 1) * (prime1 - 1);
+		//Generate the euler totient - this is used to generate the private key exponent from the public key exponent
+		let eulerTotient = (prime0 - 1) * (prime1 - 1);
 
 		//Use Euclid's Algorithm to verify that publicKeyExponent and eulerTotient are coprime
-		var factor;
+		let factor;
 		do {
 			publicKeyExponent = getRandomInt(1, eulerTotient);
 			factor = highestCommonFactor(publicKeyExponent, eulerTotient);
@@ -109,13 +109,13 @@ function start() {
 	}
 
 
-	// get input 
-	var encrypt = document.getElementById("encrypt").checked;
-	var inputstring = document.getElementById("input").value;
+	// get input
+	let encrypt = document.getElementById("encrypt").checked;
+	let inputstring = document.getElementById("input").value;
 	outstring = "";
 	inputlength = inputstring.normalize().length;
 
-	for (var index = 0; (index < inputlength); index += 1) {
+	for (let index = 0; (index < inputlength); index += 1) {
 		if ((encrypt === true)) {
 			charint = expmod(inputstring.charCodeAt(index), publicKeyExponent, keyModulus);
 			console.log(charint);
@@ -139,14 +139,3 @@ function showPrivate() {
 	document.getElementById("private").value = globalPrivateKeyExponent;
 	document.getElementById("privatelabel").innerHTML = "<p>Private Key Exponent:</p>";
 }
-
-
-
-
-
-
-
-
-
-
-

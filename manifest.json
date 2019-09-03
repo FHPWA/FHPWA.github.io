@@ -23,7 +23,7 @@
     "src": "images/appicons/favicon-32x32.png",
     "sizes": "32x32"
   },
-  
+
   {
     "src": "images/appicons/android-icon-192x192.png",
     "sizes": "192x192",
@@ -34,7 +34,7 @@
     "sizes": "512x512",
     "type": "image/png"
   },
-    
+
   {
     "src": "images/appicons/ms-icon-150x150.png",
     "sizes": "150x150"

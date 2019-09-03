@@ -62,4 +62,3 @@ function saveText() {
 	location.reload();
 
 }
-

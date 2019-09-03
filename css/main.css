@@ -25,7 +25,7 @@ body {
 	font-size: calc((12px + 0.4vw)* var(--text-mod));
 }
 
-/* CSS for iOS devices only 
+/* CSS for iOS devices only
 */
 @supports (-webkit-overflow-scrolling: touch) {
 	body {
@@ -72,7 +72,7 @@ form label{
 	border-style: solid;
 }
 
-/* Centre content when the page is greater than 55em wide 
+/* Centre content when the page is greater than 55em wide
 */
 nav, .section__content {
 	max-width: var(--const-max-content-width);
@@ -87,7 +87,7 @@ nav, .section__content {
 	text-align: justify;
 }
 
-/* Define an image - this will resize as the screen does so the page is adaptive 
+/* Define an image - this will resize as the screen does so the page is adaptive
 */
 .img--scale, .img--fixed, .img--content {
 	padding: 0.1em 1em;
@@ -104,7 +104,7 @@ nav, .section__content {
 	padding: 0.1em 0em;
 }
 
-/* Increase the width of images for tablet devices and other 'medium' form factors 
+/* Increase the width of images for tablet devices and other 'medium' form factors
 */
 
 @media only screen and (max-width: 55em) {
@@ -137,7 +137,7 @@ nav, .section__content {
 	margin: 0 auto;
 }
 
-/* Pull content to the rhs and lhs respectively 
+/* Pull content to the rhs and lhs respectively
 */
 .right{
 	position: relative;
@@ -212,19 +212,19 @@ nav ul li a:hover, .overflow:hover, nav ul li a.current {
 
 
 #toast-notification {
-	visibility: hidden;  
+	visibility: hidden;
 	margin: 0 auto;
-	text-align: center; 
-	border-radius: var(--const-toast-rounding); 
-	position: fixed; 
-	z-index: var(--z-index-on-top); 
+	text-align: center;
+	border-radius: var(--const-toast-rounding);
+	position: fixed;
+	z-index: var(--z-index-on-top);
   }
-  
+
   #toast-notification.show {
 	visibility: visible;
 	animation: fade-in 0.5s, fade-out 0.5s 2.5s;
   }
-  
+
   /* Animations to fade the toast in and out */
   @keyframes fade-in {
 	from {bottom: 0; opacity: 0;}
@@ -332,4 +332,3 @@ form textarea, form input {
 	height: 0.5em;
 	border-radius: 50%;
 }
-

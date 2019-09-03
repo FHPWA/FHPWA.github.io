@@ -1,6 +1,6 @@
 /* Light Theme */
 
-/* 
+/*
 Set the background to white and the text colour to (nearly) black
 */
 
@@ -9,7 +9,7 @@ body {
 	color: #222222;
 }
 
-/* Dark background colours */ 
+/* Dark background colours */
 .c-app-bar, .c-toast, .c-app-bar a, .c-toast a{
 	color: #EFEFEF;
 }

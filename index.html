@@ -13,7 +13,7 @@
 						console.log("ServiceWorker registration successful with scope: ", registration.scope);
 					},
 					function (err) {
-						// registration failed :( 
+						// registration failed :(
 						console.log("ServiceWorker registration failed: ", err);
 					});
 			});
@@ -34,7 +34,7 @@
 			data = DEFAULT;
 		}
 
-		// set the theme to the appropriate css 
+		// set the theme to the appropriate css
 		document.head.innerHTML += '<link rel="stylesheet" href="css/theme/' + data.theme + '.css"  id="theme">';
 
 		// set the text size
@@ -42,14 +42,14 @@
 		declaration.setProperty("--text-mod", data.text)
 	</script>
 
-	<meta name="Description" content="Author: FredHappyface; Category: Cryptography, 
+	<meta name="Description" content="Author: FredHappyface; Category: Cryptography,
 	Proof of concept; Cost: Free">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	
+
 	<!--Android app icon-->
 	<link rel="manifest" href="/manifest.json">
 	<meta name="theme-color" content="#000000" />
-	
+
 	<!--iOS touch icon-->
 	<link rel="apple-touch-icon" href="images/appicons/apple-icon-180x180.png">
 
@@ -65,7 +65,7 @@
 
 	<!--Title-->
 	<title>BlackC4t One Key</title>
-	
+
 
 </head>
 
@@ -137,12 +137,12 @@
 				<textarea placeholder="Input Message" rows="4" cols="1" id="input"></textarea>
 				<p>Encrypt or Decrypt:</p>
 				<label class="css-radio" for="rad">
-					Encrypt text 
+					Encrypt text
 					<input type="radio" name="var" value="1" id="rad" checked="checked">
 					<span class="check-mark"></span>
 				</label>
 				<label class="css-radio" for="rad-other">
-					Decrypt text 
+					Decrypt text
 					<input type="radio" name="var" value="2" id="rad-other">
 					<span class="check-mark"></span>
 				</label>
@@ -152,7 +152,7 @@
 				<textarea rows="4" cols="1" id="output"></textarea>
 			</form>
 			<div class="pair--button">
-				<button onclick="start()">&#127939; Run</button>
+				<button onclick="otp(1)">&#127939; Run</button>
 				<button onclick="copy()">&#128203; Copy Output </button>
 			</div>
 
