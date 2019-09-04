@@ -24,6 +24,10 @@ FredHappyface.github.io is built with HTML5, CSS3, JavaScript and JQuery3.4.0
 
 ## Changelog
 
+* **20190904.1:** Bug fixes
+* **20190904.0:** Updated CSS
+* **20190903.0:** Replaced jQuery with CashJS
+* **20190722.0:** Misc. improvements
 * **20190502.1:** Bug fix and updated service worker
 * **20190502.0:** Used BEM naming conventions for CSS
 * **20190423.0:** Updated jQuery from 3.3.1 to 3.4.0
