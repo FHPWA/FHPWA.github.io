@@ -105,7 +105,7 @@ nav, .section__content, .section>div, #js-toast>div {
 
 /* Define an image - this will resize as the screen does so the page is adaptive
 */
-.img {
+.img--scale, .img--fixed, .img--content {
 	padding: 0.1em 1em;
 }
 
@@ -120,6 +120,45 @@ nav, .section__content, .section>div, #js-toast>div {
 	padding: 0.1em 0em;
 }
 
+/* Increase the width of images for tablet devices and other 'medium' form factors
+*/
+
+@media only screen and (max-width: 55em) {
+	.img--content {
+		width: 50%;
+	}
+}
+
+/* Small form factors
+*/
+@media only screen and (max-width: 25em) {
+	.img--content {
+		width: 100%;
+		padding: 0.1em 0em;
+	}
+	.icon--pwa{
+		width: calc(100%/3);
+	}
+	.icon--browser {
+		width: 50%;
+	}
+}
+
+
+
+/* Make all of the actual images (inside the image containers fill the container) Give these a max height so the whole screen isn't taken up.
+*/
+
+.img--content img, .img--content-wide img, .img--fixed img, .img--scale img {
+	border-radius: var(--const-element-rounding);
+	max-height: calc(var(--const-max-content-width)/ 2);
+	display: block;
+}
+
+.img--content img, .img--content-wide img, .img--scale img {
+	width: 100%;
+	margin: 0 auto;
+}
 
 /* Create three equal columns that floats next to each other */
 .icon {
@@ -156,22 +195,6 @@ nav, .section__content, .section>div, #js-toast>div {
 	}
 	.icon--browser {
 		width: calc(100%/3);
-	}
-
-}
-
-/* Small form factors
-*/
-@media only screen and (max-width: 25em) {
-	.img--content {
-		width: 100%;
-		padding: 0.1em 0em;
-	}
-	.icon--pwa, .icon--shibe{
-		width: calc(100%/3);
-	}
-	.icon--browser {
-		width: 50%;
 	}
 
 }
