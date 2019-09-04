@@ -1,7 +1,7 @@
 // Checks if an argument is prime
 function isPrime(x) {
     for(let i = 2, s = Math.sqrt(x); i <= s; i++){
-		if(x % i === 0) return false;
+		if(x % i === 0) {return false;}
 	}
     return x > 1;
 }
@@ -53,9 +53,7 @@ function expmod(base, exp, mod) {
 let globalPrivateKeyExponent;
 
 function start() {
-
-	let prime0, prime1, isprime, keyModulus, publicKeyExponent, privateKeyExponent, outstring, charint, inputlength
-
+	let prime0, prime1, isprime, keyModulus, publicKeyExponent, privateKeyExponent, outstring, charint, inputlength;
 
 	// check for existing keys
 	let check = document.getElementById("mod").value.replace(/\s/g, "");
@@ -118,7 +116,6 @@ function start() {
 	for (let index = 0; (index < inputlength); index += 1) {
 		if ((encrypt === true)) {
 			charint = expmod(inputstring.charCodeAt(index), publicKeyExponent, keyModulus);
-			console.log(charint);
 		} else {
 			charint = expmod(inputstring.charCodeAt(index), privateKeyExponent, keyModulus);
 		}

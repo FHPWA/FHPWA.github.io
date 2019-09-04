@@ -23,7 +23,7 @@ function runTheRest() {
             document.getElementById("output").value += number;
       }
       // generate the symbols
-      for (index = 0; (index < symbols); index += 1) {
+      for (let index = 0; (index < symbols); index += 1) {
             let symbol = getRandomInt(33, 44);
             document.getElementById("output").value += String.fromCharCode(symbol);
       }
@@ -38,11 +38,10 @@ function start() {
       {
             if(rawFile.readyState === 4)
             {
-                  if(rawFile.status === 200 || rawFile.status == 0)
+                  if(rawFile.status === 200 || rawFile.status === 0)
                   {
                         let word;
                         // create an array of all the lines in the text file
-                        console.log(rawFile.responseText)
                         let lines = rawFile.responseText.split("\n");
                         // wipe the output textarea
                         document.getElementById("output").value = "";
@@ -59,7 +58,7 @@ function start() {
                         return;
                   }
             }
-      }
+      };
       rawFile.send(null);
 
 }

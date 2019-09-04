@@ -1,7 +1,7 @@
 function otp(numberOfKeys) {
     let charint, choice, inputstring, outstring, inputlength;
-    let keystring = []
-    let keyIds = ["fieldkey", "fieldkey2"]
+    let keystring = [];
+    let keyIds = ["fieldkey", "fieldkey2"];
     for(let i = 0; i < numberOfKeys; i++){
         keystring.push(document.getElementById(keyIds[i]).value.replace(/\s/g, ""));
     }
@@ -17,14 +17,14 @@ function otp(numberOfKeys) {
                 keystring[i] += keystring[i];
             }
         }
-        shift = 0
+        let shift = 0;
         for(let i = 0; i < numberOfKeys; i++){
-            shift += keystring[i].charCodeAt(index)
+            shift += keystring[i].charCodeAt(index);
         }
         if ((choice === true)) {
-            charint = inputstring.charCodeAt(index) + shift
+            charint = inputstring.charCodeAt(index) + shift;
         } else {
-            charint = inputstring.charCodeAt(index) - shift
+            charint = inputstring.charCodeAt(index) - shift;
         }
         outstring += String.fromCharCode(charint);
 

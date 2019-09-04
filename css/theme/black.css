@@ -15,7 +15,7 @@ As all elements are black, add a white bottom border
 */
 
 .section, .section-nav {
-	border-bottom: 0.1em;
+	border-bottom: .1em;
 	border-bottom-style: solid;
 	border-bottom-color: #EFEFEF;
 }

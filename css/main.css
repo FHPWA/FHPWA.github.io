@@ -1,13 +1,18 @@
 :root{
 	/* Variables */
 	--text-mod: 1;
-	/* Variables */
+	--var-icon-top-left: 0%;
+	--var-icon-top-right: 0%;
+	--var-icon-bottom-left: 0%;
+	--var-icon-bottom-right: 0%;
+	/* Constants */
 	--const-element-on-top: 99;
-	--const-toast-bottom-margin: 2em;
-	--const-toast-rounding: 10em;
+	--const-toast-bottom-margin: 1em;
+	--const-toast-rounding: 0.7em;
 	--const-element-rounding: 0.7em;
 	--const-section-rounding: 0em;
 	--const-max-content-width: 55em;
+	--const-toast-timer: 2000ms; /* Must be the same as in script.js */
 
 }
 
@@ -33,9 +38,8 @@ body {
 	}
 }
 
-/* Setup margins for text and set the font family - use browser defined text sizes - they know best for that
+/* Setup margins for text
 */
-
 h1, h2, h3, h4, h5, h6, p, span, form label, a, input{
 	margin-top: 0.3em;
 	margin-bottom: 0.5em;
@@ -45,36 +49,48 @@ form label{
 	display: inline-block;
 }
 
-.navigation-buffer {
-	width: 100%;
-	height: 9em;
-}
+
 
 /* Define a section, this will expand to fill the whole page. meaning content is in horizontal 'stripes'
 */
 
-.section, .section-nav, .app-bar, #toast-notification {
+.section, .section-nav, .app-bar, #js-toast {
 	width: 100%;
 	padding: 0px;
 	overflow: auto;
 	border-radius: 0 0 var(--const-section-rounding) var(--const-section-rounding);
 }
 
-.section-nav, #toast-notification {
+.section-nav, #js-toast {
 	position: fixed;
 	z-index: var(--const-element-on-top);
 }
 
 
-#toast-notification{
+/* Toast Notifications */
+#js-toast {
 	bottom: var(--const-toast-bottom-margin);
-	border: 0.1em;
+	visibility: hidden;
+	margin: 0 auto;
+	text-align: center;
+	position: fixed;
+}
+
+#js-toast.show {
+	visibility: visible;
+	animation: fade-in calc(var(--const-toast-timer)* 0.15), fade-out calc(var(--const-toast-timer) * 0.15) calc(var(--const-toast-timer)* 0.85);
+}
+
+#js-toast>div>p {
+	border: .1em;
 	border-style: solid;
+	border-radius: var(--const-toast-rounding);
+	padding: 1em;
 }
 
 /* Centre content when the page is greater than 55em wide
 */
-nav, .section__content {
+nav, .section__content, .section>div, #js-toast>div {
 	max-width: var(--const-max-content-width);
 	margin: auto;
 	padding: 1em;
@@ -89,7 +105,7 @@ nav, .section__content {
 
 /* Define an image - this will resize as the screen does so the page is adaptive
 */
-.img--scale, .img--fixed, .img--content {
+.img {
 	padding: 0.1em 1em;
 }
 
@@ -104,37 +120,86 @@ nav, .section__content {
 	padding: 0.1em 0em;
 }
 
-/* Increase the width of images for tablet devices and other 'medium' form factors
-*/
 
+/* Create three equal columns that floats next to each other */
+.icon {
+	float: left;
+	width: calc(100%/6 - 0.01%);
+	padding: 1em;
+}
+
+.icon--browser {
+	width: calc(100%/4);
+	padding: 2em;
+}
+
+.row{
+	width: fit-content;
+	margin: auto;
+}
+
+/* Clear floats after the columns */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* Medium form factors
+*/
 @media only screen and (max-width: 55em) {
 	.img--content {
 		width: 50%;
 	}
+	.icon--pwa, .icon--shibe {
+		width: calc(100%/4);
+	}
+	.icon--browser {
+		width: calc(100%/3);
+	}
+
 }
 
-/* Make regular images wide for smartphones and any device considered 'small'
+/* Small form factors
 */
-
-@media only screen and (max-width: 20em) {
+@media only screen and (max-width: 25em) {
 	.img--content {
 		width: 100%;
 		padding: 0.1em 0em;
 	}
+	.icon--pwa, .icon--shibe{
+		width: calc(100%/3);
+	}
+	.icon--browser {
+		width: 50%;
+	}
+
 }
 
-/* Make all of the actual images (inside the image containers fill the container) Give these a max height so the whole screen isn't taken up.
+/* Images inside divs with class = img, icon fill the div, set max height
 */
 
-.img--content img, .img--content-wide img, .img--fixed img, .img--scale img {
+.img img, .icon img {
 	border-radius: var(--const-element-rounding);
 	max-height: calc(var(--const-max-content-width)/ 2);
 	display: block;
-}
-
-.img--content img, .img--content-wide img, .img--scale img {
 	width: 100%;
 	margin: 0 auto;
+}
+
+.img--fixed{
+	width: fit-content;
+}
+
+.icon--browser p{
+	text-align: center;
+	padding-top: 0.5em;
+}
+
+
+.icon--pwa img {
+	border-radius: var(--var-icon-top-left) var(--var-icon-top-right) var(--var-icon-bottom-right) var(--var-icon-bottom-left);
+
 }
 
 /* Pull content to the rhs and lhs respectively
@@ -159,9 +224,9 @@ Define container for nav icons
 	padding-bottom: 0.5em;
 }
 
-/* Define the nav
+/*
+Define the nav
 */
-
 nav {
 	position: relative;
 	overflow: hidden;
@@ -187,6 +252,10 @@ nav ul li a, .overflow {
 	border-bottom-style: none;
 }
 
+.overflow {
+	display: none;
+}
+
 nav ul li a.current {
 	padding-bottom: 0.5em;
 	border-bottom-width: 0.3em;
@@ -206,36 +275,25 @@ nav ul li a:hover, .overflow:hover, nav ul li a.current {
 	padding-top: 1em;
 }
 
-.overflow {
-	display: none;
+
+.navigation-buffer {
+	width: 100%;
+	height: 9em;
 }
 
 
-#toast-notification {
-	visibility: hidden;
-	margin: 0 auto;
-	text-align: center;
-	border-radius: var(--const-toast-rounding);
-	position: fixed;
-	z-index: var(--z-index-on-top);
-  }
 
-  #toast-notification.show {
-	visibility: visible;
-	animation: fade-in 0.5s, fade-out 0.5s 2.5s;
-  }
-
-  /* Animations to fade the toast in and out */
-  @keyframes fade-in {
+/* Animations to fade the toast in and out */
+@keyframes fade-in {
 	from {bottom: 0; opacity: 0;}
 	to {bottom: var(--const-toast-bottom-margin); opacity: 1;}
-  }
-  @keyframes fade-out {
+}
+@keyframes fade-out {
 	from {bottom: var(--const-toast-bottom-margin); opacity: 1;}
 	to {bottom: 0; opacity: 0;}
-  }
+}
 
-/* Modify the default style for forms making them look like they are not from 2003...
+/* Modify the default style for forms
 */
 form, button, form textarea, form input {
 	border-style: solid;
@@ -267,7 +325,8 @@ form textarea, form input {
 	overflow: auto;
 }
 
-.pair--item, .pair--button {
+/* Pairs */
+.pair{
 	column-count: 2;
 	column-gap: 1em;
 }
@@ -277,12 +336,12 @@ form textarea, form input {
 }
 
 
-/* The container */
-
+/* Radio button */
 .css-radio {
 	display: block;
 	position: relative;
 	padding-left: 1.5em;
+	padding-bottom: 0.5em;
 	margin-bottom: 0px;
 	cursor: pointer;
 	font-size: 1em;
@@ -290,14 +349,12 @@ form textarea, form input {
 }
 
 /* Hide the browser's default radio button */
-
 .css-radio input {
 	display: none;
 	cursor: pointer;
 }
 
 /* Create a custom radio button */
-
 .check-mark {
 	border-width: 0.1em;
 	border-style: solid;
@@ -310,25 +367,48 @@ form textarea, form input {
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
-
 .check-mark:after {
 	content: "";
 	position: absolute;
 	display: none;
 }
 
-/* Show the indicator (dot/circle) when checked */
-
-.css-radio input:checked~.check-mark:after {
-	display: block;
-}
-
 /* Style the indicator (dot/circle) */
-
 .css-radio .check-mark:after {
 	top: 0.15em;
 	left: 0.15em;
 	width: 0.5em;
 	height: 0.5em;
 	border-radius: 50%;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.css-radio input:checked~.check-mark:after {
+	display: block;
+}
+
+/* Table */
+table{
+	margin-top: 1em;
+	margin-bottom: 1em;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+table, th, td{
+	text-align: left;
+	border-bottom: 0.1em solid;
+	padding: 0.3em;
+}
+
+th.r, td.r{
+	text-align: right;
+}
+
+
+/*
+Media
+*/
+audio  {
+	margin: 1em 0;
 }
