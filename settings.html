@@ -4,6 +4,8 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/settings.css">
+
 	<script>
 		if ("serviceWorker" in navigator) {
 			window.addEventListener("load", function () {
@@ -99,6 +101,10 @@
 	<div class="navigation-buffer">
 	</div>
 
+	<div id="js-toast" >
+		<div><p id="js-toast__text" class="c-toast"></p></div>
+	</div>
+
 	<div class="section c-primary">
 		<div class="section__content">
 			<div class="img--scale left" style="width: 4.5em;">
@@ -106,57 +112,105 @@
 			</div>
 			<h1>Settings</h1>
 
-			<p>Click or tap the save button to update changes </p>
-
 		</div>
 	</div>
 
 	<div class="section c-secondary">
 		<div class="section__content">
-			<h2>Theme:</h2>
-			<label class="css-radio" for="light">
-				Light Theme
-				<input type="radio" name="themeR" value="1" id="light" checked="checked">
-				<span class="check-mark"></span>
-			</label>
-			<label class="css-radio" for="dark">
-				Dark Theme
-				<input type="radio" name="themeR" value="2" id="dark">
-				<span class="check-mark"></span>
-			</label>
-			<label class="css-radio" for="black">
-				Black Theme
-				<input type="radio" name="themeR" value="3" id="black">
-				<span class="check-mark"></span>
-			</label>
-			<div class="button">
-				<button onclick="saveTheme()">&#128190; Save Theme</button>
+			<div class="row">
+				<h2>Theme:</h2>
+				<div class="icon icon--setting">
+					<label class="css-radio" for="light">
+						Light Theme
+						<input type="radio" name="themeR" value="1" id="light" checked="checked" onclick="saveTheme()">
+						<span class="check-mark"></span>
+					</label>
+					<div class="setting-preview">
+						<div class="section__content--settings primary--light"><h2>The quick brown fox</h2></div>
+						<div class="section__content--settings secondary--light"><p>The quick brown fox jumps over the lazy dog</p></div>
+					</div>
+				</div>
+				<div class="icon icon--setting">
+					<label class="css-radio" for="dark">
+						Dark Theme
+						<input type="radio" name="themeR" value="2" id="dark" onclick="saveTheme()">
+						<span class="check-mark"></span>
+					</label>
+					<div class="setting-preview">
+						<div class="section__content--settings primary--dark"><h2>The quick brown fox</h2></div>
+						<div class="section__content--settings secondary--dark"><p>The quick brown fox jumps over the lazy dog</p></div>
+					</div>
+				</div>
+				</div>
+				<div class="icon icon--setting">
+					<label class="css-radio" for="black">
+						Black Theme
+						<input type="radio" name="themeR" value="3" id="black" onclick="saveTheme()">
+						<span class="check-mark"></span>
+					</label>
+					<div class="setting-preview">
+						<div class="section__content--settings primary--black"><h2>The quick brown fox</h2></div>
+						<div class="section__content--settings secondary--black"><p>The quick brown fox jumps over the lazy dog</p></div>
+					</div>
+				</div>
+				<div class="icon icon--setting">
+					<label class="css-radio" for="auto">
+						Automatic Theme
+						<input type="radio" name="themeR" value="4" id="auto" onclick="saveTheme()">
+						<span class="check-mark"></span>
+					</label>
+					<div class="pair setting-preview">
+						<div>
+							<div class="section__content--settings primary--auto-left"><h2>&#127772; The quick brown fox</h2></div>
+							<div class="section__content--settings secondary--auto-left"><p>The quick brown fox jumps over the lazy dog</p></div>
+						</div>
+						<div>
+							<div class="section__content--settings primary--auto-right"><h2>&#127774; The quick brown fox</h2></div>
+							<div class="section__content--settings secondary--auto-right"><p>The quick brown fox jumps over the lazy dog</p></div>
+						</div>
+					</div>
+				</div>
 			</div>
-
 		</div>
 	</div>
 
 	<div class="section c-primary">
 		<div class="section__content">
-			<h2>Text Size:</h2>
-			<label class="css-radio" for="small">
-				Small
-				<input type="radio" name="textR" value="1" id="small" checked="checked">
-				<span class="check-mark"></span>
-			</label>
-			<label class="css-radio" for="med">
-				Medium
-				<input type="radio" name="textR" value="2" id="med">
-				<span class="check-mark"></span>
-			</label>
-			<label class="css-radio" for="large">
-				Large
-				<input type="radio" name="textR" value="3" id="large">
-				<span class="check-mark"></span>
-			</label>
-			<div class="button">
-				<button onclick="saveText()">&#128190; Save Text Size</button>
-			</div>
+				<div class="row">
+					<h2>Text Size:</h2>
+				<div class="icon icon--setting">
+					<label class="css-radio" for="small">
+						Small
+						<input type="radio" name="textR" value="1" id="small" checked="checked" onclick="saveText()">
+						<span class="check-mark"></span>
+					</label>
+					<div class="setting-preview text--small">
+						<div class="section__content--settings"><h2>The quick brown fox</h2></div>
+						<div class="section__content--settings c-secondary"><p>The quick brown fox jumps over the lazy dog</p></div>
+					</div>
+				</div>
+				<div class="icon icon--setting">
+					<label class="css-radio" for="med">
+						Medium
+						<input type="radio" name="textR" value="2" id="med" onclick="saveText()">
+						<span class="check-mark"></span>
+					</label>
+					<div class="setting-preview text--med">
+						<div class="section__content--settings"><h2>The quick brown fox</h2></div>
+						<div class="section__content--settings c-secondary"><p>The quick brown fox jumps over the lazy dog</p></div>
+					</div>
+				</div>
+				<div class="icon icon--setting">
+					<label class="css-radio" for="large">
+						Large
+						<input type="radio" name="textR" value="3" id="large" onclick="saveText()">
+						<span class="check-mark"></span>
+					</label>
+					<div class="setting-preview text--large">
+						<div class="section__content--settings"><h2>The quick brown fox</h2></div>
+						<div class="section__content--settings c-secondary"><p>The quick brown fox jumps over the lazy dog</p></div>
+					</div>
+				</div>
 
 		</div>
 	</div>
@@ -164,7 +218,6 @@
 
 
 
-	<script src="scripts/jquery-3.4.0.min.js"></script>
 	<script src="scripts/script.js"></script>
 
 	<script src="scripts/settings.js"></script>

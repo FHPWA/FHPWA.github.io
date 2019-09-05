@@ -1,0 +1,83 @@
+/* Light Theme */
+body {
+	background-color: #ffffff;
+	color: #222222;
+}
+.c-app-bar, .c-toast, .c-app-bar a, .c-toast a{
+	color: #EFEFEF;
+}
+.c-primary, .c-secondary, .c-shibe, .c-primary a, .c-secondary a, .c-shibe a{
+	color: #222222;
+}
+.c-primary {
+	background-color: #FFFFFF;
+}
+.c-secondary {
+	background-color: #ECECEA;
+}
+.c-app-bar, .c-toast {
+	background-color: #000000;
+}
+.c-shibe {
+	background-color: #cda780;
+}
+button {
+	border-color: #000000;
+	color: #000000;
+}
+form textarea, form input {
+	border-color: #000000;
+	color: #000000;
+}
+.check-mark {
+	border-color: #000000;
+	background-color: #ffffff;
+}
+.css-radio .check-mark:after {
+	background: #000000;
+}
+
+
+@media(prefers-color-scheme: dark){
+	/* Dark Theme */
+
+	body {
+		background-color: #222222;
+		color: #EFEFEF;
+		border-bottom-color: #EFEFEF;
+	}
+	.c-primary, .c-secondary, .c-app-bar, .c-toast, .c-primary a, .c-secondary a, .c-app-bar a, .c-toast a  {
+		color: #EFEFEF;
+	}
+	.c-shibe, .c-shibe a {
+		color: #222222;
+	}
+	.c-primary{
+		background-color: #222222
+	}
+	.c-secondary {
+		background-color: #393939;
+	}
+	.c-shibe {
+		background-color: #cda780;
+	}
+	.c-app-bar, .c-toast {
+		background-color: #000000;
+	}
+	button {
+		border-color: #ffffff;
+		color: #ffffff;
+	}
+	form textarea, form input {
+		border-color: #ffffff;
+		color: #ffffff;
+	}
+	.check-mark {
+		border-color: #ffffff;
+		background-color: #000000;
+	}
+	.css-radio .check-mark:after {
+		background: #ffffff;
+	}
+
+}

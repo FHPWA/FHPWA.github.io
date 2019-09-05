@@ -1,64 +1,33 @@
+let themeRadios = document.getElementsByName("themeR");
+let textRadios = document.getElementsByName("textR");
+
+let themeList = ["", "light", "dark", "black", "auto"];
+let textList = ["", "0.75", "1", "1.5"];
 
 function saveTheme() {
-	var radios = document.getElementsByName("themeR");
+	let theme = 0;
 
-	var theme = 0;
-
-	for (var i = 0, length = radios.length; i < length; i++) {
-		if (radios[i].checked) {
-			theme = radios[i].value;
+	for (let i = 0, length = themeRadios.length; i < length; i++) {
+		if (themeRadios[i].checked) {
+			theme = parseInt(themeRadios[i].value, 10);
 			break;
 		}
 	}
-	switch (theme) {
-		case "1":
-			data.theme = "light";
-			save();
-
-			break;
-		case "2":
-			data.theme = "dark";
-			save();
-
-			break;
-		case "3":
-			data.theme = "black";
-			save();
-
-			break;
-	}
+	data.theme = themeList[theme];
+	save();
 	location.reload();
-
 }
 
 function saveText() {
-	var radios = document.getElementsByName("textR");
+	let text = 0;
 
-	var text = 0;
-
-	for (var i = 0, length = radios.length; i < length; i++) {
-		if (radios[i].checked) {
-			text = radios[i].value;
+	for (let i = 0, length = textRadios.length; i < length; i++) {
+		if (textRadios[i].checked) {
+			text = parseInt(textRadios[i].value, 10);
 			break;
 		}
 	}
-	switch (text) {
-		case "1":
-			data.text = "0.75";
-			save();
-
-			break;
-		case "2":
-			data.text = "1";
-			save();
-
-			break;
-		case "3":
-			data.text = "1.5";
-			save();
-
-			break;
-	}
+	data.text = textList[text];
+	save();
 	location.reload();
-
 }

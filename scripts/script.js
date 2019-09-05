@@ -90,8 +90,6 @@ function load() {
 	}
 }
 
-
-
 /*
 Set the theme
 */
@@ -147,16 +145,6 @@ function resizeFunction() {
 }
 
 /*
-Gets an elements outer width
-*/
-function outerWidth(el) {
-	var width = el.offsetWidth;
-	var style = getComputedStyle(el);
-	width += parseInt(style.marginLeft, 10) + parseInt(style.marginRight, 10);
-	return width;
-}
-
-/*
 Run this (the document should be ready)
 */
 
@@ -170,11 +158,7 @@ setTheme();
 var resizeTimer;
 
 // Hide the overflow element
-
-
-
 document.getElementById("js-nav__overflow").style.display = "none";
-
 
 document.getElementById("js-overflow").onclick = function() {
 	var navOverflow = document.getElementById("js-nav__overflow");
