@@ -50,7 +50,7 @@ form label{
 }
 
 .setting-preview{
-	margin: .2em 0em 1.5em 0em;
+	margin: .2em .2em 1.5em .2em;
 	border-radius: var(--const-element-rounding);
 	overflow: hidden;
 }
