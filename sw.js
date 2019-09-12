@@ -1,9 +1,7 @@
-﻿// This is the service worker with the Cache-first network
-
-const cacheVersion = "blackc4t-precache";
+﻿const cacheVersion = "fredhappyface";
 const urlsToPrefetch = [
   "/",
-  "/PWA.BlackC4t/"
+  "/PWA.Home/"
 ];
 
 
