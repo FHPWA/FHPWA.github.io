@@ -7,7 +7,7 @@ const TOAST_TIMER = 2000
 Default data. Use this if there is no other data
 */
 var DEFAULT = {
-	theme: "light",
+	theme: "auto",
 	text: "1"
 };
 
@@ -48,9 +48,6 @@ function copy() {
 
 
 
-
-
-
 /*
 Does the current browser support local storage?
 */
@@ -71,7 +68,7 @@ Save data onto local storage
 */
 function save() {
 	if (hasLocalStorage()) {
-		localStorage.setItem("com.fredhappyface.blackc4t", JSON.stringify(data));
+		localStorage.setItem("com.fredhappyface", JSON.stringify(data));
 	}
 
 }
@@ -81,8 +78,8 @@ Load data from local storage
 */
 function load() {
 
-	if (hasLocalStorage() && localStorage.getItem("com.fredhappyface.blackc4t") !== null) {
-		data = JSON.parse(localStorage.getItem("com.fredhappyface.blackc4t"));
+	if (hasLocalStorage() && localStorage.getItem("com.fredhappyface") !== null) {
+		data = JSON.parse(localStorage.getItem("com.fredhappyface"));
 		return;
 	} else {
 		data = DEFAULT;
@@ -102,49 +99,6 @@ function setTheme() {
 
 
 /*
-Resize the navbar when the page is resized
-*/
-function resizeFunction() {
-	// Get the width of the nav bar and the content and the "more" button
-	var navWidth = $(document.getElementById("js-nav")).width();
-	var contentWidth = $(document.getElementById("js-nav__content")).outerWidth(true);
-	var more = $(document.getElementById("js-overflow")).outerWidth(true);
-
-	// Get the width of the overflow menu and the number of elements in the overflow menu
-	$(document.getElementById("js-nav__overflow")).show();
-
-	var overflowWidth = $(document.getElementById("js-nav__overflow")).outerWidth(true);
-	$(document.getElementById("js-nav__overflow")).hide();
-
-	var noElementOverflow = document.getElementById("js-nav__overflow").getElementsByTagName("li").length;
-
-	// shrink the page
-	while ((contentWidth + more + 20) > navWidth) {
-		$(document.getElementById("js-nav__content").lastElementChild).remove().prependTo(document.getElementById("js-nav__overflow"));
-		contentWidth = $(document.getElementById("js-nav__content")).outerWidth(true);
-	}
-
-	// enlarge the page
-	while (((contentWidth + more + overflowWidth ) < navWidth) && noElementOverflow > 0) {
-		$(document.getElementById("js-nav__overflow").firstElementChild).remove().appendTo(document.getElementById("js-nav__content"));
-		contentWidth = $(document.getElementById("js-nav__content")).outerWidth(true);
-		noElementOverflow = document.getElementById("js-nav__overflow").getElementsByTagName("li").length;
-	}
-
-	/*
-	If there are items in the overflow menu then show the overflow button
-	*/
-	noElementOverflow = document.getElementById("js-nav__overflow").getElementsByTagName("li").length;
-	if (noElementOverflow > 0) {
-		$(document.getElementById("js-overflow")).show();
-	}
-	else {
-		$(document.getElementById("js-overflow")).hide();
-	}
-
-}
-
-/*
 Run this (the document should be ready)
 */
 
@@ -153,26 +107,3 @@ load();
 
 // set the theme to the appropriate css
 setTheme();
-
-// Declare a resize timer variable
-var resizeTimer;
-
-// Hide the overflow element
-document.getElementById("js-nav__overflow").style.display = "none";
-
-document.getElementById("js-overflow").onclick = function() {
-	var navOverflow = document.getElementById("js-nav__overflow");
-	if (navOverflow.style.display === "none") {
-		navOverflow.style.display = "block";
-	} else {
-		navOverflow.style.display = "none";
-	}
-};
-
-window.onresize = function(event) {
-    clearTimeout(resizeTimer);
-	resizeTimer = setTimeout(resizeFunction(), 1000);
-};
-
-
-resizeFunction();

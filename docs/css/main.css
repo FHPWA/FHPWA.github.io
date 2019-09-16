@@ -10,7 +10,6 @@
 	--const-toast-bottom-margin: 1em;
 	--const-toast-rounding: 0.7em;
 	--const-element-rounding: 0.7em;
-	--const-section-rounding: 0em;
 	--const-max-content-width: 55em;
 	--const-toast-timer: 2000ms; /* Must be the same as in script.js */
 
@@ -62,7 +61,6 @@ form label{
 	width: 100%;
 	padding: 0px;
 	overflow: auto;
-	border-radius: 0 0 var(--const-section-rounding) var(--const-section-rounding);
 }
 
 .section-nav, #js-toast {
@@ -317,7 +315,7 @@ nav ul li a:hover, .overflow:hover, nav ul li a.current {
 
 .navigation-buffer {
 	width: 100%;
-	height: 9em;
+	height: 5em;
 }
 
 

@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script>
+		if ("serviceWorker" in navigator) {
+			window.addEventListener("load", function () {
+				navigator.serviceWorker.register("/sw.js").then(
+					function (registration) {
+						// Registration was successful
+						console.log("ServiceWorker registration successful with scope: ", registration.scope);
+					},
+					function (err) {
+						// registration failed :(
+						console.log("ServiceWorker registration failed: ", err);
+					});
+			});
+		}
+
+		var DEFAULT = {
+			theme: 'auto',
+			text: '1'
+		};
+
+		var data;
+		/* read data from local storage */
+		if (localStorage.getItem('com.fredhappyface.blackc4t') !== null) {
+			data = JSON.parse(localStorage.getItem('com.fredhappyface.blackc4t'));
+		}
+		else {
+			console.log('Your Browser does not support local storage or no data saved. Loading default data.');
+			data = DEFAULT;
+		}
+
+		// set the theme to the appropriate css
+		document.head.innerHTML += '<link rel="stylesheet" href="css/theme/' + data.theme + '.css"  id="theme">';
+
+		// set the text size
+		var declaration = document.styleSheets[0].cssRules[0].style;
+		declaration.setProperty("--text-mod", data.text)
+	</script>
+
+	<meta name="Description" content="Author: FredHappyface; Category: Cryptography,
+	Proof of concept; Cost: Free">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!--Android app icon-->
+	<link rel="manifest" href="/manifest.json">
+	<meta name="theme-color" content="#000000" />
+
+	<!--iOS touch icon-->
+	<link rel="apple-touch-icon" href="images/appicons/apple-icon-180x180.png">
+
+	<!--Bookmark, Browser favicon-->
+	<link rel="icon" type="image/png" sizes="512x512" href="images/appicons/android-icon-512x512.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/appicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/appicons/favicon-16x16.png">
+
+	<!--Windows 8, 10 tile -->
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="images/appicons/ms-icon-150x150.png">
+	<meta name="msapplication-starturl" content="/index.html">
+
+	<!--Title-->
+	<title>BlackC4t One Key</title>
+
+
+</head>
+
+<body>
+
+
+
+	<div class="section c-secondary">
+		<div class="section__content">
+			<div class="img--scale left" style="width: 4.5em;">
+
+			</div>
+
+			<h1>FredHappyface.github.io</h1>
+
+			<p>You are probably looking for <a href="https://fredhappyface.github.io/PWA.BlackC4t/">https://fredhappyface.github.io/PWA.BlackC4t/</a></p>
+
+			<p>Or...</p>
+
+			<p>You are probably looking for <a href="https://fredhappyface.github.io/PWA.Home/">https://fredhappyface.github.io/PWA.Home/</a></p>
+
+		</div>
+	</div>
+
+
+	<script src="scripts/script.js"></script>
+
+
+</body>
+
+</html>
