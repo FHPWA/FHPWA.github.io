@@ -12,9 +12,10 @@
 
 # FredHappyface.github.io
 
-desc
+FredHappyface App Launcher provides links to web-based projects at
+https://FredHappyface.github.io/PWA.Home. Holds common CSS and JS used by
+other web projects.
 
-Find the site on https://FredHappyface.github.io
 
 <img src="readme-assets/icons/proj-icon.png" alt="Project Icon" width="100">
 
