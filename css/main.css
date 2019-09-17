@@ -57,13 +57,13 @@ form label{
 /* Define a section, this will expand to fill the whole page. meaning content is in horizontal 'stripes'
 */
 
-.section, .section--app-bar, .app-bar, #js-toast {
+.section, .section--app-bar, .section--nav-bar, .app-bar, #js-toast {
 	width: 100%;
 	padding: 0px;
 	overflow: auto;
 }
 
-.section--app-bar, #js-toast {
+.section--app-bar, .section--nav-bar, #js-toast {
 	position: fixed;
 	z-index: var(--const-element-on-top);
 }
