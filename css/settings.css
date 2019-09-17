@@ -46,15 +46,15 @@
 /* Icons
 */
 
-.circle--pwa img {
+.pwa--circle img {
 	border-radius: 50%;
 }
-.square--pwa img {
+.pwa--square img {
 	border-radius: 0%;
 }
-.squircle--pwa img {
+.pwa--squircle img {
 	border-radius: 10%;
 }
-.teardrop--pwa img {
+.pwa--teardrop img {
 	border-radius: 50% 50% 10% 50%;
 }

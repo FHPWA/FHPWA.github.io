@@ -16,7 +16,7 @@ let textRadioIndex = textList.indexOf(data.text);
 if (textRadioIndex > -1){
 	document.getElementById(textIds[textRadioIndex]).checked = true;
 }
-for (let shapeRadioIndex = 0; i < shapeList.length; shapeRadioIndex++){
+for (let shapeRadioIndex = 0; shapeRadioIndex < shapeList.length; shapeRadioIndex++){
 	if (shapeList[shapeRadioIndex][0] === data.iconTopLeft && shapeList[shapeRadioIndex][1] === iconTopRight && shapeList[shapeRadioIndex][2] === iconBottomLeft && shapeList[shapeRadioIndex][3] === iconBottomRight){
 		document.getElementById(shapeIds[shapeRadioIndex]).checked = true;
 	}
