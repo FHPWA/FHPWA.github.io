@@ -8,13 +8,20 @@ let textList = ["", "0.75", "1", "1.5"];
 let textIds = ["", "small", "med", "large"];
 
 // TopLeft, TopRight, BottomLeft, BottomRight
-let shapeList = [["", "", "", ""], ["0%", "0%", "0%", "0%"], ["50%", "50%", "50%", "50%"], ["10%", "10%", "10%", "10%"], ["50%", "50%", "50%", "10%"]]
+let shapeList = [["", "", "", ""], ["0%", "0%", "0%", "0%"], ["50%", "50%", "50%", "50%"], ["10%", "10%", "10%", "10%"], ["50%", "50%", "50%", "10%"]];
+let shapeIds = ["", "square", "circle", "squircle", "teardrop"];
 
 document.getElementById(data.theme).checked = true;
-textRadioIndex = textList.indexOf(data.text);
+let textRadioIndex = textList.indexOf(data.text);
 if (textRadioIndex > -1){
 	document.getElementById(textIds[textRadioIndex]).checked = true;
 }
+for (let shapeRadioIndex = 0; i < shapeList.length; shapeRadioIndex++){
+	if (shapeList[shapeRadioIndex][0] === data.iconTopLeft && shapeList[shapeRadioIndex][1] === iconTopRight && shapeList[shapeRadioIndex][2] === iconBottomLeft && shapeList[shapeRadioIndex][3] === iconBottomRight){
+		document.getElementById(shapeIds[shapeRadioIndex]).checked = true;
+	}
+}
+
 
 function saveTheme() {
 	let theme = 0;

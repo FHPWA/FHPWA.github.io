@@ -9,10 +9,10 @@ Default data. Use this if there is no other data
 var DEFAULT = {
 	theme: "auto",
 	text: "1",
-	iconTopLeft: '50%',
-	iconTopRight: '50%',
-	iconBottomLeft: '50%',
-	iconBottomRight: '50%'
+	iconTopLeft: "50%",
+	iconTopRight: "50%",
+	iconBottomLeft: "50%",
+	iconBottomRight: "50%"
 };
 
 var data;

@@ -57,13 +57,13 @@ form label{
 /* Define a section, this will expand to fill the whole page. meaning content is in horizontal 'stripes'
 */
 
-.section, .section-nav, .app-bar, #js-toast {
+.section, .section--app-bar, .app-bar, #js-toast {
 	width: 100%;
 	padding: 0px;
 	overflow: auto;
 }
 
-.section-nav, #js-toast {
+.section--app-bar, #js-toast {
 	position: fixed;
 	z-index: var(--const-element-on-top);
 }
@@ -192,7 +192,7 @@ nav, .section__content, .section__content--settings, .section>div, #js-toast>div
 		width: calc(100%/3);
 	}
 	.icon--setting {
-		width: calc(100%)
+		width: calc(100%);
 	}
 
 }
@@ -313,10 +313,16 @@ nav ul li a:hover, .overflow:hover, nav ul li a.current {
 }
 
 
-.navigation-buffer {
+.buffer--app-bar {
 	width: 100%;
 	height: 5em;
 }
+
+.buffer--nav-bar {
+	width: 100%;
+	height: 9em;
+}
+
 
 
 
@@ -363,12 +369,15 @@ form textarea, form input {
 }
 
 /* Pairs */
-.pair{
+.pair, .three{
 	column-count: 2;
 	column-gap: 1em;
 }
+.three{
+	column-count: 3;
+}
 
-.pair--button, .button {
+.pair--button, .three--button, .button {
 	margin-top: 0.5em;
 }
 

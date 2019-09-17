@@ -38,7 +38,7 @@ form textarea, form input {
 }
 
 
-@media(prefers-color-scheme: dark){
+@media (prefers-color-scheme: dark){
 	/* Dark Theme */
 
 	body {
@@ -53,7 +53,7 @@ form textarea, form input {
 		color: #222222;
 	}
 	.c-primary{
-		background-color: #222222
+		background-color: #222222;
 	}
 	.c-secondary {
 		background-color: #393939;
