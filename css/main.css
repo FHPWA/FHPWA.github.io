@@ -338,25 +338,24 @@ nav ul li a:hover, .overflow:hover, nav ul li a.current {
 
 /* Modify the default style for forms
 */
-form, button, form textarea, form input {
+form{
+	border-width: 0em;
+	width: 100%;
+	font-size: 1em;
+	background-color: rgba(0, 0, 0, 0);
+}
+button, .css-file, form textarea, form input {
 	border-style: solid;
 	border-radius: var(--const-element-rounding);
 	width: 100%;
 	font-size: 1em;
 	background-color: rgba(0, 0, 0, 0);
-
-}
-
-button, form textarea, form input{
 	border-width: 0.1em;
 	padding: 0.5em;
 }
 
-form{
-	border-width: 0em;
-}
 
-button {
+button, .css-file {
 	display: block;
 	margin-bottom: 0.5em;
 	cursor: pointer;
@@ -377,7 +376,7 @@ form textarea, form input {
 	column-count: 3;
 }
 
-.pair--button, .three--button, .button {
+.pair--button, .three--button, .button, .css-file {
 	margin-top: 0.5em;
 }
 
@@ -433,6 +432,19 @@ form textarea, form input {
 	display: block;
 }
 
+
+/* File Upload icon */
+.css-file {
+    text-align: center;
+}
+
+/* Hide the browser's default file upload icon */
+.css-file input {
+	display: none;
+	cursor: pointer;
+}
+
+
 /* Table */
 table{
 	margin-top: 1em;
@@ -457,4 +469,28 @@ Media
 */
 audio  {
 	margin: 1em 0;
+}
+
+
+.c-app-bar--home, .c-app-bar--home a, .c-app-bar--brainf, .c-app-bar--brainf a, .c-app-bar--blackc4t, .c-app-bar--blackc4t a, .c-toast, .c-toast a{
+	color: #EFEFEF;
+}
+.c-app-bar--shibe, .c-app-bar--shibe a {
+	color: #222222;
+}
+
+.c-app-bar--home {
+	background-color: #5270ff;
+}
+
+.c-app-bar--blackc4t, .c-toast{
+	background-color: #000000;
+}
+
+.c-app-bar--brainf{
+    background-color: #e23834;
+}
+
+.c-app-bar--shibe, .c-app-bar--shibe a {
+	background-color: #cda780;
 }

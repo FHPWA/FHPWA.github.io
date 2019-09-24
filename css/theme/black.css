@@ -23,49 +23,30 @@ As all elements are black, add a white bottom border
 /*
 Define colours to be used in this document
 */
-.c-primary, .c-secondary, .c-app-bar, .c-toast, .c-primary a, .c-secondary a, .c-app-bar a, .c-toast a  {
+.c-primary, .c-secondary, .c-primary a, .c-secondary a {
 	color: #EFEFEF;
 }
 
-.c-primary, .c-secondary, .c-app-bar, .c-toast {
+.c-primary, .c-secondary {
 	background-color: #000000;
 }
 
 /* Keep c-shibe as is, as the black icons would not be visible */
-
-.c-shibe {
-	background-color: #cda780;
-	color: #222222;
+.c-app-bar--shibe {
 	border-bottom-color: #222222;
-}
-
-.c-shibe a {
-	color: #222222;
 }
 
 
 
 /* Colour form elements (and related) */
-
-button {
+button, .css-file, form textarea, form input  {
 	border-color: #ffffff;
 	color: #ffffff;
 }
-
-form textarea, form input {
-	border-color: #ffffff;
-	color: #ffffff;
-}
-
-/* Colour the custom radio button */
-
 .check-mark {
 	border-color: #ffffff;
 	background-color: #000000;
 }
-
-/* Colour the indicator (dot/circle) */
-
 .css-radio .check-mark:after {
 	background: #ffffff;
 }

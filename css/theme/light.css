@@ -10,12 +10,12 @@ body {
 }
 
 /* Dark background colours */
-.c-app-bar, .c-toast, .c-app-bar a, .c-toast a{
+.c-app-bar, .c-app-bar a{
 	color: #EFEFEF;
 }
 
 /* Light background colours */
-.c-primary, .c-secondary, .c-shibe, .c-primary a, .c-secondary a, .c-shibe a{
+.c-primary, .c-secondary, .c-primary a, .c-secondary a{
 	color: #222222;
 }
 
@@ -28,35 +28,17 @@ body {
 	background-color: #ECECEA;
 }
 
-.c-app-bar, .c-toast {
-	background-color: #000000;
-}
-
-.c-shibe {
-	background-color: #cda780;
-}
-
 /* Colour form elements (and related) */
-
-button {
+button, .css-file, form textarea, form input {
 	border-color: #000000;
 	color: #000000;
 }
-
-form textarea, form input {
-	border-color: #000000;
-	color: #000000;
-}
-
 /* Colour the custom radio button */
-
 .check-mark {
 	border-color: #000000;
 	background-color: #ffffff;
 }
-
 /* Colour the indicator (dot/circle) */
-
 .css-radio .check-mark:after {
 	background: #000000;
 }
