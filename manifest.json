@@ -19,7 +19,7 @@
       "type": "image/png"
     },
     {
-      "src": "/images/appicons/square-512.png",
+      "src": "/images/appicons/mask.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
