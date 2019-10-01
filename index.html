@@ -7,45 +7,31 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<script>
 		if ("serviceWorker" in navigator) {
-			window.addEventListener("load", function () {
-				navigator.serviceWorker.register("/sw.js").then(
-					function (registration) {
-						// Registration was successful
-						console.log("ServiceWorker registration successful with scope: ", registration.scope);
-					},
-					function (err) {
-						// registration failed :(
-						console.log("ServiceWorker registration failed: ", err);
-					});
-			});
+				navigator.serviceWorker.register("/sw.js", {scope: "/"});
 		}
-
 	</script>
 	<script>
 		window.location.replace("https://fredhappyface.github.io/PWA.Home/");
 	</script>
 	<script>
-		var DEFAULT = {
-			theme: 'auto',
-			text: '1'
-		};
-
 		var data;
 		/* read data from local storage */
-		if (localStorage.getItem('com.fredhappyface.blackc4t') !== null) {
-			data = JSON.parse(localStorage.getItem('com.fredhappyface.blackc4t'));
+		if (localStorage.getItem('com.fredhappyface') !== null) {
+			data = JSON.parse(localStorage.getItem('com.fredhappyface'));
 		}
 		else {
 			console.log('Your Browser does not support local storage or no data saved. Loading default data.');
-			data = DEFAULT;
+			data = {
+				theme: 'auto',
+				text: '1'
+			};
 		}
-
 		// set the theme to the appropriate css
 		document.head.innerHTML += '<link rel="stylesheet" href="css/theme/' + data.theme + '.css"  id="theme">';
-
 		// set the text size
 		var declaration = document.styleSheets[0].cssRules[0].style;
 		declaration.setProperty("--text-mod", data.text)
+
 	</script>
 
 	<meta name="Description" content="Author: FredHappyface; Category: Cryptography,

@@ -51,38 +51,19 @@ function copy() {
   }
 
 
-
 /*
-Does the current browser support local storage?
-*/
-function hasLocalStorage() {
-	var test = "test";
-	try {
-		localStorage.setItem(test, test);
-		localStorage.removeItem(test);
-		return true;
-	}
-	catch (e) {
-		return false;
-	}
-}
-
-/*
-Save data onto local storage
+Save data onto local storage - Over 95% of browsers support this so im not going to check for it
 */
 function save() {
-	if (hasLocalStorage()) {
-		localStorage.setItem("com.fredhappyface", JSON.stringify(data));
+	localStorage.setItem("com.fredhappyface", JSON.stringify(data));
 	}
-
-}
 
 /*
 Load data from local storage
 */
 function load() {
 
-	if (hasLocalStorage() && localStorage.getItem("com.fredhappyface") !== null) {
+	if (localStorage.getItem("com.fredhappyface") !== null) {
 		data = JSON.parse(localStorage.getItem("com.fredhappyface"));
 		return;
 	} else {
