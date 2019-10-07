@@ -1,4 +1,4 @@
-:root{
+:root {
 	/* Variables */
 	--text-mod: 1;
 	--var-icon-top-left: 0%;
@@ -12,10 +12,9 @@
 	--const-element-rounding: 0.7em;
 	--const-max-content-width: 55em;
 	--const-toast-timer: 2000ms; /* Must be the same as in script.js */
-
 }
 
-*, *:before, *:after {
+*, *::before, *::after {
 	font-family: Verdana, sans-serif;
 	box-sizing: border-box;
 	word-wrap: break-word;
@@ -26,30 +25,32 @@
 }
 
 body {
-	font-size: calc((12px + 0.4vw)* var(--text-mod));
+	font-size: calc((12px + 0.4vw) * var(--text-mod));
 }
 
 /* CSS for iOS devices only
 */
+
 @supports (-webkit-overflow-scrolling: touch) {
 	body {
-		font-size: calc((16px + 0.4vw)* var(--text-mod));
+		font-size: calc((16px + 0.4vw) * var(--text-mod));
 	}
 }
 
 /* Setup margins for text
 */
-h1, h2, h3, h4, h5, h6, p, span, form label, a, input{
+
+h1, h2, h3, h4, h5, h6, p, span, form label, a, input {
 	margin-top: 0.3em;
 	margin-bottom: 0.5em;
 }
 
-form label{
+form label {
 	display: inline-block;
 }
 
-.setting-preview{
-	margin: .2em .2em 1.5em .2em;
+.setting-preview {
+	margin: 0.2em 0.2em 1.5em 0.2em;
 	border-radius: var(--const-element-rounding);
 	overflow: hidden;
 }
@@ -68,8 +69,8 @@ form label{
 	z-index: var(--const-element-on-top);
 }
 
-
 /* Toast Notifications */
+
 #js-toast {
 	bottom: var(--const-toast-bottom-margin);
 	visibility: hidden;
@@ -80,11 +81,11 @@ form label{
 
 #js-toast.show {
 	visibility: visible;
-	animation: fade-in calc(var(--const-toast-timer)* 0.15), fade-out calc(var(--const-toast-timer) * 0.15) calc(var(--const-toast-timer)* 0.85);
+	animation: fade-in calc(var(--const-toast-timer) * 0.15), fade-out calc(var(--const-toast-timer) * 0.15) calc(var(--const-toast-timer) * 0.85);
 }
 
-#js-toast>div>p {
-	border: .1em;
+#js-toast > div > p {
+	border: 0.1em;
 	border-style: solid;
 	border-radius: var(--const-toast-rounding);
 	padding: 1em;
@@ -92,26 +93,30 @@ form label{
 
 /* Centre content when the page is greater than 55em wide
 */
-nav, .section__content, .section__content--settings, .section>div, #js-toast>div {
+
+nav, .section__content, .section__content--settings, .section > div, #js-toast > div {
 	max-width: var(--const-max-content-width);
 	margin: auto;
 	padding: 1em;
 	overflow: hidden;
 }
-.section__content--settings{
+
+.section__content--settings {
 	margin: 0em;
-	padding: .5em 1em;
+	padding: 0.5em 1em;
 	max-width: 1000em;
 }
 
 /* Justify the text to keep it looking tidy
 */
+
 .section__content p {
 	text-align: justify;
 }
 
 /* Define an image - this will resize as the screen does so the page is adaptive
 */
+
 .img--scale, .img--fixed, .img--content {
 	padding: 0.1em 1em;
 }
@@ -122,6 +127,7 @@ nav, .section__content, .section__content--settings, .section>div, #js-toast>div
 
 /* Define a wide image - this will always take up the width of the screen
 */
+
 .img--content-wide {
 	width: 100%;
 	padding: 0.1em 0em;
@@ -135,9 +141,6 @@ nav, .section__content, .section__content--settings, .section>div, #js-toast>div
 		width: 50%;
 	}
 }
-
-
-
 
 /* Make all of the actual images (inside the image containers fill the container) Give these a max height so the whole screen isn't taken up.
 */
@@ -153,27 +156,29 @@ nav, .section__content, .section__content--settings, .section>div, #js-toast>div
 	margin: 0 auto;
 }
 
-
 .icon {
 	float: left;
 	width: calc(100%/6 - 0.01%);
 	padding: 1em;
 }
+
 .icon--browser {
 	width: calc(100%/4);
 	padding: 2em;
 }
+
 .icon--setting {
 	width: calc(100%/2);
 	padding: 0em;
 }
 
-.row{
+.row {
 	margin: auto;
 }
 
 /* Clear floats after the columns */
-.row:after {
+
+.row::after {
 	content: "";
 	display: table;
 	clear: both;
@@ -181,6 +186,7 @@ nav, .section__content, .section__content--settings, .section>div, #js-toast>div
 
 /* Medium form factors
 */
+
 @media only screen and (max-width: 55em) {
 	.img--content {
 		width: 50%;
@@ -194,24 +200,23 @@ nav, .section__content, .section__content--settings, .section>div, #js-toast>div
 	.icon--setting {
 		width: calc(100%);
 	}
-
 }
 
 /* Small form factors
 */
+
 @media only screen and (max-width: 25em) {
 	.img--content {
 		width: 100%;
 		padding: 0.1em 0em;
 	}
-	.icon--pwa{
+	.icon--pwa {
 		width: calc(100%/3);
 	}
 	.icon--browser {
 		width: 50%;
 	}
 }
-
 
 /* Images inside divs with class = img, icon fill the div, set max height
 */
@@ -224,24 +229,23 @@ nav, .section__content, .section__content--settings, .section>div, #js-toast>div
 	margin: 0 auto;
 }
 
-.img--fixed{
+.img--fixed {
 	width: fit-content;
 }
 
-.icon--browser p{
+.icon--browser p {
 	text-align: center;
 	padding-top: 0.5em;
 }
 
-
 .icon--pwa img {
 	border-radius: var(--var-icon-top-left) var(--var-icon-top-right) var(--var-icon-bottom-right) var(--var-icon-bottom-left);
-
 }
 
 /* Pull content to the rhs and lhs respectively
 */
-.right{
+
+.right {
 	position: relative;
 	padding-right: 0em;
 	float: right;
@@ -256,6 +260,7 @@ nav, .section__content, .section__content--settings, .section>div, #js-toast>div
 /*
 Define container for nav icons
 */
+
 .app__icon {
 	padding: 0em;
 	padding-bottom: 0.5em;
@@ -264,6 +269,7 @@ Define container for nav icons
 /*
 Define the nav
 */
+
 nav {
 	position: relative;
 	overflow: hidden;
@@ -312,7 +318,6 @@ nav ul li a:hover, .overflow:hover, nav ul li a.current {
 	padding-top: 1em;
 }
 
-
 .buffer--app-bar {
 	width: 100%;
 	height: 5em;
@@ -323,37 +328,50 @@ nav ul li a:hover, .overflow:hover, nav ul li a.current {
 	height: 9em;
 }
 
-
-
-
 /* Animations to fade the toast in and out */
+
 @keyframes fade-in {
-	from {bottom: 0; opacity: 0;}
-	to {bottom: var(--const-toast-bottom-margin); opacity: 1;}
+	from {
+		bottom: 0;
+		opacity: 0;
+	}
+	to {
+		bottom: var(--const-toast-bottom-margin);
+		opacity: 1;
+	}
 }
+
 @keyframes fade-out {
-	from {bottom: var(--const-toast-bottom-margin); opacity: 1;}
-	to {bottom: 0; opacity: 0;}
+	from {
+		bottom: var(--const-toast-bottom-margin);
+		opacity: 1;
+	}
+	to {
+		bottom: 0;
+		opacity: 0;
+	}
 }
 
 /* Modify the default style for forms
 */
-form{
+
+form {
 	border-width: 0em;
 	width: 100%;
 	font-size: 1em;
 	background-color: rgba(0, 0, 0, 0);
 }
+
 button, .css-file, form textarea, form input {
 	border-style: solid;
 	border-radius: var(--const-element-rounding);
+	border-color: #000000;
 	width: 100%;
 	font-size: 1em;
 	background-color: rgba(0, 0, 0, 0);
 	border-width: 0.1em;
 	padding: 0.5em;
 }
-
 
 button, .css-file {
 	display: block;
@@ -368,11 +386,13 @@ form textarea, form input {
 }
 
 /* Pairs */
-.pair, .three{
+
+.pair, .three {
 	column-count: 2;
 	column-gap: 1em;
 }
-.three{
+
+.three {
 	column-count: 3;
 }
 
@@ -380,8 +400,8 @@ form textarea, form input {
 	margin-top: 0.5em;
 }
 
-
 /* Radio button */
+
 .css-radio {
 	display: block;
 	position: relative;
@@ -394,12 +414,14 @@ form textarea, form input {
 }
 
 /* Hide the browser's default radio button */
+
 .css-radio input {
 	display: none;
 	cursor: pointer;
 }
 
 /* Create a custom radio button */
+
 .check-mark {
 	border-width: 0.1em;
 	border-style: solid;
@@ -412,14 +434,16 @@ form textarea, form input {
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
-.check-mark:after {
+
+.check-mark::after {
 	content: "";
 	position: absolute;
 	display: none;
 }
 
 /* Style the indicator (dot/circle) */
-.css-radio .check-mark:after {
+
+.css-radio .check-mark::after {
 	top: 0.15em;
 	left: 0.15em;
 	width: 0.5em;
@@ -428,72 +452,75 @@ form textarea, form input {
 }
 
 /* Show the indicator (dot/circle) when checked */
-.css-radio input:checked~.check-mark:after {
+
+.css-radio input:checked ~ .check-mark::after {
 	display: block;
 }
 
-
 /* File Upload icon */
+
 .css-file {
-    text-align: center;
+	text-align: center;
 }
 
 /* Hide the browser's default file upload icon */
+
 .css-file input {
 	display: none;
 	cursor: pointer;
 }
 
-
 /* Table */
-table{
+
+table {
 	margin-top: 1em;
 	margin-bottom: 1em;
 	width: 100%;
 	border-collapse: collapse;
 }
 
-table, th, td{
+table, th, td {
 	text-align: left;
 	border-bottom: 0.1em solid;
 	padding: 0.3em;
 }
 
-th.r, td.r{
+th.r, td.r {
 	text-align: right;
 }
-
 
 /*
 Media
 */
-audio  {
+
+audio {
 	margin: 1em 0;
 }
 
-
-.c-app-bar--home, .c-app-bar--home a, .c-app-bar--brainf, .c-app-bar--brainf a, .c-app-bar--blackc4t, .c-app-bar--blackc4t a, .c-toast, .c-toast a{
+.c-app-bar--home, .c-app-bar--home a, .c-app-bar--brainf, .c-app-bar--brainf a, .c-app-bar--blackc4t, .c-app-bar--blackc4t a, .c-toast, .c-toast a {
 	color: #EFEFEF;
 }
+
 .c-app-bar--shibe, .c-app-bar--shibe a {
 	color: #222222;
 }
+
 .c-app-bar--shibe .app__icon {
 	filter: invert(1);
 }
 
 .c-app-bar--home {
-	background-color: #5270ff;
+	background-color: #5270FF;
 }
 
-.c-app-bar--blackc4t, .c-toast{
+.c-app-bar--blackc4t, .c-toast {
 	background-color: #000000;
 }
 
-.c-app-bar--brainf{
-    background-color: #e23834;
+.c-app-bar--brainf {
+	background-color: #E23834;
 }
 
 .c-app-bar--shibe, .c-app-bar--shibe a {
-	background-color: #cda780;
+	background-color: #CDA780;
 }

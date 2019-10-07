@@ -15,7 +15,7 @@ As all elements are black, add a white bottom border
 */
 
 .section, .section-nav {
-	border-bottom: .1em;
+	border-bottom: 0.1em;
 	border-bottom-style: solid;
 	border-bottom-color: #EFEFEF;
 }
@@ -36,17 +36,15 @@ Define colours to be used in this document
 	border-bottom-color: #222222;
 }
 
-
-
 /* Colour form elements (and related) */
-button, .css-file, form textarea, form input  {
-	border-color: #ffffff;
-	color: #ffffff;
+button, .css-file, form textarea, form input {
+	border-color: #FFFFFF;
+	color: #FFFFFF;
 }
 .check-mark {
-	border-color: #ffffff;
+	border-color: #FFFFFF;
 	background-color: #000000;
 }
-.css-radio .check-mark:after {
-	background: #ffffff;
+.css-radio .check-mark::after {
+	background: #FFFFFF;
 }

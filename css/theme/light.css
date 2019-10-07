@@ -5,17 +5,17 @@ Set the background to white and the text colour to (nearly) black
 */
 
 body {
-	background-color: #ffffff;
+	background-color: #FFFFFF;
 	color: #222222;
 }
 
 /* Dark background colours */
-.c-app-bar, .c-app-bar a{
+.c-app-bar, .c-app-bar a {
 	color: #EFEFEF;
 }
 
 /* Light background colours */
-.c-primary, .c-secondary, .c-primary a, .c-secondary a{
+.c-primary, .c-secondary, .c-primary a, .c-secondary a {
 	color: #222222;
 }
 
@@ -36,9 +36,9 @@ button, .css-file, form textarea, form input {
 /* Colour the custom radio button */
 .check-mark {
 	border-color: #000000;
-	background-color: #ffffff;
+	background-color: #FFFFFF;
 }
 /* Colour the indicator (dot/circle) */
-.css-radio .check-mark:after {
+.css-radio .check-mark::after {
 	background: #000000;
 }

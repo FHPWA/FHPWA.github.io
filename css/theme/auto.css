@@ -1,9 +1,9 @@
 /* Light Theme */
 body {
-	background-color: #ffffff;
+	background-color: #FFFFFF;
 	color: #222222;
 }
-.c-primary, .c-secondary, .c-primary a, .c-secondary a{
+.c-primary, .c-secondary, .c-primary a, .c-secondary a {
 	color: #222222;
 }
 .c-primary {
@@ -12,20 +12,19 @@ body {
 .c-secondary {
 	background-color: #ECECEA;
 }
-button, .css-file, form textarea, form input  {
+button, .css-file, form textarea, form input {
 	border-color: #000000;
 	color: #000000;
 }
 .check-mark {
 	border-color: #000000;
-	background-color: #ffffff;
+	background-color: #FFFFFF;
 }
-.css-radio .check-mark:after {
+.css-radio .check-mark::after {
 	background: #000000;
 }
 
-
-@media (prefers-color-scheme: dark){
+@media (prefers-color-scheme: dark) {
 	/* Dark Theme */
 
 	body {
@@ -36,22 +35,21 @@ button, .css-file, form textarea, form input  {
 	.c-primary, .c-secondary, .c-primary a, .c-secondary a {
 		color: #EFEFEF;
 	}
-	.c-primary{
+	.c-primary {
 		background-color: #222222;
 	}
 	.c-secondary {
 		background-color: #393939;
 	}
 	button, .css-file, form textarea, form input {
-		border-color: #ffffff;
-		color: #ffffff;
+		border-color: #FFFFFF;
+		color: #FFFFFF;
 	}
 	.check-mark {
-		border-color: #ffffff;
+		border-color: #FFFFFF;
 		background-color: #000000;
 	}
-	.css-radio .check-mark:after {
-		background: #ffffff;
+	.css-radio .check-mark::after {
+		background: #FFFFFF;
 	}
-
 }

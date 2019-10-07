@@ -1,0 +1,23 @@
+{
+  "name": "fredhappyface.github.io",
+  "version": "1.0.0",
+  "description": "Holds common CSS and JS used by other web projects",
+  "main": "sw.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FredHappyface/FredHappyface.github.io.git"
+  },
+  "author": "FredHappyface",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FredHappyface/FredHappyface.github.io/issues"
+  },
+  "homepage": "https://github.com/FredHappyface/FredHappyface.github.io#readme",
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "eslint-config-google": "^0.14.0"
+  }
+}

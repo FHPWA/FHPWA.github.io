@@ -15,27 +15,25 @@ body {
 }
 
 /* Colours */
-.c-primary{
+.c-primary {
 	background-color: #222222;
 }
 .c-secondary {
 	background-color: #393939;
 }
 
-
-
 /* Colour form elements (and related) */
 
 button, .css-file, form textarea, form input {
-	border-color: #ffffff;
-	color: #ffffff;
+	border-color: #FFFFFF;
+	color: #FFFFFF;
 }
 /* Colour the custom radio button */
 .check-mark {
-	border-color: #ffffff;
+	border-color: #FFFFFF;
 	background-color: #000000;
 }
 /* Colour the indicator (dot/circle) */
-.css-radio .check-mark:after {
-	background: #ffffff;
+.css-radio .check-mark::after {
+	background: #FFFFFF;
 }
