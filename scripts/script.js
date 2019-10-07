@@ -81,7 +81,7 @@ function download(filename, chars) { // eslint-disable-line no-unused-vars
 		link.style.display = "none";
 		document.body.appendChild(link);
 		link.click();
-		document.body.removeAttributeNode(link);
+		document.body.removeChild(link);
 	} else {
 		showToast("Give the file a name");
 	}
