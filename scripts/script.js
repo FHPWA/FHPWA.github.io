@@ -72,7 +72,7 @@ function upload(files, targets) { // eslint-disable-line no-unused-vars
  * @return {void} none
  */
 function download(filename, chars) { // eslint-disable-line no-unused-vars
-	if (filename.length > 0) {
+	if (filename.length > 0 && chars.length > 0) {
 		const blob = new Blob([chars], {type: "application/octet-stream"});
 		const blobURL = window.URL.createObjectURL(blob);
 		const link = document.createElement("a");
@@ -83,7 +83,7 @@ function download(filename, chars) { // eslint-disable-line no-unused-vars
 		link.click();
 		document.body.removeChild(link);
 	} else {
-		showToast("Give the file a name");
+		showToast("Give the file a name and some content");
 	}
 	return;
 }
