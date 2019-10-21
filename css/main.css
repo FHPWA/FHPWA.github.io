@@ -264,6 +264,7 @@ Define container for nav icons
 .app__icon {
 	padding: 0em;
 	padding-bottom: 0.5em;
+	width: 2.5em;
 }
 
 /*
