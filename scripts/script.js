@@ -8,7 +8,7 @@
 const TOAST_TIMER = 2000;
 /*
 Default data. Use this if there is no other data
-*/
+
 var DEFAULT = {
 	theme: "auto",
 	text: "1",
@@ -19,7 +19,7 @@ var DEFAULT = {
 };
 
 var data;
-
+*/
 
 /**
  * Copy the contents of the output element
@@ -121,7 +121,7 @@ async function copyToClipboard(stringToCopy) {
  * going to check for it
  * @return {void}
  */
-function save() {
+function save() { // eslint-disable-line no-unused-vars
 	localStorage.setItem("com.fredhappyface", JSON.stringify(data));
 	return;
 }
@@ -131,7 +131,7 @@ Load data from local storage
 */
 /**
  * @return {void}
- */
+
 function load() {
 	if (localStorage.getItem("com.fredhappyface") !== null) {
 		data = JSON.parse(localStorage.getItem("com.fredhappyface"));
@@ -140,12 +140,12 @@ function load() {
 	}
 	return;
 }
-
+ */
 
 /**
  * Set the theme
  * @return {void}
- */
+
 function setTheme() {
 	if (document.getElementById("theme") === null) {
 		document.head.innerHTML +=
@@ -157,12 +157,9 @@ function setTheme() {
 }
 
 
-/*
-Run this (the document should be ready)
-*/
-
 // read data from local storage
 load();
 
 // set the theme to the appropriate css
 setTheme();
+*/
