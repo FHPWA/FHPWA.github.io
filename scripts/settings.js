@@ -1,6 +1,6 @@
 /* eslint-disable prefer-const */
 
-if (localStorage.getItem("com.fredhappyface") !== null) {
+if (localStorage.getItem("com.fredhappyface") === null) {
 	// eslint-disable-next-line no-var
 	var data = {
 		"theme": "auto",
