@@ -1,4 +1,20 @@
 /* eslint-disable prefer-const */
+
+if (localStorage.getItem("com.fredhappyface") !== null) {
+	// eslint-disable-next-line no-var
+	var data = {};
+}
+
+/**
+ * Save data onto local storage - Over 95% of browsers support this so I'm not
+ * going to check for it
+ * @return {void}
+ */
+function save() {
+	localStorage.setItem("com.fredhappyface", JSON.stringify(data));
+	return;
+}
+
 let themeRadios = document.getElementsByName("themeR");
 let textRadios = document.getElementsByName("textR");
 let shapeRadios = document.getElementsByName("shapeR");

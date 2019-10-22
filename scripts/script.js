@@ -6,20 +6,6 @@
 
 
 const TOAST_TIMER = 2000;
-/*
-Default data. Use this if there is no other data
-
-var DEFAULT = {
-	theme: "auto",
-	text: "1",
-	iconTopLeft: "50%",
-	iconTopRight: "50%",
-	iconBottomLeft: "50%",
-	iconBottomRight: "50%",
-};
-
-var data;
-*/
 
 /**
  * Copy the contents of the output element
@@ -114,52 +100,3 @@ async function copyToClipboard(stringToCopy) {
 	}
 	return;
 }
-
-
-/**
- * Save data onto local storage - Over 95% of browsers support this so I'm not
- * going to check for it
- * @return {void}
- */
-function save() { // eslint-disable-line no-unused-vars
-	localStorage.setItem("com.fredhappyface", JSON.stringify(data));
-	return;
-}
-
-/*
-Load data from local storage
-*/
-/**
- * @return {void}
-
-function load() {
-	if (localStorage.getItem("com.fredhappyface") !== null) {
-		data = JSON.parse(localStorage.getItem("com.fredhappyface"));
-	} else {
-		data = DEFAULT;
-	}
-	return;
-}
- */
-
-/**
- * Set the theme
- * @return {void}
-
-function setTheme() {
-	if (document.getElementById("theme") === null) {
-		document.head.innerHTML +=
-		"<link rel=\"stylesheet\" href=\"css/theme/" +
-		data.theme + ".css\"  id=\"theme\">";
-	}
-	save();
-	return;
-}
-
-
-// read data from local storage
-load();
-
-// set the theme to the appropriate css
-setTheme();
-*/
