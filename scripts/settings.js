@@ -2,7 +2,14 @@
 
 if (localStorage.getItem("com.fredhappyface") !== null) {
 	// eslint-disable-next-line no-var
-	var data = {};
+	var data = {
+		"theme": "auto",
+		"text": "1",
+		"iconTopLeft": "50%",
+		"iconTopRight": "50%",
+		"iconBottomLeft": "50%",
+		"iconBottomRight": "50%",
+	};
 }
 
 /**
