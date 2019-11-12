@@ -399,6 +399,7 @@ form {
 }
 
 button, .css-file, form textarea, form input, .code pre {
+	font-family: 'Fira Sans';
 	border-style: solid;
 	border-radius: var(--const-element-rounding);
 	border-color: #000000;
