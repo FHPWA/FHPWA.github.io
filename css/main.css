@@ -11,11 +11,11 @@
 	--const-toast-rounding: 0.7em;
 	--const-element-rounding: 0.7em;
 	--const-max-content-width: 55em;
-	--const-toast-timer: 2000ms; /* Must be the same as in script.js */
+	--const-toast-timer: 2000ms;
+	/* Must be the same as in script.js */
 }
 
 *, *::before, *::after {
-	font-family: Verdana, sans-serif;
 	box-sizing: border-box;
 	word-wrap: break-word;
 	-ms-user-select: none;
@@ -24,8 +24,43 @@
 	padding: 0em;
 }
 
+@font-face {
+	font-family: 'Fira Code';
+	src: local('Fira Code Light'), url('https://fredhappyface.github.io/fonts/FiraCode.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Fira Sans';
+	src: local('Fira Sans NF Light'), url('https://fredhappyface.github.io/fonts/FiraSansNF.woff2') format('woff2');
+}
+
 body {
+	font-family: 'Fira Sans', sans-serif;
 	font-size: calc((12px + 0.4vw) * var(--text-mod));
+}
+
+.code, .code pre {
+	font-family: 'Fira Code', monospace;
+}
+
+.code pre {
+	line-height: 0;
+	counter-reset: line;
+}
+
+pre span {
+	display: block;
+	line-height: 1.5em;
+	white-space: pre-wrap;
+}
+
+pre span::before {
+	counter-increment: line;
+	content: counter(line);
+	display: inline-block;
+	border-right: 0.1em solid;
+	padding: 0 0.5em;
+	margin-right: 0.5em;
 }
 
 /* CSS for iOS devices only
@@ -363,7 +398,7 @@ form {
 	background-color: rgba(0, 0, 0, 0);
 }
 
-button, .css-file, form textarea, form input {
+button, .css-file, form textarea, form input, .code pre {
 	border-style: solid;
 	border-radius: var(--const-element-rounding);
 	border-color: #000000;
