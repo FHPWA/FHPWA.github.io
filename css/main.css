@@ -98,9 +98,7 @@ form label {
 	padding: 0px;
 	overflow: auto;
 }
-nav {
-	padding-top: 0em;
-}
+
 .app-bar h1 {
 	margin: 0.1em 0;
 }
@@ -140,6 +138,9 @@ nav, .section__content, .section__content--settings, .section > div, #js-toast >
 	margin: auto;
 	padding: 1em;
 	overflow: hidden;
+}
+nav {
+	padding-top: 0em;
 }
 
 .section__content--settings {
