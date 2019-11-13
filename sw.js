@@ -1,23 +1,35 @@
-﻿const cacheVersion = "fredhappyface";
+﻿const cacheVersion = "fredhappyface.github.io-2019.11.1";
 const urlsToPrefetch = [
 	"/",
 	"/PWA.Home/",
 ];
 
 
-this.addEventListener("install", function(event) {
+self.addEventListener("install", function (event) {
 	event.waitUntil(
-		caches.open(cacheVersion).then(function(cache) {
+		caches.open(cacheVersion).then(function (cache) {
 			return cache.addAll(urlsToPrefetch);
 		})
 	);
 });
 
+self.addEventListener("activate", function(event) {
+	event.waitUntil(
+		caches.keys().then(function(keyList){
+			return Promise.all(keyList.map(function(key){
+				if (key !== cacheVersion){
+					return caches.delete(key);
+				}
+			}));
+		})
+	);
+	return self.clients.claim();
+});
 
-this.addEventListener("fetch", (event) => {
-	const responsePromise = caches.match(event.request).then((response) => {
-		return response || fetch(event.request);
-	});
+self.addEventListener("fetch", (event) => {
+  let responsePromise = caches.match(event.request).then((response) => {
+    return response || fetch(event.request);
+  });
 
-	event.respondWith(responsePromise);
+  event.respondWith(responsePromise);
 });
