@@ -98,8 +98,8 @@ form label {
 	padding: 0px;
 	overflow: auto;
 }
-.app-bar > .section__content {
-	padding-bottom: 0em;
+nav {
+	padding-top: 0em;
 }
 .app-bar h1 {
 	margin: 0.1em 0;
