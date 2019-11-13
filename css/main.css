@@ -101,6 +101,7 @@ form label {
 
 .app-bar h1 {
 	margin: 0.1em 0;
+	text-decoration: none;
 }
 
 .section--app-bar, .section--nav-bar, #js-toast {
