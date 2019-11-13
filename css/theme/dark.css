@@ -6,11 +6,11 @@ Set the background to black and the text colour to (nearly) white
 
 body {
 	background-color: #181A1F;
-	color: #EFEFEF;
+	color: #ABB2BF;
 }
 /* Dark background colours */
 .c-primary, .c-secondary, .c-primary a, .c-secondary a {
-	color: #EFEFEF;
+	color: #ABB2BF;
 }
 
 /* Colours */
@@ -24,14 +24,14 @@ body {
 /* Colour form elements (and related) */
 
 button, .css-file, form textarea, form input {
-	border-color: #EFEFEF;
-	color: #EFEFEF;
+	border-color: #ABB2BF;
+	color: #ABB2BF;
 }
 /* Colour the custom radio button */
 .check-mark {
-	border-color: #EFEFEF;
+	border-color: #ABB2BF;
 }
 /* Colour the indicator (dot/circle) */
 .css-radio .check-mark::after {
-	background: #EFEFEF;
+	background: #ABB2BF;
 }

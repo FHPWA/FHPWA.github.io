@@ -542,11 +542,11 @@ audio {
 }
 
 .c-app-bar--home, .c-app-bar--home a, .c-app-bar--brainf, .c-app-bar--brainf a, .c-app-bar--blackc4t, .c-app-bar--blackc4t a, .c-toast, .c-toast a {
-	color: #EFEFEF;
+	color: #ABB2BF;
 }
 
 .c-app-bar--shibe, .c-app-bar--shibe a {
-	color: #222222;
+	color: #383A42;
 }
 
 .c-app-bar--shibe .app__icon {

@@ -6,8 +6,8 @@ Set the background to black and the text colour to (nearly) white
 
 body {
 	background-color: #000000;
-	color: #EFEFEF;
-	border-bottom-color: #EFEFEF;
+	color: #ABB2BF;
+	border-bottom-color: #ABB2BF;
 }
 
 /*
@@ -17,14 +17,14 @@ As all elements are black, add a white bottom border
 .section, .section-nav {
 	border-bottom: 0.1em;
 	border-bottom-style: solid;
-	border-bottom-color: #EFEFEF;
+	border-bottom-color: #ABB2BF;
 }
 
 /*
 Define colours to be used in this document
 */
 .c-primary, .c-secondary, .c-primary a, .c-secondary a {
-	color: #EFEFEF;
+	color: #ABB2BF;
 }
 
 .c-primary, .c-secondary {
@@ -33,12 +33,12 @@ Define colours to be used in this document
 
 /* Colour form elements (and related) */
 button, .css-file, form textarea, form input {
-	border-color: #EFEFEF;
-	color: #EFEFEF;
+	border-color: #ABB2BF;
+	color: #ABB2BF;
 }
 .check-mark {
-	border-color: #EFEFEF;
+	border-color: #ABB2BF;
 }
 .css-radio .check-mark::after {
-	background: #EFEFEF;
+	background: #ABB2BF;
 }

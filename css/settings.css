@@ -5,8 +5,8 @@
 	border-bottom: 0.1em;
 	border-bottom-style: solid;
 	background-color: #000000;
-	color: #EFEFEF;
-	border-bottom-color: #EFEFEF;
+	color: #ABB2BF;
+	border-bottom-color: #ABB2BF;
 }
 
 /* Dark
@@ -14,7 +14,7 @@
 
 .primary--dark, .secondary--dark, .primary--auto-left, .secondary--auto-left {
 	background-color: #181A1F;
-	color: #EFEFEF;
+	color: #ABB2BF;
 }
 
 .secondary--dark, .secondary--auto-left {
@@ -26,7 +26,7 @@
 
 .primary--light, .secondary--light, .primary--auto-right, .secondary--auto-right {
 	background-color: #FAFAFA;
-	color: #222222;
+	color: #383A42;
 }
 
 .secondary--light, .secondary--auto-right {
