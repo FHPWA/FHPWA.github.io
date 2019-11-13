@@ -1,4 +1,4 @@
-﻿const cacheVersion = "fredhappyface.github.io-2019.11.2";
+﻿const cacheVersion = "fredhappyface.github.io-2019.11.3";
 const urlsToPrefetch = [
 	"/",
 	"/PWA.Home/",
