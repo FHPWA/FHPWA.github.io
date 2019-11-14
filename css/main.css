@@ -19,6 +19,7 @@
 	box-sizing: border-box;
 	word-wrap: break-word;
 	-ms-user-select: none;
+	-webkit-user-select: none;
 	user-select: none;
 	margin: 0em;
 	padding: 0em;
@@ -220,6 +221,8 @@ nav {
 }
 
 .row {
+	display: flex;
+	flex-wrap: wrap;
 	margin: auto;
 }
 
@@ -459,6 +462,8 @@ form textarea, form input {
 	margin-bottom: 0px;
 	cursor: pointer;
 	font-size: 1em;
+	-ms-user-select: none;
+	-webkit-user-select: none;
 	user-select: none;
 }
 
