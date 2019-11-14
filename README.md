@@ -121,32 +121,50 @@ More information can be found at https://help.github.com/en/desktop/contributing
 MIT License
 Copyright (c) Kieran W
 (See the [LICENSE](/LICENSE.md) for more information.)
-
-
 ## Browser Support
 
 ### Supported
-This PWA is optimised for the following browsers and has been tested on them:
+FredHappyface PWAs are built with the following browsers in mind:
+Google Chrome
 
-|Google Chrome|Chromium Based Browsers|Safari|
-|:-:|:-:|:-:|
-| <img src="readme-assets/browsers/chrome.png" alt="Google Chrome" width="200"> | <img src="readme-assets/browsers/chromium.png" alt="Chromium" width="200"> | <img src="readme-assets/browsers/safari.png" alt="Safari" width="200"> |
+<img src="readme-assets/browsers/chrome.png" alt="Google Chrome" width="200">
 
-### Partial Support
-This PWA should function on these browsers but some elements may look odd:
+Chromium Based Browsers
 
-|Firefox|Microsoft Edge|
-|:-:|:-:|
-| <img src="readme-assets/browsers/firefox.png" alt="Firefox" width="200"> | <img src="readme-assets/browsers/ms-edge.png" alt="Microsoft Edge" width="200"> |
+<img src="readme-assets/browsers/chromium.png" alt="Chromium" width="200">
 
-### Not Supported
-This PWA is not supported on these browsers, functionality and visuals may not
-work as expected:
+Safari
 
-|Internet Explorer|TOR Browser|Other Browsers|
-|:-:|:-:|:-:|
-| <img src="readme-assets/browsers/ie.png" alt="Internet Explorer" width="200"> | <img src="readme-assets/browsers/tor.png" alt="TOR Browser" width="200"> | <img src="readme-assets/browsers/browser.png" alt="Other Browsers" width="200"> |
+<img src="readme-assets/browsers/safari.png" alt="Safari" width="200">
 
+Microsoft Edge (Chromium)
+
+<img src="readme-assets/browsers/edge.png" alt="Microsoft Edge (Chromium)" width="200">
+
+
+### Unsupported
+FredHappyface PWAs are not designed for the following browsers
+(though they may still run as expected in some cases, such as on
+Firefox). Functionality and visuals may not work as expected:
+Firefox
+
+<img src="readme-assets/browsers/firefox.png" alt="Firefox" width="200">
+
+Microsoft Edge (EdgeHTML)
+
+<img src="readme-assets/browsers/ms-edge.png" alt="Microsoft Edge (EdgeHTML)" width="200">
+
+Internet Explorer
+
+<img src="readme-assets/browsers/ie.png" alt="Internet Explorer" width="200">
+
+TOR Browser
+
+<img src="readme-assets/browsers/tor.png" alt="TOR Browser" width="200">
+
+Other Browsers
+
+<img src="readme-assets/browsers/browser.png" alt="Other Browsers" width="200">
 
 
 ## Screenshots
