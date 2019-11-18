@@ -1,49 +1,69 @@
-﻿const cacheVersion = "fredhappyface.github.io-2019.11.6";
-const urlsToPrefetch = [
+﻿const CACHE = "fredhappyface.github.io";
+const precacheFiles = [
 	"/",
 ];
 
 self.addEventListener("install", function (event) {
+	self.skipWaiting();
 	event.waitUntil(
-		caches.open(cacheVersion).then(function (cache) {
-			return cache.addAll(urlsToPrefetch);
+		caches.open(CACHE).then(function (cache) {
+			return cache.addAll(precacheFiles);
 		})
 	);
 });
 
+// Allow sw to control of current page
 self.addEventListener("activate", function (event) {
-	event.waitUntil(
-		caches.keys().then(function (keyList) {
-			return Promise.all(keyList.map(function (key) {
-				if (key !== cacheVersion) {
-					return caches.delete(key);
-				}
-			}));
-		})
+	event.waitUntil(self.clients.claim());
+});
+
+// If any fetch fails, it will look for the request in the cache and serve it from there first
+self.addEventListener("fetch", function (event) {
+	if (event.request.method !== "GET") return;
+	event.respondWith(
+		fromCache(event.request).then(
+			function (response) {
+				// The response was found in the cache so we respond with it and update the entry
+				// This is where we call the server to get the newest version of the
+				// file to use the next time we show view
+				event.waitUntil(
+					fetch(event.request).then(function (response) {
+						return updateCache(event.request, response);
+					})
+				);
+				return response;
+			},
+			function () {
+				// The response was not found in the cache so we look for it on the server
+				return fetch(event.request)
+					.then(function (response) {
+						// If request was success, add or update it in the cache
+						event.waitUntil(updateCache(event.request, response.clone()));
+						return response;
+					})
+					.catch(function (error) {
+					});
+			}
+		)
 	);
-	return self.clients.claim();
 });
 
-self.addEventListener('fetch', function (event) {
-	event.respondWith(fromNetwork(event.request, 400).catch(function () {
-		return fromCache(event.request);
-	}));
-});
-
-function fromNetwork(request, timeout) {
-	return new Promise(function (fulfill, reject) {
-		var timeoutId = setTimeout(reject, timeout);
-		fetch(request).then(function (response) {
-			clearTimeout(timeoutId);
-			fulfill(response);
-		}, reject);
+function fromCache(request) {
+	// Check to see if you have it in the cache
+	// Return response
+	// If not in the cache, then return
+	return caches.open(CACHE).then(function (cache) {
+		return cache.match(request).then(function (matching) {
+			if (!matching || matching.status === 404) {
+				return Promise.reject("no-match");
+			}
+			return matching;
+		});
 	});
 }
 
-function fromCache(request) {
-	return caches.open(cacheVersion).then(function (cache) {
-		return cache.match(request).then(function (matching) {
-			return matching || Promise.reject('no-match');
-		});
+function updateCache(request, response) {
+	return caches.open(CACHE).then(function (cache) {
+		return cache.put(request, response);
 	});
 }
