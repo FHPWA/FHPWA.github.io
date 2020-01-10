@@ -68,7 +68,7 @@ pre span::before {
 */
 
 @supports (-webkit-overflow-scrolling: touch) {
-	body {
+	input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], select:focus, textarea {
 		font-size: calc((16px + 0.4vw) * var(--text-mod));
 	}
 }
@@ -100,10 +100,23 @@ form label {
 	overflow: auto;
 }
 
+.app-bar {
+	display: flex;
+}
+
+.app-bar > div {
+	min-width: 0em;
+}
+
 .app-bar h1 {
 	font-size: 2.5em;
 	margin: 0 0.1em;
+	min-width: 0em;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
+
 .app-bar a {
 	text-decoration: none;
 	margin: 0em;
@@ -145,6 +158,7 @@ nav, .section__content, .section__content--settings, .section > div, #js-toast >
 	padding: 1em;
 	overflow: hidden;
 }
+
 nav {
 	padding-top: 0em;
 }
