@@ -104,14 +104,18 @@ form label {
 	display: flex;
 }
 
-.app-bar > div > div {
+.app-bar .left {
 	min-width: 0em;
 	overflow: hidden;
+	flex: 1;
 }
 
 .app-bar h1 {
 	font-size: 2.5em;
 	margin: 0 0.1em;
+}
+
+.app-bar .left h1 {
 	min-width: 0em;
 	white-space: nowrap;
 	overflow: hidden;
