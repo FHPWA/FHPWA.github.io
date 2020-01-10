@@ -100,12 +100,12 @@ form label {
 	overflow: auto;
 }
 
-.app-bar {
-	display: flex;
-}
-
 .app-bar > div {
 	min-width: 0em;
+}
+
+.app-bar > div > div {
+	display: flex;
 }
 
 .app-bar h1 {
