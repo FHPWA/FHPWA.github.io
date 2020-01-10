@@ -101,11 +101,12 @@ form label {
 }
 
 .app-bar > div {
-	min-width: 0em;
+	display: flex;
 }
 
 .app-bar > div > div {
-	display: flex;
+	min-width: 0em;
+	overflow: hidden;
 }
 
 .app-bar h1 {
