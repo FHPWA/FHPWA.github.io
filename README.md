@@ -12,7 +12,7 @@
 
 # FredHappyface.github.io
 
-<img src="readme-assets/icons/proj-icon.png" alt="Project Icon" width="100">
+<img src="readme-assets/icons/name.png" alt="Project Icon" width="750">
 
 FredHappyface App Launcher provides links to web-based projects at
 https://FredHappyface.github.io/PWA.Home. Holds common CSS and JS used by
