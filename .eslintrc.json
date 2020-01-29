@@ -19,6 +19,7 @@
         "quotes": ["error", "double"],
         "camelcase":"off",
 		"no-tabs":"off",
-		"eqeqeq":"error"
+		"eqeqeq":"error",
+		"object-curly-spacing": "off",
     }
 }
