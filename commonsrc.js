@@ -9,10 +9,12 @@ const path = require("path");
  * @return {string} template text
  */
 function getTemplate(templateName) {
-	request('https://fredhappyface.github.io/commonsrc/' + templateName, { json: false }, (error, res, body) => {
-		if (error) { return console.log(error); }
-		return body;
-	});
+	return new Promise(function (resolve, reject) {
+		request('https://fredhappyface.github.io/commonsrc/' + templateName, { json: false }, function (error, res, body) {
+			if (error) { reject(error); }
+			resolve(body);
+		});
+	})
 }
 
 
@@ -66,8 +68,8 @@ function doMangleAndWrite(templateFile, mangle, outFile) {
  * @param {json} mangle
  * @param {string} outFile
  */
-function doRemoteMangleAndWrite(templateName, mangle, outFile) {
-	doWrite(doMangle(getTemplate(templateName), mangle), outFile);
+async function doRemoteMangleAndWrite(templateName, mangle, outFile) {
+	doWrite(doMangle(await getTemplate(templateName), mangle), outFile);
 }
 
 
