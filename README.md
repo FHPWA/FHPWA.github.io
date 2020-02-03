@@ -23,6 +23,11 @@ other web projects.
 FredHappyface.github.io is built with HTML5 and CSS3
 
 
+## commonsrc
+Contains templates that are can be grabbed by other projects. It seems sensible
+to keep them here to ease maintainability. See commonsrc.js for a few examples
+of how these can be used
+
 ## Changelog
 See the [CHANGELOG](/CHANGELOG.md) for more information.
 

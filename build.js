@@ -21,7 +21,7 @@ function getDir(fileName) {
 /**
  *
  * @param {string} templateFile
- * @param {string} mangle
+ * @param {json} mangle
  * @param {string} outFile
  */
 function doMangleAndWrite(templateFile, mangle, outFile) {

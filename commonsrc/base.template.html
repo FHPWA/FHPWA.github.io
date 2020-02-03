@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+	<link rel="preload" href="https://fredhappyface.github.io/fonts/FiraSansNF.woff2" as="font" type="font/woff2">
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="https://fredhappyface.github.io/css/main.css">
+	<script>
+		if ("serviceWorker" in navigator) {
+			navigator.serviceWorker.register("/{{projectFullName}}/sw.js", { scope: "/{{projectFullName}}/" });
+		}
+		/* read data from local storage */
+		var data = JSON.parse(localStorage.getItem('com.fredhappyface'));
+		// set the theme to the appropriate css
+		document.head.innerHTML += '<link rel="stylesheet" href="https://fredhappyface.github.io/css/theme/' + (data && data.theme ? data.theme : "auto") + '.css"  id="theme">';
+		// set the text size
+		var declaration = document.styleSheets[0].cssRules[0].style;
+		declaration.setProperty("--text-mod", (data && data.text ? data.text : "1"))
+	</script>
+
+	<meta name="Description" content="Author: FredHappyface; Category: Cryptography,
+	Proof of concept; Cost: Free">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!--Android app icon-->
+	<link rel="manifest" href="/{{projectFullName}}/manifest.json">
+	<meta name="theme-color" content="#000000" />
+
+	<!--iOS touch icon-->
+	<link rel="apple-touch-icon" sizes="180x180" href="images/appicons/square-180.png">
+
+	<!--Bookmark, Browser favicon-->
+	<link rel="icon" type="image/png" sizes="256x256" href="images/appicons/squircle-256.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/appicons/squircle-256.png">
+
+	<!--Windows 8, 10 tile -->
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" sizes="150x150" content="images/appicons/square-180.png">
+	<meta name="msapplication-starturl" content="/{{projectFullName}}/">
+
+	<!--Title-->
+	<title>{{pageName}}</title>
+
+
+</head>
+
+<body>
+
+	<div class="section--nav-bar c-app-bar--{{stylesNamespace}}">
+
+		<div class="app-bar">
+			<div class="section__content">
+				<div class="left">
+					<h1>{{projectShortName}}</h1>
+				</div>
+				<div class="pair right">
+					<a href="https://fredhappyface.github.io/PWA.Home/info.html">
+						<h1>&#xf449;</h1>
+					</a>
+					<a href="https://fredhappyface.github.io/PWA.Home/settings.html">
+						<h1>&#xf423;</h1>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		{{#isNavigation}}
+		<nav id="js-nav">
+			<ul class="nav__content" id="js-nav__content">
+				{{#navContent}}
+				<li>
+					<a href="{{link}}" {{#current}}class="current"{{/current}}>{{text}}</a>
+				</li>
+				{{/navContent}}
+
+			</ul>
+			<a class="overflow" id="js-overflow">More...</a>
+			<ul class="nav__overflow" id="js-nav__overflow">
+			</ul>
+		</nav>
+		{{/isNavigation}}
+	</div>
+
+	<div class="buffer--nav-bar">
+	</div>
+
+	<div id="js-toast" >
+		<div><p id="js-toast__text" class="c-toast"></p></div>
+	</div>
+
+	{{#pageContent}}
+	<div class="section c-{{#primary}}primary{{/primary}}{{^primary}}secondary{{/primary}}">
+		<div class="section__content">
+			{{& htmlContent}}
+		</div>
+	</div>
+	{{/pageContent}}
+
+	{{#pageScript}}
+	<script src="scripts/{{script}}"></script>
+	{{/pageScript}}
+
+	<script src="https://fredhappyface.github.io/scripts/script.js"></script>
+	{{#isNavigation}}
+	<script src="https://fredhappyface.github.io/scripts/navbar.js"></script>
+	{{/isNavigation}}
+
+</body>
+
+</html>
