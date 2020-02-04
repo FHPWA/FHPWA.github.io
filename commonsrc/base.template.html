@@ -9,13 +9,16 @@
 		if ("serviceWorker" in navigator) {
 			navigator.serviceWorker.register("/{{projectFullName}}/sw.js", { scope: "/{{projectFullName}}/" });
 		}
-		/* read data from local storage */
-		var data = JSON.parse(localStorage.getItem('com.fredhappyface'));
-		// set the theme to the appropriate css
-		document.head.innerHTML += '<link rel="stylesheet" href="https://fredhappyface.github.io/css/theme/' + (data && data.theme ? data.theme : "auto") + '.css"  id="theme">';
-		// set the text size
-		var declaration = document.styleSheets[0].cssRules[0].style;
-		declaration.setProperty("--text-mod", (data && data.text ? data.text : "1"))
+		/* read data from local storage and set css vars*/
+		let settingData = JSON.parse(localStorage.getItem('com.fredhappyface'));
+		const declaration = document.styleSheets[0].cssRules[0].style;
+		declaration.setProperty("--text-mod", (settingData.textSize.size ? settingData.textSize.size : "1"))
+		if (settingData.theme.name !== "auto"){
+			declaration.setProperty("--var-c-primary", (settingData.theme.cPrimary ? settingData.theme.cPrimary : "#FAFAFA"))
+			declaration.setProperty("--var-c-secondary", (settingData.theme.cSecondary ? settingData.theme.cSecondary : "#EAEAEB"))
+			declaration.setProperty("--var-c-text", (settingData.theme.cText ? settingData.theme.cText : "#383A42"))
+			declaration.setProperty("--var-c-black", (settingData.theme.cBlack ? settingData.theme.cBlack : "0"))
+		}
 	</script>
 
 	<meta name="Description" content="Author: FredHappyface; Category: Cryptography,
