@@ -44,7 +44,7 @@ function saveT(tRadios, type, tConst) {
 	let radioIndex = 0;
 	for (let iteration = 0, length = tRadios.length; iteration < length; iteration++) {
 		if (tRadios[iteration].checked) {
-			radioIndex = parseInt(tRadios[i].value, 10);
+			radioIndex = parseInt(tRadios[iteration].value, 10);
 			break;
 		}
 	}
