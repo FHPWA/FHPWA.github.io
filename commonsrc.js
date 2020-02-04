@@ -133,6 +133,7 @@ for (let index = 0; index < pages.length; index++) {
 	page.navContent[index].current = true;
 	page.pageContent = pages[index].pageContent;
 	page.pageName = pages[index].pageName;
+	page.pageScript = pages[index].pageScript;
 	doMangleAndWrite("base.template.html", page, "example-out/" + pages[index].pageUrl)
 }
 

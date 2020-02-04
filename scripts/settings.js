@@ -1,92 +1,120 @@
 /* eslint-disable prefer-const */
 
 if (localStorage.getItem("com.fredhappyface") === null) {
-	// eslint-disable-next-line no-var
-	var data = {
-		"theme": "auto",
-		"text": "1",
-		"iconTopLeft": "50%",
-		"iconTopRight": "50%",
-		"iconBottomLeft": "50%",
-		"iconBottomRight": "50%",
-	};
+	settingData = {
+		"theme": {
+			"name": "auto",
+			"cPrimary": "#FAFAFA",
+			"cSecondary": "#EAEAEB",
+			"cText": "#383A42",
+			"cBlack": "0",
+		},
+		"textSize": {
+			"name": "med",
+			"size": "1"
+		},
+		"iconShape": {
+			"name": "circle",
+			"iconTopLeft": "50%",
+			"iconTopRight": "50%",
+			"iconBottomLeft": "50%",
+			"iconBottomRight": "50%",
+		}
+	}
 }
 
 /**
- * Save data onto local storage - Over 95% of browsers support this so I'm not
+ * Save settingData onto local storage - Over 95% of browsers support this so I'm not
  * going to check for it
  * @return {void}
  */
 function save() {
-	localStorage.setItem("com.fredhappyface", JSON.stringify(data));
+	localStorage.setItem("com.fredhappyface", JSON.stringify(settingData));
 	return;
 }
 
-let themeRadios = document.getElementsByName("themeR");
-let textRadios = document.getElementsByName("textR");
-let shapeRadios = document.getElementsByName("shapeR");
-
-let themeList = ["", "light", "dark", "black", "auto"];
-
-let textList = ["", "0.75", "1", "1.5"];
-let textIds = ["", "small", "med", "large"];
-
-// TopLeft, TopRight, BottomLeft, BottomRight
-let shapeList = [["", "", "", ""], ["0%", "0%", "0%", "0%"],
-	["50%", "50%", "50%", "50%"], ["10%", "10%", "10%", "10%"],
-	["50%", "50%", "50%", "10%"]];
-let shapeIds = ["", "square", "circle", "squircle", "teardrop"];
 
 // Set the checked radio buttons for theme, textSize and iconShape
-document.getElementById(data.theme).checked = true;
-let textRadioIndex = textList.indexOf(data.text);
-if (textRadioIndex > -1) {
-	document.getElementById(textIds[textRadioIndex]).checked = true;
-}
-for (let shapeRadioIndex = 0; shapeRadioIndex < shapeList.length;
-	shapeRadioIndex++) {
-	if (shapeList[shapeRadioIndex][0] === data.iconTopLeft &&
-		shapeList[shapeRadioIndex][1] === data.iconTopRight &&
-		shapeList[shapeRadioIndex][2] === data.iconBottomLeft &&
-		shapeList[shapeRadioIndex][3] === data.iconBottomRight) {
-		document.getElementById(shapeIds[shapeRadioIndex]).checked = true;
+document.getElementById(settingData.theme.name).checked = true;
+document.getElementById(settingData.textSize.name).checked = true;
+document.getElementById(settingData.iconShape.name).checked = true;
+
+
+function saveT(tRadios, type, tConst) {
+	let radioIndex = 0;
+	for (let iteration = 0, length = tRadios.length; iteration < length; iteration++) {
+		if (tRadios[iteration].checked) {
+			radioIndex = parseInt(tRadios[i].value, 10);
+			break;
+		}
 	}
+	settingData[type] = tConst[radioIndex];
+	save();
+	location.reload();
 }
 
 /**
  * saveTheme takes the current index of the theme radio button and uses
- * themeList to identify the theme to set in localStorage
+ * themes to identify the theme to set in localStorage
  */
 function saveTheme() { // eslint-disable-line no-unused-vars
-	let theme = 0;
 
-	for (let i = 0, length = themeRadios.length; i < length; i++) {
-		if (themeRadios[i].checked) {
-			theme = parseInt(themeRadios[i].value, 10);
-			break;
-		}
-	}
-	data.theme = themeList[theme];
-	save();
-	location.reload();
+	const themes = [
+		{},
+		{
+			"name": "light",
+			"cPrimary": "#FAFAFA",
+			"cSecondary": "#EAEAEB",
+			"cText": "#383A42",
+			"cBlack": "0",
+		},
+		{
+			"name": "dark",
+			"cPrimary": "#181A1F",
+			"cSecondary": "#282C34",
+			"cText": "#ABB2BF",
+			"cBlack": "0",
+		},
+		{
+			"name": "black",
+			"cPrimary": "#000000",
+			"cSecondary": "#000000",
+			"cText": "#ABB2BF",
+			"cBlack": "1",
+		},
+		{
+			"name": "auto",
+			"cPrimary": null,
+			"cSecondary": null,
+			"cText": null,
+		},
+	]
+
+	saveT(document.getElementsByName("themeR"), "theme", themes)
 }
 
 /**
  * saveText takes the current index of the textSize radio button and uses
- * textList to identify the text size to set in localStorage
+ * textSizes to identify the text size to set in localStorage
  */
 function saveText() { // eslint-disable-line no-unused-vars
-	let text = 0;
-
-	for (let i = 0, length = textRadios.length; i < length; i++) {
-		if (textRadios[i].checked) {
-			text = parseInt(textRadios[i].value, 10);
-			break;
-		}
-	}
-	data.text = textList[text];
-	save();
-	location.reload();
+	const textSizes = [
+		{
+		},
+		{
+			"name": "small",
+			"size": "0.75"
+		},
+		{
+			"name": "med",
+			"size": "1"
+		},
+		{
+			"name": "large",
+			"size": "1.5"
+		},
+	]
+	saveT(document.getElementsByName("textR"), "textSize", textSizes)
 }
 
 /**
@@ -94,18 +122,39 @@ function saveText() { // eslint-disable-line no-unused-vars
  * shapeList to set the icon shape in localStorage
  */
 function saveShape() { // eslint-disable-line no-unused-vars
-	let shape = 0;
 
-	for (let i = 0, length = shapeRadios.length; i < length; i++) {
-		if (shapeRadios[i].checked) {
-			shape = parseInt(shapeRadios[i].value, 10);
-			break;
+	const iconShapes = [
+		{
+		},
+		{
+			"name": "square",
+			"iconTopLeft": "0%",
+			"iconTopRight": "0%",
+			"iconBottomLeft": "0%",
+			"iconBottomRight": "0%",
+		},
+		{
+			"name": "circle",
+			"iconTopLeft": "50%",
+			"iconTopRight": "50%",
+			"iconBottomLeft": "50%",
+			"iconBottomRight": "50%",
+		},
+		{
+			"name": "squircle",
+			"iconTopLeft": "10%",
+			"iconTopRight": "10%",
+			"iconBottomLeft": "10%",
+			"iconBottomRight": "10%",
+		},
+		{
+			"name": "teardrop",
+			"iconTopLeft": "50%",
+			"iconTopRight": "50%",
+			"iconBottomLeft": "50%",
+			"iconBottomRight": "10%",
 		}
-	}
-	data.iconTopLeft = shapeList[shape][0];
-	data.iconTopRight = shapeList[shape][1];
-	data.iconBottomLeft = shapeList[shape][2];
-	data.iconBottomRight = shapeList[shape][3];
-	save();
-	location.reload();
+	]
+
+	saveT(document.getElementsByName("shapeR"), "iconShape", iconShapes)
 }

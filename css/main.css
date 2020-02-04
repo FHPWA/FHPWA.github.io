@@ -5,6 +5,10 @@
 	--var-icon-top-right: 0%;
 	--var-icon-bottom-left: 0%;
 	--var-icon-bottom-right: 0%;
+	--var-c-primary: #FAFAFA;
+	--var-c-secondary: #EAEAEB;
+	--var-c-text: #383A42;
+	--var-c-black: 0;
 	/* Constants */
 	--const-element-on-top: 99;
 	--const-toast-bottom-margin: 1em;
@@ -13,6 +17,14 @@
 	--const-max-content-width: 55em;
 	--const-toast-timer: 2000ms;
 	/* Must be the same as in script.js */
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--var-c-primary: #181A1F;
+		--var-c-secondary: #282C34;
+		--var-c-text: #ABB2BF;
+	}
 }
 
 *, *::before, *::after {
@@ -100,7 +112,7 @@ form label {
 	overflow: auto;
 }
 
-.app-bar > div {
+.app-bar>div {
 	display: flex;
 }
 
@@ -147,7 +159,7 @@ form label {
 	animation: fade-in calc(var(--const-toast-timer) * 0.15), fade-out calc(var(--const-toast-timer) * 0.15) calc(var(--const-toast-timer) * 0.85);
 }
 
-#js-toast > div > p {
+#js-toast>div>p {
 	border: 0.1em;
 	border-style: solid;
 	border-radius: var(--const-toast-rounding);
@@ -157,7 +169,7 @@ form label {
 /* Centre content when the page is greater than 55em wide
 */
 
-nav, .section__content, .section__content--settings, .section > div, #js-toast > div {
+nav, .section__content, .section__content--settings, .section>div, #js-toast>div {
 	max-width: var(--const-max-content-width);
 	margin: auto;
 	padding: 1em;
@@ -432,7 +444,7 @@ form {
 	background-color: rgba(0, 0, 0, 0);
 }
 
-button, .css-file, form textarea, form input, .code pre {
+button, .css-file, form textarea, form input, form select, .code pre {
 	font-family: 'Fira Sans';
 	border-style: solid;
 	border-radius: var(--const-element-rounding);
@@ -526,7 +538,7 @@ form textarea, form input {
 
 /* Show the indicator (dot/circle) when checked */
 
-.css-radio input:checked ~ .check-mark::after {
+.css-radio input:checked~.check-mark::after {
 	display: block;
 }
 
@@ -600,4 +612,49 @@ audio {
 
 .c-app-bar--shibe, .c-app-bar--shibe a {
 	background-color: #CDA780;
+}
+
+
+
+body {
+	background-color: var(--var-c-primary);
+	color: var(--var-c-text);
+}
+
+/*
+As all elements are black, add a white bottom border
+*/
+
+.section, .section-nav, body {
+	border-bottom: calc(0.1em * var(--var-c-black));
+	border-bottom-style: solid;
+	border-bottom-color: #ABB2BF;
+}
+
+/* Light background colours */
+.c-primary, .c-secondary, .c-primary a, .c-secondary a {
+	color: var(--var-c-text);
+}
+
+/* Colours */
+.c-primary {
+	background-color: var(--var-c-primary);
+}
+
+.c-secondary {
+	background-color: var(--var-c-secondary);
+}
+
+/* Colour form elements (and related) */
+button, .css-file, form textarea, form input {
+	border-color: var(--var-c-text);
+	color: var(--var-c-text);
+}
+/* Colour the custom radio button */
+.check-mark {
+	border-color: var(--var-c-text);
+}
+/* Colour the indicator (dot/circle) */
+.css-radio .check-mark::after {
+	background: var(--var-c-text);
 }
