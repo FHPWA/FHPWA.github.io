@@ -2,7 +2,7 @@
 <html lang="en-GB">
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="https://fredhappyface.github.io/css/main.css">
 	<script>
 		if ("serviceWorker" in navigator) {
 				navigator.serviceWorker.register("/sw.js", {scope: "/"});
@@ -13,12 +13,19 @@
 	</script>
 	<script>
 		/* read data from local storage */
-		var data = JSON.parse(localStorage.getItem('com.fredhappyface'));
-		// set the theme to the appropriate css
-		document.head.innerHTML += '<link rel="stylesheet" href="css/theme/' + (data && data.theme ? data.theme : "auto") + '.css"  id="theme">';
-		// set the text size
-		var declaration = document.styleSheets[0].cssRules[0].style;
-		declaration.setProperty("--text-mod", (data && data.text ? data.text : "1"))
+		let settingData = JSON.parse(localStorage.getItem('com.fredhappyface'));
+		const rootStyles = document.styleSheets[0].cssRules[0].style;
+		const darkStyles = document.styleSheets[0].cssRules[1].cssRules[0].style;
+		rootStyles.setProperty("--text-mod", (settingData.textSize.size ? settingData.textSize.size : "1"))
+		if (settingData.theme.name !== "auto"){
+			rootStyles.setProperty("--var-c-primary", (settingData.theme.cPrimary ? settingData.theme.cPrimary : "#FAFAFA"))
+			rootStyles.setProperty("--var-c-secondary", (settingData.theme.cSecondary ? settingData.theme.cSecondary : "#EAEAEB"))
+			rootStyles.setProperty("--var-c-text", (settingData.theme.cText ? settingData.theme.cText : "#383A42"))
+			darkStyles.setProperty("--var-c-primary", (settingData.theme.cPrimary ? settingData.theme.cPrimary : "#181A1F"))
+			darkStyles.setProperty("--var-c-secondary", (settingData.theme.cSecondary ? settingData.theme.cSecondary : "#282C34"))
+			darkStyles.setProperty("--var-c-text", (settingData.theme.cText ? settingData.theme.cText : "#ABB2BF"))
+			rootStyles.setProperty("--var-c-black", (settingData.theme.cBlack ? settingData.theme.cBlack : "0"))
+		}
 	</script>
 
 	<meta name="Description" content="Author: FredHappyface; Category: Cryptography,

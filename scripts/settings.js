@@ -11,7 +11,7 @@ if (localStorage.getItem("com.fredhappyface") === null) {
 		},
 		"textSize": {
 			"name": "med",
-			"size": "1"
+			"size": "1",
 		},
 		"iconShape": {
 			"name": "circle",
@@ -19,13 +19,13 @@ if (localStorage.getItem("com.fredhappyface") === null) {
 			"iconTopRight": "50%",
 			"iconBottomLeft": "50%",
 			"iconBottomRight": "50%",
-		}
-	}
+		},
+	};
 }
 
 /**
- * Save settingData onto local storage - Over 95% of browsers support this so I'm not
- * going to check for it
+ * Save settingData onto local storage - Over 95% of browsers support this
+ * so I'm not going to check for it
  * @return {void}
  */
 function save() {
@@ -39,7 +39,13 @@ document.getElementById(settingData.theme.name).checked = true;
 document.getElementById(settingData.textSize.name).checked = true;
 document.getElementById(settingData.iconShape.name).checked = true;
 
-
+/**
+ *
+ * @param {NodeListOf<HTMLElement>} tRadios a list of radio buttons
+ * @param {string} type text representation of the type. see first children of
+ * settingData
+ * @param {json} tConst constant containing variants of the given setting
+ */
 function saveT(tRadios, type, tConst) {
 	let radioIndex = 0;
 	for (let iteration = 0, length = tRadios.length; iteration < length; iteration++) {
@@ -58,7 +64,6 @@ function saveT(tRadios, type, tConst) {
  * themes to identify the theme to set in localStorage
  */
 function saveTheme() { // eslint-disable-line no-unused-vars
-
 	const themes = [
 		{},
 		{
@@ -88,9 +93,9 @@ function saveTheme() { // eslint-disable-line no-unused-vars
 			"cSecondary": null,
 			"cText": null,
 		},
-	]
+	];
 
-	saveT(document.getElementsByName("themeR"), "theme", themes)
+	saveT(document.getElementsByName("themeR"), "theme", themes);
 }
 
 /**
@@ -103,18 +108,18 @@ function saveText() { // eslint-disable-line no-unused-vars
 		},
 		{
 			"name": "small",
-			"size": "0.75"
+			"size": "0.75",
 		},
 		{
 			"name": "med",
-			"size": "1"
+			"size": "1",
 		},
 		{
 			"name": "large",
-			"size": "1.5"
+			"size": "1.5",
 		},
-	]
-	saveT(document.getElementsByName("textR"), "textSize", textSizes)
+	];
+	saveT(document.getElementsByName("textR"), "textSize", textSizes);
 }
 
 /**
@@ -122,7 +127,6 @@ function saveText() { // eslint-disable-line no-unused-vars
  * shapeList to set the icon shape in localStorage
  */
 function saveShape() { // eslint-disable-line no-unused-vars
-
 	const iconShapes = [
 		{
 		},
@@ -153,8 +157,7 @@ function saveShape() { // eslint-disable-line no-unused-vars
 			"iconTopRight": "50%",
 			"iconBottomLeft": "50%",
 			"iconBottomRight": "10%",
-		}
-	]
-
-	saveT(document.getElementsByName("shapeR"), "iconShape", iconShapes)
+		},
+	];
+	saveT(document.getElementsByName("shapeR"), "iconShape", iconShapes);
 }

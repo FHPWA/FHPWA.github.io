@@ -2,6 +2,7 @@ const request = require("request");
 const mustache = require("mustache");
 const fs = require("fs");
 const path = require("path");
+const cheerio = require("cheerio");
 
 /**
  *
@@ -53,17 +54,6 @@ function doWrite(string, outFile) {
 	});
 }
 
-/**
- *
- * @param {string} templateFile
- * @param {json} mangle
- * @param {string} outFile
- */
-function doMangleAndWrite(templateFile, mangle, outFile) {
-	fs.readFile("commonsrc/" + templateFile, "utf8", function(error, data) {
-		doWrite(doMangle(data, mangle), outFile);
-	});
-}
 
 /**
  *
@@ -76,56 +66,47 @@ async function doRemoteMangleAndWrite(templateName, mangle, outFile) {
 }
 
 
-// Base
-base = {
-	projectFullName: "PWA.Example",
-	projectShortName: "Example",
-	stylesNamespace: "example",
-	projectColour: "#602030",
-	isNavigation: true,
-	precacheFiles: [
-		{
-			fileName: "PWA.Example/",
-		},
-		{
-			fileName: "PWA.Example/index.html",
-		},
-	],
-};
+/**
+ *
+ * @param {string} file file containing page data
+ * @return {json} page with name, url, content, and scripts
+ */
+function getPageData(file) {
+	data = fs.readFileSync("src/" + file, "utf8");
+	const sections = cheerio.load(data);
+	const page = {
+		pageName: sections("title").text(),
+		pageUrl: file.split(".")[0] + ".html",
+		pageContent: [],
+		pageScript: [],
+	};
+	sections("section").each(function(index, element) {
+		page.pageContent.push({
+			htmlContent: sections(element).html(),
+			primary: index % 2 === 1,
+		});
+	});
+	sections("script").each(function(index, element) {
+		page.pageScript.push({ script: sections(element).html() });
+	});
+	return page;
+}
 
-pages = [
-	{
-		pageName: "Nav 1",
-		pageUrl: "nav1.html",
-		pageContent: [
-			{
-				primary: true,
-				htmlContent: "<h1>This is some content</h1><p>Looks ok to me.</p>",
-			},
-			{
-				htmlContent: "<h1>This is some more content</h1><p>Because I can - Would be a good idea to have this read in from a file or something.</p>",
-			},
-		],
-		pageScript: [
-			{
-				script: "example-script.js",
-			},
-		],
-	},
-	{
-		pageName: "Nav 2",
-		pageUrl: "nav2.html",
-		pageContent: [
-			{
-				primary: true,
-				htmlContent: "<h1>This is some content</h1><p>Looks ok to me.</p>",
-			},
-		],
-	},
-];
+
+const rawData = JSON.parse(fs.readFileSync("src/config.json"));
+const files = rawData.files;
+const base = rawData.base;
+
+
+const pages = [];
+for (let index = 0; index < files.length; index++) {
+	pages.push(getPageData(files[index]));
+}
+
 /**
  * Populate navContent
  */
+
 base.navContent = [];
 for (let index = 0; index < pages.length; index++) {
 	base.navContent.push({
@@ -141,10 +122,10 @@ for (let index = 0; index < pages.length; index++) {
 	page.pageContent = pages[index].pageContent;
 	page.pageName = pages[index].pageName;
 	page.pageScript = pages[index].pageScript;
-	doMangleAndWrite("base.template.html", page, "example-out/" + pages[index].pageUrl);
+	doRemoteMangleAndWrite("base.template.html", page, pages[index].pageUrl);
 }
 
 // Manifest
-doMangleAndWrite("manifest.template.json", base, "example-out/manifest.json");
+doRemoteMangleAndWrite("manifest.template.json", base, "manifest.json");
 // Service Worker
-doMangleAndWrite("sw.template.js", base, "example-out/sw.js");
+doRemoteMangleAndWrite("sw.template.js", base, "sw.js");

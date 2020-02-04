@@ -26,7 +26,17 @@ FredHappyface.github.io is built with HTML5 and CSS3
 ## commonsrc
 Contains templates that are can be grabbed by other projects. It seems sensible
 to keep them here to ease maintainability. See commonsrc.js for a few examples
-of how these can be used
+of how these can be used.
+
+Alternatively, if you'd rather hit the ground running, run the following at the
+root of your project.
+```bash
+wget https://fredhappyface.github.io/commonsrc/build.js
+```
+
+Be sure to include the template files under src/ and a config for base and the
+list of page templates in the order desired.
+
 
 ## Changelog
 See the [CHANGELOG](/CHANGELOG.md) for more information.
