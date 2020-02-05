@@ -100,3 +100,28 @@ async function copyToClipboard(stringToCopy) {
 	}
 	return;
 }
+
+
+/**
+ * Returns a random integer between min (inclusive) and max (exclusive)
+ * @param {int} min minimum int inclusive
+ * @param {int} max maximum int exclusive
+ * @return {int} random number
+ */
+function getRandomInt(min, max) {
+	let rand = window.crypto.getRandomValues(new Uint8Array(1)) / 256
+	return Math.floor(rand * (max - min)) + min;
+}
+
+/**
+ *
+ * @param {arr[]} array array of values to shuffle
+ * @return {arr[]} shuffled array
+ */
+function shuffle(array) { // eslint-disable-line no-unused-vars
+	for (let index = array.length - 1; index > 0; index--) {
+		const swap = getRandomInt(0, array.length);
+		[array[index], array[swap]] = [array[swap], array[index]];
+	}
+	return array;
+}
