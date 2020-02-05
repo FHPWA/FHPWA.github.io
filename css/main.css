@@ -497,6 +497,7 @@ form textarea, form input {
 	height: 1em;
 	width: 1em;
 	border-radius: 50%;
+	border-color: var(--var-c-text);
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
@@ -515,6 +516,7 @@ form textarea, form input {
 	width: 0.5em;
 	height: 0.5em;
 	border-radius: 50%;
+	background: var(--var-c-text);
 }
 
 /* Show the indicator (dot/circle) when checked */
@@ -610,11 +612,4 @@ audio {
 }
 .c-secondary {
 	background-color: var(--var-c-secondary);
-}
-
-.check-mark {
-	border-color: var(--var-c-text);
-}
-.css-radio .check-mark::after {
-	background: var(--var-c-text);
 }

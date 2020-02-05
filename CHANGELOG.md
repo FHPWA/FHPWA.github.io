@@ -2,6 +2,9 @@
 All major and minor version changes will be documented in this file. Details of
 patch-level version changes can be found in [commit messages](../../commits/master).
 
+## 2020.1 - 2020/02/05
+- Themes now use css variables
+
 ## Fix scaling on iOS - 10/01/2020
 - Use smaller text on iOS
 - Prevent heading overflow on all devices
