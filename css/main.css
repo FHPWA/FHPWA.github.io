@@ -1,10 +1,10 @@
 :root {
 	/* Variables */
 	--text-mod: 1;
-	--var-icon-top-left: 0%;
-	--var-icon-top-right: 0%;
-	--var-icon-bottom-left: 0%;
-	--var-icon-bottom-right: 0%;
+	--var-icon-top-left: 50%;
+	--var-icon-top-right: 50%;
+	--var-icon-bottom-left: 50%;
+	--var-icon-bottom-right: 50%;
 	--var-c-primary: #FAFAFA;
 	--var-c-secondary: #EAEAEB;
 	--var-c-text: #383A42;
@@ -79,6 +79,7 @@ pre span::before {
 
 /* CSS for iOS devices only
 */
+
 @supports (-webkit-overflow-scrolling: touch) {
 	input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], select:focus, textarea {
 		font-size: calc((16px + 0.4vw) * var(--text-mod));
@@ -87,6 +88,7 @@ pre span::before {
 
 /* Setup margins for text
 */
+
 h1, h2, h3, h4, h5, h6, p, span, form label, a, input {
 	margin-top: 0.3em;
 	margin-bottom: 0.5em;
@@ -104,6 +106,7 @@ form label {
 
 /* Define a section, this will expand to fill the whole page. meaning content is in horizontal 'stripes'
 */
+
 .section, .section--app-bar, .section--nav-bar, .app-bar, #js-toast {
 	width: 100%;
 	padding: 0px;
@@ -143,6 +146,7 @@ form label {
 }
 
 /* Toast Notifications */
+
 #js-toast {
 	bottom: var(--const-toast-bottom-margin);
 	visibility: hidden;
@@ -185,12 +189,14 @@ nav {
 
 /* Justify the text to keep it looking tidy
 */
+
 .section__content p {
 	text-align: justify;
 }
 
 /* Define an image - this will resize as the screen does so the page is adaptive
 */
+
 .img--scale, .img--fixed, .img--content {
 	padding: 0.1em 1em;
 }
@@ -201,6 +207,7 @@ nav {
 
 /* Define a wide image - this will always take up the width of the screen
 */
+
 .img--content-wide {
 	width: 100%;
 	padding: 0.1em 0em;
@@ -208,6 +215,7 @@ nav {
 
 /* Increase the width of images for tablet devices and other 'medium' form factors
 */
+
 @media only screen and (max-width: 55em) {
 	.img--content {
 		width: 50%;
@@ -216,6 +224,7 @@ nav {
 
 /* Make all of the actual images (inside the image containers fill the container) Give these a max height so the whole screen isn't taken up.
 */
+
 .img--content img, .img--content-wide img, .img--fixed img, .img--scale img {
 	border-radius: var(--const-element-rounding);
 	max-height: calc(var(--const-max-content-width)/ 2);
@@ -259,6 +268,7 @@ nav {
 
 /* Medium form factors
 */
+
 @media only screen and (max-width: 55em) {
 	.img--content {
 		width: 50%;
@@ -425,16 +435,19 @@ form {
 	background-color: rgba(0, 0, 0, 0);
 }
 
-button, .css-file, form textarea, form input, form select, .code pre {
-	font-family: 'Fira Sans';
+button, .css-file, form textarea, form input, form select, .code pre, progress {
 	border-style: solid;
 	border-radius: var(--const-element-rounding);
 	border-color: var(--var-c-text);
-	color: var(--var-c-text);
 	width: 100%;
+	border-width: 0.1em;
+}
+
+button, .css-file, form textarea, form input, form select, .code pre {
+	font-family: 'Fira Sans';
+	color: var(--var-c-text);
 	font-size: 1em;
 	background-color: rgba(0, 0, 0, 0);
-	border-width: 0.1em;
 	padding: 0.5em;
 }
 
@@ -448,6 +461,24 @@ button, .css-file {
 form textarea, form input {
 	resize: none;
 	overflow: auto;
+}
+
+progress {
+	margin: 0.5em 0em;
+	height: 1.5em;
+}
+
+progress::-webkit-progress-bar {
+	background-color: #00000000;
+	border-radius: var(--const-element-rounding);
+}
+
+progress::-webkit-progress-value {
+	border-radius: var(--const-element-rounding);
+}
+
+progress::-moz-progress-bar {
+	border-radius: var(--const-element-rounding);
 }
 
 /* Pairs */
@@ -597,12 +628,12 @@ audio {
 	background-color: #884BFA;
 }
 
-
 .section, .section-nav {
 	border-bottom: calc(0.1em * var(--var-c-black));
 	border-bottom-style: solid;
 	border-bottom-color: #ABB2BF;
 }
+
 .c-primary, .c-secondary, .c-primary a, .c-secondary a {
 	color: var(--var-c-text);
 }
@@ -610,6 +641,7 @@ audio {
 .c-primary {
 	background-color: var(--var-c-primary);
 }
+
 .c-secondary {
 	background-color: var(--var-c-secondary);
 }
