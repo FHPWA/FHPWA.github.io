@@ -598,7 +598,7 @@ audio {
 }
 
 
-.section, .section-nav, body {
+.section, .section-nav {
 	border-bottom: calc(0.1em * var(--var-c-black));
 	border-bottom-style: solid;
 	border-bottom-color: #ABB2BF;
