@@ -230,7 +230,7 @@ nav {
 
 .icon {
 	float: left;
-	width: calc(100%/6 - 0.01%);
+	width: calc(100%/6);
 	padding: 0.7em;
 }
 
@@ -272,14 +272,14 @@ nav {
 		width: calc(100%/3);
 	}
 	.icon--grid-xl {
-		width: calc(100%/2);
+		width: 100%;
 	}
 }
 
-/* Small form factors 35 * 16 px
+/* Small form factors 30 * 16 px
 */
 
-@media only screen and (max-width: 35em) {
+@media only screen and (max-width: 30em) {
 	.img--content {
 		width: 100%;
 		padding: 0.1em 0em;
