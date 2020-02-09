@@ -99,7 +99,7 @@ form label {
 }
 
 .setting-preview {
-	margin: 0.2em 0.2em 1.5em 0.2em;
+	margin: 0.2em;
 	border-radius: var(--const-element-rounding);
 	overflow: hidden;
 }
