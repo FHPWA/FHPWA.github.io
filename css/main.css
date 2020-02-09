@@ -213,14 +213,6 @@ nav {
 	padding: 0.1em 0em;
 }
 
-/* Increase the width of images for tablet devices and other 'medium' form factors
-*/
-
-@media only screen and (max-width: 55em) {
-	.img--content {
-		width: 50%;
-	}
-}
 
 /* Make all of the actual images (inside the image containers fill the container) Give these a max height so the whole screen isn't taken up.
 */
@@ -284,10 +276,10 @@ nav {
 	}
 }
 
-/* Small form factors 30 * 16 px
+/* Small form factors 35 * 16 px
 */
 
-@media only screen and (max-width: 30em) {
+@media only screen and (max-width: 35em) {
 	.img--content {
 		width: 100%;
 		padding: 0.1em 0em;
