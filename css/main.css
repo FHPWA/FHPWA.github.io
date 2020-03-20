@@ -53,6 +53,23 @@ body {
 	color: var(--var-c-text);
 }
 
+/* CSS for iOS devices only
+*/
+
+@supports (-webkit-overflow-scrolling: touch) {
+	input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], select:focus, textarea {
+		font-size: calc((16px + 0.4vw) * var(--text-mod));
+	}
+}
+
+/* Setup margins for text
+*/
+
+h1, h2, h3, h4, h5, h6, p, span, form label, a, input {
+	margin-top: 0.3em;
+	margin-bottom: 0.5em;
+}
+
 .code, .code pre {
 	font-family: 'Fira Code', monospace;
 }
@@ -77,23 +94,6 @@ pre span::before {
 	margin-right: 0.5em;
 }
 
-/* CSS for iOS devices only
-*/
-
-@supports (-webkit-overflow-scrolling: touch) {
-	input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], select:focus, textarea {
-		font-size: calc((16px + 0.4vw) * var(--text-mod));
-	}
-}
-
-/* Setup margins for text
-*/
-
-h1, h2, h3, h4, h5, h6, p, span, form label, a, input {
-	margin-top: 0.3em;
-	margin-bottom: 0.5em;
-}
-
 form label {
 	display: inline-block;
 }
@@ -102,6 +102,21 @@ form label {
 	margin: 0.2em;
 	border-radius: var(--const-element-rounding);
 	overflow: hidden;
+}
+
+/* Pull content to the rhs and lhs respectively
+*/
+
+.right {
+	position: relative;
+	padding-right: 0em;
+	float: right;
+}
+
+.left {
+	position: relative;
+	padding-left: 0em;
+	float: left;
 }
 
 /* Define a section, this will expand to fill the whole page. meaning content is in horizontal 'stripes'
@@ -145,42 +160,6 @@ form label {
 	z-index: var(--const-element-on-top);
 }
 
-/* Toast Notifications */
-
-#js-toast {
-	bottom: var(--const-toast-bottom-margin);
-	visibility: hidden;
-	margin: 0 auto;
-	text-align: center;
-	position: fixed;
-}
-
-#js-toast.show {
-	visibility: visible;
-	animation: fade-in calc(var(--const-toast-timer) * 0.15), fade-out calc(var(--const-toast-timer) * 0.15) calc(var(--const-toast-timer) * 0.85);
-}
-
-#js-toast>div>p {
-	border: 0.1em;
-	border-style: solid;
-	border-radius: var(--const-toast-rounding);
-	padding: 1em;
-}
-
-/* Centre content when the page is greater than 55em wide
-*/
-
-nav, .section__content, .section__content--settings, .section>div, #js-toast>div {
-	max-width: var(--const-max-content-width);
-	margin: auto;
-	padding: 1em;
-	overflow: hidden;
-}
-
-nav {
-	padding-top: 0em;
-}
-
 .section__content--settings {
 	margin: 0em;
 	padding: 0.5em 1em;
@@ -192,6 +171,16 @@ nav {
 
 .section__content p {
 	text-align: justify;
+}
+
+/* Centre content when the page is greater than 55em wide
+*/
+
+nav, .section__content, .section__content--settings, .section>div, #js-toast>div {
+	max-width: var(--const-max-content-width);
+	margin: auto;
+	padding: 1em;
+	overflow: hidden;
 }
 
 /* Define an image - this will resize as the screen does so the page is adaptive
@@ -213,13 +202,12 @@ nav {
 	padding: 0.1em 0em;
 }
 
-
 /* Make all of the actual images (inside the image containers fill the container) Give these a max height so the whole screen isn't taken up.
 */
 
 .img--content img, .img--content-wide img, .img--fixed img, .img--scale img {
 	border-radius: var(--const-element-rounding);
-	max-height: calc(var(--const-max-content-width)/ 2);
+	max-height: calc(var(--const-max-content-width) / 2);
 	display: block;
 }
 
@@ -230,19 +218,19 @@ nav {
 
 .icon {
 	float: left;
-	width: calc(100%/6);
+	width: calc(100% / 6);
 	padding: 0.7em;
 }
 
 .icon--grid-l {
-	width: calc(100%/4);
-	padding: 1.4em;
-}
-.icon--grid-xl {
-	width: calc(100%/2);
+	width: calc(100% / 4);
 	padding: 1.4em;
 }
 
+.icon--grid-xl {
+	width: calc(100% / 2);
+	padding: 1.4em;
+}
 
 .row {
 	display: flex;
@@ -266,10 +254,10 @@ nav {
 		width: 50%;
 	}
 	.icon--pwa, .icon--grid {
-		width: calc(100%/4);
+		width: calc(100% / 4);
 	}
 	.icon--grid-l {
-		width: calc(100%/3);
+		width: calc(100% / 3);
 	}
 	.icon--grid-xl {
 		width: 100%;
@@ -285,10 +273,10 @@ nav {
 		padding: 0.1em 0em;
 	}
 	.icon--pwa, .icon--grid {
-		width: calc(100%/3);
+		width: calc(100% / 3);
 	}
 	.icon--grid-l {
-		width: calc(100%/2);
+		width: calc(100% / 2);
 	}
 	.icon--grid-xl {
 		width: 100%;
@@ -300,7 +288,7 @@ nav {
 
 .img img, .icon img {
 	border-radius: var(--const-element-rounding);
-	max-height: calc(var(--const-max-content-width)/ 2);
+	max-height: calc(var(--const-max-content-width) / 2);
 	display: block;
 	width: 100%;
 	margin: 0 auto;
@@ -319,21 +307,6 @@ nav {
 	border-radius: var(--var-icon-top-left) var(--var-icon-top-right) var(--var-icon-bottom-right) var(--var-icon-bottom-left);
 }
 
-/* Pull content to the rhs and lhs respectively
-*/
-
-.right {
-	position: relative;
-	padding-right: 0em;
-	float: right;
-}
-
-.left {
-	position: relative;
-	padding-left: 0em;
-	float: left;
-}
-
 /*
 Define the nav
 */
@@ -341,9 +314,10 @@ Define the nav
 nav {
 	position: relative;
 	overflow: hidden;
+	padding-top: 0em;
 }
 
-nav ul {
+nav>ul {
 	display: inline-block;
 	list-style: none;
 	min-width: 1px;
@@ -351,12 +325,12 @@ nav ul {
 	margin: 0em;
 }
 
-nav ul li {
+nav>ul>li {
 	display: inline-block;
 	padding: 0.5em 1em 0.5em 0em;
 }
 
-nav ul li a, .overflow {
+nav>ul>li>a, .overflow {
 	text-decoration: none;
 	padding: 0.7em 0.3em;
 	border-bottom-width: 0.1em;
@@ -367,12 +341,12 @@ nav ul li a, .overflow {
 	display: none;
 }
 
-nav ul li a.current {
+nav>ul>li>a.current {
 	padding-bottom: 0.5em;
 	border-bottom-width: 0.3em;
 }
 
-nav ul li a:hover, .overflow:hover, nav ul li a.current {
+nav>ul>li>a:hover, .overflow:hover, nav>ul>li>a.current {
 	border-bottom-style: solid;
 	cursor: pointer;
 }
@@ -439,7 +413,7 @@ button, .css-file, form textarea, form input, form select, .code pre, progress {
 }
 
 button, .css-file, form textarea, form input, form select, .code pre {
-	font-family: 'Fira Sans';
+	font-family: 'Fira Sans', sans-serif;
 	color: var(--var-c-text);
 	font-size: 1em;
 	background-color: rgba(0, 0, 0, 0);
@@ -470,6 +444,8 @@ progress::-webkit-progress-bar {
 
 progress::-webkit-progress-value {
 	border-radius: var(--const-element-rounding);
+	transition-property: width;
+	transition-duration: 0.7s;
 }
 
 progress::-moz-progress-bar {
@@ -589,6 +565,28 @@ Media
 
 audio {
 	margin: 1em 0;
+}
+
+/* Toast Notifications */
+
+#js-toast {
+	bottom: var(--const-toast-bottom-margin);
+	visibility: hidden;
+	margin: 0 auto;
+	text-align: center;
+	position: fixed;
+}
+
+#js-toast.show {
+	visibility: visible;
+	animation: fade-in calc(var(--const-toast-timer) * 0.15), fade-out calc(var(--const-toast-timer) * 0.15) calc(var(--const-toast-timer) * 0.85);
+}
+
+#js-toast>div>p {
+	border: 0.1em;
+	border-style: solid;
+	border-radius: var(--const-toast-rounding);
+	padding: 1em;
 }
 
 .c-app-bar--blackc4t, .c-app-bar--blackc4t a, .c-toast, .c-toast a {
