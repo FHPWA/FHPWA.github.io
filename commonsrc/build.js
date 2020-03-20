@@ -11,7 +11,7 @@ const cheerio = require("cheerio");
  */
 function getTemplate(templateName) {
 	return new Promise(function(resolve, reject) {
-		request("https://fredhappyface.github.io/commonsrc/" + templateName, { json: false }, function(error, res, body) {
+		request("https://fhpwa.github.io/commonsrc/" + templateName, { json: false }, function(error, res, body) {
 			if (error) {
 				reject(error);
 			}

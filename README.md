@@ -1,26 +1,22 @@
-<p float="left">
-<img src="https://img.shields.io/github/languages/top/fredhappyface/FredHappyface.github.io.svg?style=flat-square" alt="Github top language">
-<img src="https://img.shields.io/codacy/grade/15e9d901702e4b58a87681ab39c5ae49.svg?style=flat-square" alt="Codacy grade">
-<img src="https://img.shields.io/codacy/coverage/15e9d901702e4b58a87681ab39c5ae49.svg?style=flat-square" alt="Codacy coverage">
-<img src="https://img.shields.io/github/repo-size/fredhappyface/FredHappyface.github.io.svg?style=flat-square" alt="Repository size">
-<img src="https://img.shields.io/github/issues/fredhappyface/FredHappyface.github.io.svg?style=flat-square" alt="Issues">
-<img src="https://img.shields.io/github/license/fredhappyface/FredHappyface.github.io.svg?style=flat-square" alt="License">
-<img src="https://img.shields.io/github/commit-activity/m/fredhappyface/FredHappyface.github.io.svg?style=flat-square" alt="Commit activity">
-<img src="https://img.shields.io/github/last-commit/fredhappyface/FredHappyface.github.io.svg?style=flat-square" alt="Last commit">
-</p>
+[![Github top language](https://img.shields.io/github/languages/top/FHPWA/FHPWA.github.io.svg?style=for-the-badge)](../../)
+[![Codacy grade](https://img.shields.io/codacy/grade/[codacy-proj-id].svg?style=for-the-badge)](https://www.codacy.com/manual/FHPWA/FHPWA.github.io)
+[![Repository size](https://img.shields.io/github/repo-size/FHPWA/FHPWA.github.io.svg?style=for-the-badge)](../../)
+[![Issues](https://img.shields.io/github/issues/FHPWA/FHPWA.github.io.svg?style=for-the-badge)](../../issues)
+[![License](https://img.shields.io/github/license/FHPWA/FHPWA.github.io.svg?style=for-the-badge)](/LICENSE.md)
+[![Commit activity](https://img.shields.io/github/commit-activity/m/FHPWA/FHPWA.github.io.svg?style=for-the-badge)](../../commits/master)
+[![Last commit](https://img.shields.io/github/last-commit/FHPWA/FHPWA.github.io.svg?style=for-the-badge)](../../commits/master)
 
-
-# FredHappyface.github.io
+# FHPWA.github.io
 
 <img src="readme-assets/icons/name.png" alt="Project Icon" width="750">
 
 FredHappyface App Launcher provides links to web-based projects at
-https://FredHappyface.github.io/PWA.Home. Holds common CSS and JS used by
+https://FHPWA.github.io/home. Holds common CSS and JS used by
 other web projects.
 
 
 ## Language information
-FredHappyface.github.io is built with HTML5 and CSS3
+FHPWA.github.io is built with HTML5 and CSS3
 
 
 ## commonsrc
@@ -31,7 +27,7 @@ of how these can be used.
 Alternatively, if you'd rather hit the ground running, run the following at the
 root of your project.
 ```bash
-wget https://fredhappyface.github.io/commonsrc/build.js
+wget https://FHPWA.github.io/commonsrc/build.js
 ```
 
 Be sure to include the template files under src/ and a config for base and the

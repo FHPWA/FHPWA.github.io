@@ -10,12 +10,13 @@ const path = require("path");
  */
 function getTemplate(templateName) {
 	return new Promise(function(resolve, reject) {
-		request("https://fredhappyface.github.io/commonsrc/" + templateName, { json: false }, function(error, res, body) {
-			if (error) {
-				reject(error);
-			}
-			resolve(body);
-		});
+		request("https://fhpwa.github.io/commonsrc/" + templateName,
+			{ json: false }, function(error, res, body) {
+				if (error) {
+					reject(error);
+				}
+				resolve(body);
+			});
 	});
 }
 
@@ -78,17 +79,17 @@ async function doRemoteMangleAndWrite(templateName, mangle, outFile) {
 
 // Base
 base = {
-	projectFullName: "PWA.Example",
+	projectFullName: "Example",
 	projectShortName: "Example",
 	stylesNamespace: "example",
 	projectColour: "#602030",
 	isNavigation: true,
 	precacheFiles: [
 		{
-			fileName: "PWA.Example/",
+			fileName: "Example/",
 		},
 		{
-			fileName: "PWA.Example/index.html",
+			fileName: "Example/index.html",
 		},
 	],
 };
@@ -103,7 +104,9 @@ pages = [
 				htmlContent: "<h1>This is some content</h1><p>Looks ok to me.</p>",
 			},
 			{
-				htmlContent: "<h1>This is some more content</h1><p>Because I can - Would be a good idea to have this read in from a file or something.</p>",
+				htmlContent: "<h1>This is some more content</h1><p>Because I can - " +
+					"Would be a good idea to have this read in from a file or " +
+					"something.</p>",
 			},
 		],
 		pageScript: [
@@ -141,7 +144,8 @@ for (let index = 0; index < pages.length; index++) {
 	page.pageContent = pages[index].pageContent;
 	page.pageName = pages[index].pageName;
 	page.pageScript = pages[index].pageScript;
-	doMangleAndWrite("base.template.html", page, "example-out/" + pages[index].pageUrl);
+	doMangleAndWrite("base.template.html", page, "example-out/" +
+	pages[index].pageUrl);
 }
 
 // Manifest

@@ -38,12 +38,12 @@
 
 @font-face {
 	font-family: 'Fira Code';
-	src: local('Fira Code Light'), url('https://fredhappyface.github.io/fonts/FiraCode.woff2') format('woff2');
+	src: local('Fira Code Light'), url('https://fhpwa.github.io/fonts/FiraCode.woff2') format('woff2');
 }
 
 @font-face {
 	font-family: 'Fira Sans';
-	src: local('Fira Sans NF'), url('https://fredhappyface.github.io/fonts/FiraSansNF.woff2') format('woff2');
+	src: local('Fira Sans NF'), url('https://fhpwa.github.io/fonts/FiraSansNF.woff2') format('woff2');
 }
 
 body {
