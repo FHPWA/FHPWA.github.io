@@ -1,22 +1,22 @@
-[![Github top language](https://img.shields.io/github/languages/top/FHPWA/FHPWA.github.io.svg?style=for-the-badge)](../../)
-[![Codacy grade](https://img.shields.io/codacy/grade/[codacy-proj-id].svg?style=for-the-badge)](https://www.codacy.com/manual/FHPWA/FHPWA.github.io)
-[![Repository size](https://img.shields.io/github/repo-size/FHPWA/FHPWA.github.io.svg?style=for-the-badge)](../../)
-[![Issues](https://img.shields.io/github/issues/FHPWA/FHPWA.github.io.svg?style=for-the-badge)](../../issues)
-[![License](https://img.shields.io/github/license/FHPWA/FHPWA.github.io.svg?style=for-the-badge)](/LICENSE.md)
-[![Commit activity](https://img.shields.io/github/commit-activity/m/FHPWA/FHPWA.github.io.svg?style=for-the-badge)](../../commits/master)
-[![Last commit](https://img.shields.io/github/last-commit/FHPWA/FHPWA.github.io.svg?style=for-the-badge)](../../commits/master)
+[![Github top language](https://img.shields.io/github/languages/top/FHPWA/fredhappyface.com.svg?style=for-the-badge)](../../)
+[![Codacy grade](https://img.shields.io/codacy/grade/[codacy-proj-id].svg?style=for-the-badge)](https://www.codacy.com/manual/FHPWA/fredhappyface.com)
+[![Repository size](https://img.shields.io/github/repo-size/FHPWA/fredhappyface.com.svg?style=for-the-badge)](../../)
+[![Issues](https://img.shields.io/github/issues/FHPWA/fredhappyface.com.svg?style=for-the-badge)](../../issues)
+[![License](https://img.shields.io/github/license/FHPWA/fredhappyface.com.svg?style=for-the-badge)](/LICENSE.md)
+[![Commit activity](https://img.shields.io/github/commit-activity/m/FHPWA/fredhappyface.com.svg?style=for-the-badge)](../../commits/master)
+[![Last commit](https://img.shields.io/github/last-commit/FHPWA/fredhappyface.com.svg?style=for-the-badge)](../../commits/master)
 
-# FHPWA.github.io
+# fredhappyface.com
 
 <img src="readme-assets/icons/name.png" alt="Project Icon" width="750">
 
 FredHappyface App Launcher provides links to web-based projects at
-https://FHPWA.github.io/home. Holds common CSS and JS used by
+https://fredhappyface.com/home. Holds common CSS and JS used by
 other web projects.
 
 
 ## Language information
-FHPWA.github.io is built with HTML5 and CSS3
+fredhappyface.com is built with HTML5 and CSS3
 
 
 ## commonsrc
@@ -27,7 +27,7 @@ of how these can be used.
 Alternatively, if you'd rather hit the ground running, run the following at the
 root of your project.
 ```bash
-wget https://FHPWA.github.io/commonsrc/build.js
+wget https://fredhappyface.com/commonsrc/build.js
 ```
 
 Be sure to include the template files under src/ and a config for base and the

@@ -1,5 +1,5 @@
 {
-  "name": "fhpwa.github.io",
+  "name": "fredhappyface.com",
   "version": "1.0.0",
   "description": "Holds common CSS and JS used by other web projects",
   "main": "sw.js",
@@ -8,20 +8,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fhpwa/fhpwa.github.io.git"
+    "url": "git+https://github.com/fhpwa/fredhappyface.com.git"
   },
   "author": "FredHappyface",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fhpwa/fhpwa.github.io/issues"
+    "url": "https://github.com/fhpwa/fredhappyface.com/issues"
   },
-  "homepage": "https://github.com/fhpwa/fhpwa.github.io#readme",
+  "homepage": "https://github.com/fhpwa/fredhappyface.com#readme",
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-google": "^0.14.0"
   },
   "dependencies": {
-    "mustache": "^4.0.1",
-    "request": "^2.88.2"
+    "axios": "^0.19.2",
+    "mustache": "^4.0.1"
   }
 }

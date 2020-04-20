@@ -1,4 +1,4 @@
-const request = require("request");
+const request = require("axios");
 const mustache = require("mustache");
 const fs = require("fs");
 const path = require("path");
@@ -11,7 +11,7 @@ const cheerio = require("cheerio");
  */
 function getTemplate(templateName) {
 	return new Promise(function(resolve, reject) {
-		request("https://fhpwa.github.io/commonsrc/" + templateName, { json: false }, function(error, res, body) {
+		request("https://fredhappyface.com/commonsrc/" + templateName, { json: false }, function(error, res, body) {
 			if (error) {
 				reject(error);
 			}
