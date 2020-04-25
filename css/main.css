@@ -246,10 +246,10 @@ nav, .section__content, .section__content--settings, .section>div, #js-toast>div
 	clear: both;
 }
 
-/* Medium form factors 60 * 16 px
+/* Medium form factors 50 * 16 px
 */
 
-@media only screen and (max-width: 60em) {
+@media only screen and (max-width: 50em) {
 	.img--content {
 		width: 50%;
 	}
