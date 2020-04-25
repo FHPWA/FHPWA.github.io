@@ -249,7 +249,7 @@ nav, .section__content, .section__content--settings, .section>div, #js-toast>div
 /* Medium form factors 60 * 16 px
 */
 
-@media only screen and (max-width: 60) {
+@media only screen and (max-width: 60em) {
 	.img--content {
 		width: 50%;
 	}
