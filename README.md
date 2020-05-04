@@ -1,5 +1,5 @@
 [![Github top language](https://img.shields.io/github/languages/top/FHPWA/fredhappyface.com.svg?style=for-the-badge)](../../)
-[![Codacy grade](https://img.shields.io/codacy/grade/[codacy-proj-id].svg?style=for-the-badge)](https://www.codacy.com/manual/FHPWA/fredhappyface.com)
+[![Codacy grade](https://img.shields.io/codacy/grade/bf0f8cf278974ba6b48770e5fc3d3eff.svg?style=for-the-badge)](https://www.codacy.com/gh/FHPWA/fredhappyface.com)
 [![Repository size](https://img.shields.io/github/repo-size/FHPWA/fredhappyface.com.svg?style=for-the-badge)](../../)
 [![Issues](https://img.shields.io/github/issues/FHPWA/fredhappyface.com.svg?style=for-the-badge)](../../issues)
 [![License](https://img.shields.io/github/license/FHPWA/fredhappyface.com.svg?style=for-the-badge)](/LICENSE.md)
