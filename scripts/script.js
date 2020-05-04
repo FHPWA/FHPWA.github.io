@@ -34,7 +34,8 @@ for each file
  */
 function upload(files, targets) { // eslint-disable-line no-unused-vars
 	const output = [];
-	for (let index = 0, file; file = files[index]; index++) {
+	for (let index = 0; index < files.length; index++) {
+		const file = files[index];
 		const reader = new FileReader();
 		reader.readAsText(file, "UTF-8");
 		reader.onload = function(event) {
@@ -75,17 +76,6 @@ function download(filename, chars) { // eslint-disable-line no-unused-vars
 }
 
 /**
- * Copy the contents of the output element
- * @return {void}
- */
-function copy() { // eslint-disable-line no-unused-vars
-	var stringToCopy = document.getElementById("output").value;
-	copyToClipboard(stringToCopy);
-	window.getSelection().removeAllRanges();
-	return;
-}
-
-/**
  * @param {string} stringToCopy
  * @return {void}
  */
@@ -101,6 +91,16 @@ async function copyToClipboard(stringToCopy) {
 	return;
 }
 
+/**
+ * Copy the contents of the output element
+ * @return {void}
+ */
+function copy() { // eslint-disable-line no-unused-vars
+	var stringToCopy = document.getElementById("output").value;
+	copyToClipboard(stringToCopy);
+	window.getSelection().removeAllRanges();
+	return;
+}
 
 /**
  * Returns a random integer between min (inclusive) and max (exclusive)
