@@ -23,7 +23,7 @@ function showToast(message) {
 	return;
 }
 
-MAX_FILE_SIZE = 1024 * 1024;
+const MAX_FILE_SIZE = 1024 * 1024;
 
 /**
  * Open the system file selector and upload a stream of chars with a filename
@@ -33,7 +33,7 @@ for each file
  * @return {string[]} fileNames
  */
 function upload(files, targets) { // eslint-disable-line no-unused-vars
-	output = [];
+	const output = [];
 	for (let index = 0, file; file = files[index]; index++) {
 		const reader = new FileReader();
 		reader.readAsText(file, "UTF-8");
@@ -109,7 +109,7 @@ async function copyToClipboard(stringToCopy) {
  * @return {int} random number
  */
 function getRandomInt(min, max) {
-	let rand = window.crypto.getRandomValues(new Uint8Array(1)) / 256
+	let rand = window.crypto.getRandomValues(new Uint8Array(1)) / 256;
 	return Math.floor(rand * (max - min)) + min;
 }
 

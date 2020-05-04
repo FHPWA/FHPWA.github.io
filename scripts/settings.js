@@ -1,7 +1,8 @@
 /* eslint-disable prefer-const */
 
 if (localStorage.getItem("com.fredhappyface") === null) {
-	settingData = {
+	// eslint-disable-next-line no-var
+	var settingData = {
 		"theme": {
 			"name": "auto",
 			"cPrimary": "#FAFAFA",
@@ -48,7 +49,8 @@ document.getElementById(settingData.iconShape.name).checked = true;
  */
 function saveT(tRadios, type, tConst) {
 	let radioIndex = 0;
-	for (let iteration = 0, length = tRadios.length; iteration < length; iteration++) {
+	for (let iteration = 0, length = tRadios.length; iteration < length;
+		iteration++) {
 		if (tRadios[iteration].checked) {
 			radioIndex = parseInt(tRadios[iteration].value, 10);
 			break;

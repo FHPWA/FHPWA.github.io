@@ -1,7 +1,8 @@
 {
     "env": {
         "browser": true,
-        "es6": true
+		"es6": true,
+		"amd": true
     },
     "extends": [
         "google"
@@ -20,6 +21,7 @@
         "camelcase":"off",
 		"no-tabs":"off",
 		"eqeqeq":"error",
-		"object-curly-spacing": "off"
+		"object-curly-spacing": "off",
+		"no-undef": "error"
     }
 }

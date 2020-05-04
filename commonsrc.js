@@ -72,13 +72,14 @@ function doMangleAndWrite(templateFile, mangle, outFile) {
  * @param {json} mangle
  * @param {string} outFile
  */
-async function doRemoteMangleAndWrite(templateName, mangle, outFile) {
-	doWrite(doMangle(await getTemplate(templateName), mangle), outFile);
+async function doRemoteMangleAndWrite( // eslint-disable-line no-unused-vars
+	templateName, mangle, outFile) {
+	doWrite(doMangle(getTemplate(templateName), mangle), outFile);
 }
 
 
 // Base
-base = {
+const base = {
 	projectFullName: "Example",
 	projectShortName: "Example",
 	stylesNamespace: "example",
@@ -94,7 +95,7 @@ base = {
 	],
 };
 
-pages = [
+const pages = [
 	{
 		pageName: "Nav 1",
 		pageUrl: "nav1.html",

@@ -72,7 +72,7 @@ async function doRemoteMangleAndWrite(templateName, mangle, outFile) {
  * @return {json} page with name, url, content, and scripts
  */
 function getPageData(file) {
-	data = fs.readFileSync("src/" + file, "utf8");
+	const data = fs.readFileSync("src/" + file, "utf8");
 	const sections = cheerio.load(data);
 	const page = {
 		pageName: sections("title").text(),

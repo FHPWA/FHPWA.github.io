@@ -9,14 +9,16 @@
 	--var-c-secondary: #EAEAEB;
 	--var-c-text: #383A42;
 	--var-c-black: 0;
+
 	/* Constants */
 	--const-element-on-top: 99;
 	--const-toast-bottom-margin: 1em;
 	--const-toast-rounding: 0.7em;
 	--const-element-rounding: 0.7em;
 	--const-max-content-width: 55em;
-	--const-toast-timer: 2000ms;
+
 	/* Must be the same as in script.js */
+	--const-toast-timer: 2000ms;
 }
 
 @media (prefers-color-scheme: dark) {
