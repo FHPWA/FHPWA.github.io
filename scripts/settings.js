@@ -2,7 +2,7 @@
 
 if (localStorage.getItem("com.fredhappyface") === null) {
 	// eslint-disable-next-line no-var
-	var settingData = {
+	settingData = {
 		"theme": {
 			"name": "auto",
 			"cPrimary": "#FAFAFA",
