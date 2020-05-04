@@ -1,10 +1,10 @@
-[![Github top language](https://img.shields.io/github/languages/top/FHPWA/fredhappyface.com.svg?style=for-the-badge)](../../)
-[![Codacy grade](https://img.shields.io/codacy/grade/bf0f8cf278974ba6b48770e5fc3d3eff.svg?style=for-the-badge)](https://www.codacy.com/gh/FHPWA/fredhappyface.com)
-[![Repository size](https://img.shields.io/github/repo-size/FHPWA/fredhappyface.com.svg?style=for-the-badge)](../../)
-[![Issues](https://img.shields.io/github/issues/FHPWA/fredhappyface.com.svg?style=for-the-badge)](../../issues)
-[![License](https://img.shields.io/github/license/FHPWA/fredhappyface.com.svg?style=for-the-badge)](/LICENSE.md)
-[![Commit activity](https://img.shields.io/github/commit-activity/m/FHPWA/fredhappyface.com.svg?style=for-the-badge)](../../commits/master)
-[![Last commit](https://img.shields.io/github/last-commit/FHPWA/fredhappyface.com.svg?style=for-the-badge)](../../commits/master)
+[![Github top language](https://img.shields.io/github/languages/top/FHPWA/fhpwa.github.io.svg?style=for-the-badge)](../../)
+[![Codacy grade](https://img.shields.io/codacy/grade/bf0f8cf278974ba6b48770e5fc3d3eff.svg?style=for-the-badge)](https://www.codacy.com/gh/FHPWA/fhpwa.github.io)
+[![Repository size](https://img.shields.io/github/repo-size/FHPWA/fhpwa.github.io.svg?style=for-the-badge)](../../)
+[![Issues](https://img.shields.io/github/issues/FHPWA/fhpwa.github.io.svg?style=for-the-badge)](../../issues)
+[![License](https://img.shields.io/github/license/FHPWA/fhpwa.github.io.svg?style=for-the-badge)](/LICENSE.md)
+[![Commit activity](https://img.shields.io/github/commit-activity/m/FHPWA/fhpwa.github.io.svg?style=for-the-badge)](../../commits/master)
+[![Last commit](https://img.shields.io/github/last-commit/FHPWA/fhpwa.github.io.svg?style=for-the-badge)](../../commits/master)
 
 # fredhappyface.com
 
