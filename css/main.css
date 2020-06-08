@@ -53,12 +53,12 @@ body {
 	font-size: calc((12px + 0.4vw) * var(--text-mod));
 	background-color: var(--var-c-primary);
 	color: var(--var-c-text);
-	scrollbar-width: calc((12px + 0.4vw) * var(--text-mod));
+	scrollbar-width: calc((12px + 0.4vw) * var(--text-mod) * 0.7);
 	scrollbar-color: var(--var-c-text) var(--var-c-secondary);
 }
 
 body::-webkit-scrollbar {
-	width: calc((12px + 0.4vw) * var(--text-mod));
+	width: calc((12px + 0.4vw) * var(--text-mod) * 0.7);
 }
 
 body::-webkit-scrollbar-track {
