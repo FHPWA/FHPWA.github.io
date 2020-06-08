@@ -53,6 +53,22 @@ body {
 	font-size: calc((12px + 0.4vw) * var(--text-mod));
 	background-color: var(--var-c-primary);
 	color: var(--var-c-text);
+	scrollbar-width: calc((12px + 0.4vw) * var(--text-mod));
+	scrollbar-color: var(--var-c-text) var(--var-c-secondary);
+}
+
+body::-webkit-scrollbar {
+	width: calc((12px + 0.4vw) * var(--text-mod));
+}
+
+body::-webkit-scrollbar-track {
+	background: var(--var-c-secondary);
+}
+
+body::-webkit-scrollbar-thumb {
+	border: calc((12px + 0.4vw) * var(--text-mod) * 0.15) solid var(--var-c-secondary);
+	border-radius: var(--const-element-rounding);
+	background-color: var(--var-c-text);
 }
 
 /* CSS for iOS devices only
@@ -91,7 +107,7 @@ pre span::before {
 	counter-increment: line;
 	content: counter(line);
 	display: inline-block;
-	border-right: 0.1em solid;
+	border-right: 0.15em solid;
 	padding: 0 0.5em;
 	margin-right: 0.5em;
 }
@@ -102,7 +118,7 @@ form label {
 
 .setting-preview {
 	margin: 0.2em;
-	border-radius: var(--const-element-rounding);
+	border-radius: var(--const-element-rounding) 0 var(--const-element-rounding) 0;
 	overflow: hidden;
 }
 
@@ -142,7 +158,7 @@ form label {
 
 .app-bar h1 {
 	font-size: 2.5em;
-	margin: 0 0.1em;
+	margin: 0 0.15em;
 }
 
 .app-bar .left h1 {
@@ -189,7 +205,7 @@ nav, .section__content, .section__content--settings, .section>div, #js-toast>div
 */
 
 .img--scale, .img--fixed, .img--content {
-	padding: 0.1em 1em;
+	padding: 0.15em 1em;
 }
 
 .img--content {
@@ -201,14 +217,14 @@ nav, .section__content, .section__content--settings, .section>div, #js-toast>div
 
 .img--content-wide {
 	width: 100%;
-	padding: 0.1em 0;
+	padding: 0.15em 0;
 }
 
 /* Make all of the actual images (inside the image containers fill the container) Give these a max height so the whole screen isn't taken up.
 */
 
 .img--content img, .img--content-wide img, .img--fixed img, .img--scale img {
-	border-radius: var(--const-element-rounding);
+	border-radius: var(--const-element-rounding) 0 var(--const-element-rounding) 0;
 	max-height: calc(var(--const-max-content-width) / 2);
 	display: block;
 }
@@ -272,7 +288,7 @@ nav, .section__content, .section__content--settings, .section>div, #js-toast>div
 @media only screen and (max-width: 25em) {
 	.img--content {
 		width: 100%;
-		padding: 0.1em 0;
+		padding: 0.15em 0;
 	}
 	.icon--pwa, .icon--grid {
 		width: calc(100% / 3);
@@ -289,7 +305,7 @@ nav, .section__content, .section__content--settings, .section>div, #js-toast>div
 */
 
 .img img, .icon img {
-	border-radius: var(--const-element-rounding);
+	border-radius: var(--const-element-rounding) 0 var(--const-element-rounding) 0;
 	max-height: calc(var(--const-max-content-width) / 2);
 	display: block;
 	width: 100%;
@@ -335,7 +351,7 @@ nav>ul>li {
 nav>ul>li>a, .overflow {
 	text-decoration: none;
 	padding: 0.7em 0.3em;
-	border-bottom-width: 0.1em;
+	border-bottom-width: 0.15em;
 	border-bottom-style: none;
 }
 
@@ -408,10 +424,10 @@ form {
 
 button, .css-file, form textarea, form input, form select, .code pre, progress {
 	border-style: solid;
-	border-radius: var(--const-element-rounding);
+	border-radius: var(--const-element-rounding) 0 var(--const-element-rounding) 0;
 	border-color: var(--var-c-text);
 	width: 100%;
-	border-width: 0.1em;
+	border-width: 0.15em;
 }
 
 button, .css-file, form textarea, form input, form select, .code pre {
@@ -441,17 +457,17 @@ progress {
 
 progress::-webkit-progress-bar {
 	background-color: #00000000;
-	border-radius: var(--const-element-rounding);
+	border-radius: var(--const-element-rounding) 0 var(--const-element-rounding) 0;
 }
 
 progress::-webkit-progress-value {
-	border-radius: var(--const-element-rounding);
+	border-radius: var(--const-element-rounding) 0 var(--const-element-rounding) 0;
 	transition-property: width;
 	transition-duration: 0.7s;
 }
 
 progress::-moz-progress-bar {
-	border-radius: var(--const-element-rounding);
+	border-radius: var(--const-element-rounding) 0 var(--const-element-rounding) 0;
 }
 
 /* Pairs */
@@ -493,7 +509,7 @@ progress::-moz-progress-bar {
 /* Create a custom radio button */
 
 .check-mark {
-	border-width: 0.1em;
+	border-width: 0.15em;
 	border-style: solid;
 	position: absolute;
 	top: -0.15em;
@@ -515,10 +531,10 @@ progress::-moz-progress-bar {
 /* Style the indicator (dot/circle) */
 
 .css-radio .check-mark::after {
-	top: 0.15em;
-	left: 0.15em;
-	width: 0.5em;
-	height: 0.5em;
+	top: 0.2em;
+	left: 0.2em;
+	width: 0.4em;
+	height: 0.4em;
 	border-radius: 50%;
 	background: var(--var-c-text);
 }
@@ -553,7 +569,7 @@ table {
 
 table, th, td {
 	text-align: left;
-	border-bottom: 0.1em solid;
+	border-bottom: 0.15em solid;
 	padding: 0.3em;
 }
 
@@ -585,9 +601,9 @@ audio {
 }
 
 #js-toast>div>p {
-	border: 0.1em;
+	border: 0.15em;
 	border-style: solid;
-	border-radius: var(--const-toast-rounding);
+	border-radius: var(--const-toast-rounding) 0 var(--const-toast-rounding) 0;
 	padding: 1em;
 }
 
@@ -624,7 +640,7 @@ audio {
 }
 
 .section, .section-nav {
-	border-bottom: calc(0.1em * var(--var-c-black));
+	border-bottom: calc(0.15em * var(--var-c-black));
 	border-bottom-style: solid;
 	border-bottom-color: #ABB2BF;
 }

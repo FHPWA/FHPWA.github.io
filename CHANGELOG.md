@@ -2,6 +2,10 @@
 All major and minor version changes will be documented in this file. Details of
 patch-level version changes can be found in [commit messages](../../commits/master).
 
+## 2020.1.1 2020/06/07
+- Button and text area shapes have had a refresh
+- Added custom scrollbar
+
 ## 2020.1 - 2020/02/05
 - Themes now use css variables
 

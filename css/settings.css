@@ -2,7 +2,7 @@
 */
 
 .primary--black, .secondary--black {
-	border-bottom: 0.1em;
+	border-bottom: 0.15em;
 	border-bottom-style: solid;
 	background-color: #000000;
 	color: #ABB2BF;
