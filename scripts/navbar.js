@@ -23,8 +23,6 @@ function resizeFunction() {
 		const el = document.getElementById("js-nav__content").lastElementChild;
 		// prependto
 		document.getElementById("js-nav__content").prepend(el);
-		// remove
-		el.parentNode.removeChild(el);
 		contentWidth = document.getElementById("js-nav__content").clientWidth;
 	}
 
@@ -34,8 +32,6 @@ function resizeFunction() {
 		const el = document.getElementById("js-nav__overflow").firstElementChild;
 		// appendto
 		document.getElementById("js-nav__content").appendChild(el);
-		// remove
-		el.parentNode.removeChild(el);
 		contentWidth = document.getElementById("js-nav__content").clientWidth;
 		noElementOverflow = document.getElementById("js-nav__overflow")
 			.getElementsByTagName("li").length;
