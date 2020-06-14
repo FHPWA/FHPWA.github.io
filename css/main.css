@@ -335,13 +335,14 @@ nav {
 	position: relative;
 	overflow: hidden;
 	padding-top: 0;
+	padding-left: 1.5em;
 }
 
 nav>ul {
 	display: inline-block;
 	list-style: none;
 	min-width: 1px;
-	padding: 0 0 0 0.5em;
+	padding: 0;
 	margin: 0;
 }
 

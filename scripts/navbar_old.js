@@ -1,42 +1,40 @@
+
 /**
  * Resize the navbar when the page is resized
  */
 function resizeFunction() {
 	// Get the width of the nav bar and the content and the "more" button
-	const navComputedStyle = getComputedStyle(document.getElementById("js-nav"));
-	const navWidth = document.getElementById("js-nav").clientWidth - (parseFloat(
-		navComputedStyle.paddingLeft) + parseFloat(navComputedStyle.paddingRight));
-	let contentWidth = document.getElementById("js-nav__content").clientWidth;
-	const more = document.getElementById("js-overflow").clientWidth;
+	const navWidth = $(document.getElementById("js-nav")).width();
+	let contentWidth = $(document.getElementById("js-nav__content"))
+		.outerWidth(true);
+	const more = $(document.getElementById("js-overflow")).outerWidth(true);
 
 	/* Get the width of the overflow menu and the number of elements in
 	the overflow menu */
-	document.getElementById("js-nav__overflow").style.display = "block";
-	const overflowWidth = document.getElementById("js-nav__overflow").clientWidth;
-	document.getElementById("js-nav__overflow").style.display = "none";
+	$(document.getElementById("js-nav__overflow")).show();
+
+	const overflowWidth = $(document.getElementById("js-nav__overflow"))
+		.outerWidth(true);
+	$(document.getElementById("js-nav__overflow")).hide();
 
 	let noElementOverflow = document.getElementById("js-nav__overflow")
 		.getElementsByTagName("li").length;
 
 	// shrink the page
 	while ((contentWidth + more + 20) > navWidth) {
-		const el = document.getElementById("js-nav__content").lastElementChild;
-		// prependto
-		document.getElementById("js-nav__content").prepend(el);
-		// remove
-		el.parentNode.removeChild(el);
-		contentWidth = document.getElementById("js-nav__content").clientWidth;
+		$(document.getElementById("js-nav__content").lastElementChild)
+			.remove().prependTo(document.getElementById("js-nav__overflow"));
+		contentWidth = $(document.getElementById("js-nav__content"))
+			.outerWidth(true);
 	}
 
 	// enlarge the page
 	while (((contentWidth + more + overflowWidth ) < navWidth) &&
 		noElementOverflow > 0) {
-		const el = document.getElementById("js-nav__overflow").firstElementChild;
-		// appendto
-		document.getElementById("js-nav__content").appendChild(el);
-		// remove
-		el.parentNode.removeChild(el);
-		contentWidth = document.getElementById("js-nav__content").clientWidth;
+		$(document.getElementById("js-nav__overflow").firstElementChild)
+			.remove().appendTo(document.getElementById("js-nav__content"));
+		contentWidth = $(document.getElementById("js-nav__content"))
+			.outerWidth(true);
 		noElementOverflow = document.getElementById("js-nav__overflow")
 			.getElementsByTagName("li").length;
 	}
@@ -47,9 +45,9 @@ function resizeFunction() {
 	noElementOverflow = document.getElementById("js-nav__overflow")
 		.getElementsByTagName("li").length;
 	if (noElementOverflow > 0) {
-		document.getElementById("js-overflow").style.display = "block";
+		$(document.getElementById("js-overflow")).show();
 	} else {
-		document.getElementById("js-overflow").style.display = "none";
+		$(document.getElementById("js-overflow")).hide();
 	}
 }
 
