@@ -52,15 +52,15 @@
 
 body {
 	font-family: 'Fira Sans', sans-serif;
-	font-size: calc((12px + 0.4vw) * var(--text-mod));
+	font-size: calc((14px + 0.35vw) * var(--text-mod));
 	background-color: var(--var-c-primary);
 	color: var(--var-c-text);
-	scrollbar-width: calc((12px + 0.4vw) * var(--text-mod) * 0.7);
+	scrollbar-width: calc((14px + 0.35vw) * var(--text-mod) * 0.7);
 	scrollbar-color: var(--var-c-text) var(--var-c-secondary);
 }
 
 body::-webkit-scrollbar {
-	width: calc((12px + 0.4vw) * var(--text-mod) * 0.7);
+	width: calc((14px + 0.35vw) * var(--text-mod) * 0.7);
 }
 
 body::-webkit-scrollbar-track {
@@ -68,7 +68,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-	border: calc((12px + 0.4vw) * var(--text-mod) * 0.15) solid var(--var-c-secondary);
+	border: calc((14px + 0.35vw) * var(--text-mod) * 0.15) solid var(--var-c-secondary);
 	border-radius: var(--const-element-rounding);
 	background-color: var(--var-c-text);
 }
@@ -78,7 +78,7 @@ body::-webkit-scrollbar-thumb {
 
 @supports (-webkit-overflow-scrolling: touch) {
 	input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], select:focus, textarea {
-		font-size: calc((16px + 0.4vw) * var(--text-mod));
+		font-size: calc((16px + 0.35vw) * var(--text-mod));
 	}
 }
 
