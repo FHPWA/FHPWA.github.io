@@ -11,7 +11,7 @@ function resizeFunction() {
 
 	/* Get the width of the overflow menu and the number of elements in
 	the overflow menu */
-	document.getElementById("js-nav__overflow").style.display = "block";
+	document.getElementById("js-nav__overflow").style.display = "inline-block";
 	const overflowWidth = document.getElementById("js-nav__overflow").clientWidth;
 	document.getElementById("js-nav__overflow").style.display = "none";
 
@@ -22,12 +22,12 @@ function resizeFunction() {
 	while ((contentWidth + more + 20) > navWidth) {
 		const el = document.getElementById("js-nav__content").lastElementChild;
 		// prependto
-		document.getElementById("js-nav__content").prepend(el);
+		document.getElementById("js-nav__overflow").prepend(el);
 		contentWidth = document.getElementById("js-nav__content").clientWidth;
 	}
 
 	// enlarge the page
-	while (((contentWidth + more + overflowWidth ) < navWidth) &&
+	while (((contentWidth + more + overflowWidth ) + 50 < navWidth) &&
 		noElementOverflow > 0) {
 		const el = document.getElementById("js-nav__overflow").firstElementChild;
 		// appendto
@@ -37,13 +37,14 @@ function resizeFunction() {
 			.getElementsByTagName("li").length;
 	}
 
+
 	/*
 	If there are items in the overflow menu then show the overflow button
 	*/
 	noElementOverflow = document.getElementById("js-nav__overflow")
 		.getElementsByTagName("li").length;
 	if (noElementOverflow > 0) {
-		document.getElementById("js-overflow").style.display = "block";
+		document.getElementById("js-overflow").style.display = "inline-block";
 	} else {
 		document.getElementById("js-overflow").style.display = "none";
 	}
@@ -58,7 +59,7 @@ document.getElementById("js-nav__overflow").style.display = "none";
 document.getElementById("js-overflow").onclick = function() {
 	const navOverflow = document.getElementById("js-nav__overflow");
 	if (navOverflow.style.display === "none") {
-		navOverflow.style.display = "block";
+		navOverflow.style.display = "inline-block";
 	} else {
 		navOverflow.style.display = "none";
 	}

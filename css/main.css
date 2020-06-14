@@ -353,7 +353,7 @@ nav>ul>li {
 
 nav>ul>li>a, .overflow {
 	text-decoration: none;
-	padding: 0.7em 0.3em;
+	padding: 0 0.3em 0.7em 0.3em;
 	border-bottom-width: 0.15em;
 	border-bottom-style: none;
 }
