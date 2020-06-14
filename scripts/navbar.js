@@ -19,7 +19,7 @@ function resizeFunction() {
 		.getElementsByTagName("li").length;
 
 	// shrink the page
-	while ((contentWidth + more + 20) > navWidth) {
+	while ((contentWidth + more + 50) > navWidth) {
 		const el = document.getElementById("js-nav__content").lastElementChild;
 		// prependto
 		document.getElementById("js-nav__overflow").prepend(el);
