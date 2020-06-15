@@ -9,14 +9,12 @@
 	--var-c-secondary: #EAEAEB;
 	--var-c-text: #383A42;
 	--var-c-black: 0;
-
 	/* Constants */
 	--const-element-on-top: 99;
 	--const-toast-bottom-margin: 1em;
 	--const-toast-rounding: 0.7em;
 	--const-element-rounding: 0.7em;
 	--const-max-content-width: 55em;
-
 	/* Must be the same as in script.js */
 	--const-toast-timer: 2000ms;
 }
@@ -90,6 +88,22 @@ h1, h2, h3, h4, h5, h6, p, span, form label, a, input {
 	margin-bottom: 0.5em;
 }
 
+h1 {
+	font-size: 1.7em;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+h3 {
+	font-size: 1.3em;
+}
+
+h4 {
+	font-size: 1.1em;
+}
+
 .code, .code pre {
 	font-family: 'Fira Code', monospace;
 }
@@ -159,7 +173,7 @@ form label {
 }
 
 .app-bar h1 {
-	font-size: 2.5em;
+	font-size: 2.1em;
 	margin: 0 0.15em;
 }
 
@@ -384,12 +398,12 @@ nav>ul>li>a:hover, .overflow:hover, nav>ul>li>a.current {
 
 .buffer--app-bar {
 	width: 100%;
-	height: 5em;
+	height: 4.5em;
 }
 
 .buffer--nav-bar {
 	width: 100%;
-	height: 7.5em;
+	height: 7em;
 }
 
 /* Animations to fade the toast in and out */
