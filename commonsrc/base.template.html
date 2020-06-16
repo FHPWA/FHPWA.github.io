@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="https://fredhappyface.com/css/main.css">
 	<script>
 		if ("serviceWorker" in navigator) {
-			navigator.serviceWorker.register("/{{projectFullName}}/sw.js", { scope: "/{{projectFullName}}/" });
+			navigator.serviceWorker.register("/{{namespace}}/sw.js", { scope: "/{{namespace}}/" });
 		}
 		/* read data from local storage and set css vars*/
 		let settingData = JSON.parse(localStorage.getItem('com.fredhappyface'));
@@ -29,7 +29,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!--Android app icon-->
-	<link rel="manifest" href="/{{projectFullName}}/manifest.json">
+	<link rel="manifest" href="/{{namespace}}/manifest.json">
 	<meta name="theme-color" content="{{projectColour}}" />
 
 	<!--iOS touch icon-->
@@ -42,7 +42,7 @@
 	<!--Windows 8, 10 tile -->
 	<meta name="msapplication-TileColor" content="{{projectColour}}">
 	<meta name="msapplication-TileImage" sizes="150x150" content="images/appicons/square-180.png">
-	<meta name="msapplication-starturl" content="/{{projectFullName}}/">
+	<meta name="msapplication-starturl" content="/{{namespace}}/">
 
 	<!--Title-->
 	<title>{{pageName}}</title>
@@ -57,7 +57,7 @@
 		<div class="app-bar">
 			<div class="section__content">
 				<div class="left">
-					<h1>{{projectShortName}}</h1>
+					<h1>{{projectName}}</h1>
 				</div>
 				<div class="pair right">
 					<a href="https://fredhappyface.com/home/info.html">

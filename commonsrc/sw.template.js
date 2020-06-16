@@ -1,4 +1,4 @@
-const CACHE = "{{projectShortName}}";
+const CACHE = "{{projectName}}";
 const precacheFiles = [{{#precacheFiles}}"/{{& fileName}}",{{/precacheFiles}}
 ];
 
