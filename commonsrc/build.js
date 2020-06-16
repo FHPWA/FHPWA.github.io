@@ -1,27 +1,28 @@
-const request = require("axios");
+const axios = require("axios");
 const mustache = require("mustache");
 const fs = require("fs");
 const path = require("path");
 const cheerio = require("cheerio");
 
+
 /**
+ * Get a template file and return the contents
  *
  * @param {string} templateName the name of the template file
  * @return {string} template text
  */
-function getTemplate(templateName) {
-	return new Promise(function(resolve, reject) {
-		request("https://fredhappyface.com/commonsrc/" + templateName, { json: false }, function(error, res, body) {
-			if (error) {
-				reject(error);
-			}
-			resolve(body);
-		});
-	});
+async function getTemplate(templateName) {
+	try {
+		const response = await axios.get("https://fredhappyface.com/commonsrc/" + templateName);
+		return response.data;
+	} catch (error) {
+		console.log(error);
+	}
 }
 
 
 /**
+ * Get the directory that a file is member of
  *
  * @param {string} fileName
  * @return {string} parent directory
@@ -31,6 +32,8 @@ function getDir(fileName) {
 }
 
 /**
+ * Mangle a template and a json object containing data to mangle and return the
+ * mangled text
  *
  * @param {string} template template string
  * @param {json} mangle json containing mangle data
@@ -62,7 +65,8 @@ function doWrite(string, outFile) {
  * @param {string} outFile
  */
 async function doRemoteMangleAndWrite(templateName, mangle, outFile) {
-	doWrite(doMangle(await getTemplate(templateName), mangle), outFile);
+	const template = await getTemplate(templateName);
+	doWrite(doMangle(template, mangle), outFile);
 }
 
 
@@ -116,12 +120,36 @@ for (let index = 0; index < pages.length; index++) {
 	});
 }
 
+/**
+ * Populate shortcuts (android home screen shortcuts )
+ */
+base.shortcut = [];
 for (let index = 0; index < pages.length; index++) {
-	const page = JSON.parse(JSON.stringify(base));
+	if (fs.existsSync("./images/shorticons/" + pages[index].pageUrl.replace(
+		".html", ".png"))) {
+		base.shortcut.push({
+			name: pages[index].pageName,
+			link: pages[index].pageUrl,
+			icon: pages[index].pageUrl.replace(".html", ".png"),
+		});
+	}
+}
+base.isShortcuts = base.shortcut.length > 0;
+
+// Add pages to precache files
+for (let index = 0; index < pages.length; index++) {
+	base.precacheFiles.push({
+		fileName: base.namespace + "/" + pages[index].pageUrl,
+	});
+}
+
+for (let index = 0; index < pages.length; index++) {
+	const page = JSON.parse(JSON.stringify(base)); // create a copy of base
 	page.navContent[index].current = true;
 	page.pageContent = pages[index].pageContent;
 	page.pageName = pages[index].pageName;
 	page.pageScript = pages[index].pageScript;
+	// write the page
 	doRemoteMangleAndWrite("base.template.html", page, pages[index].pageUrl);
 }
 
