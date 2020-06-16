@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fhpwa/fredhappyface.com.git"
+    "url": "git+https://github.com/fhpwa/fhpwa.github.io.git"
   },
   "author": "FredHappyface",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fhpwa/fredhappyface.com/issues"
+    "url": "https://github.com/fhpwa/fhpwa.github.io/issues"
   },
-  "homepage": "https://github.com/fhpwa/fredhappyface.com#readme",
+  "homepage": "https://github.com/fhpwa/fhpwa.github.io#readme",
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-google": "^0.14.0"
