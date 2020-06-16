@@ -28,7 +28,7 @@
 		{{#shortcut}}
 		{
 			"name": "{{name}}",
-			"url": "{{link}}",
+			"url": "/{{namespace}}/{{link}}",
 			"icons": [
 				{
 					"src": "/{{namespace}}/images/shorticons/{{icon}}",
