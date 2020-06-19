@@ -57,15 +57,20 @@ body {
 	scrollbar-color: var(--var-c-text) var(--var-c-secondary);
 }
 
-body::-webkit-scrollbar {
+textarea {
+	scrollbar-width: calc((14px + 0.35vw) * var(--text-mod) * 0.7);
+	scrollbar-color: var(--var-c-text) var(--var-c-secondary);
+}
+
+body::-webkit-scrollbar, textarea::-webkit-scrollbar {
 	width: calc((14px + 0.35vw) * var(--text-mod) * 0.7);
 }
 
-body::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track, textarea::-webkit-scrollbar-track {
 	background: var(--var-c-secondary);
 }
 
-body::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb, textarea::-webkit-scrollbar-thumb {
 	border: calc((14px + 0.35vw) * var(--text-mod) * 0.15) solid var(--var-c-secondary);
 	border-radius: var(--const-element-rounding);
 	background-color: var(--var-c-text);
