@@ -4,6 +4,7 @@
 <head>
 	<link rel="preload" href="https://fredhappyface.com/fonts/FiraSansNF.woff2" as="font" type="font/woff2">
 	<meta charset="utf-8">
+	<!-- styling, apply stored theme -->
 	<link rel="stylesheet" type="text/css" href="https://fredhappyface.com/css/main.css">
 	<script>
 		if ("serviceWorker" in navigator) {
@@ -25,28 +26,20 @@
 		}
 	</script>
 
-	<meta name="Description" content="Author: FredHappyface; Cost: Free">
+	<!-- description for search engine and viewport -->
+	<meta name="Description" content="{{projectDescription}}">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
 	<!--Android app icon-->
 	<link rel="manifest" href="/{{namespace}}/manifest.json">
 	<meta name="theme-color" content="{{projectColour}}" />
-
 	<!--iOS touch icon-->
 	<link rel="apple-touch-icon" sizes="180x180" href="images/appicons/square-180.png">
-
-	<!--Bookmark, Browser favicon-->
+	<!--Bookmark, Browser favicon -->
 	<link rel="icon" type="image/png" sizes="256x256" href="images/appicons/squircle-256.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="images/appicons/squircle-256.png">
 
-	<!--Windows 8, 10 tile -->
-	<meta name="msapplication-TileColor" content="{{projectColour}}">
-	<meta name="msapplication-TileImage" sizes="150x150" content="images/appicons/square-180.png">
-	<meta name="msapplication-starturl" content="/{{namespace}}/">
-
 	<!--Title-->
 	<title>{{pageName}}</title>
-
 
 </head>
 
@@ -90,8 +83,10 @@
 	<div class="buffer--{{#isNavigation}}nav{{/isNavigation}}{{^isNavigation}}app{{/isNavigation}}-bar">
 	</div>
 
-	<div id="js-toast" >
-		<div><p id="js-toast__text" class="c-toast"></p></div>
+	<div id="js-toast">
+		<div>
+			<p id="js-toast__text" class="c-toast"></p>
+		</div>
 	</div>
 
 	{{#pageContent}}
