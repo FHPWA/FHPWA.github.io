@@ -88,7 +88,7 @@ body::-webkit-scrollbar-thumb, textarea::-webkit-scrollbar-thumb {
 /* Setup margins for text
 */
 
-h1, h2, h3, h4, h5, h6, p, span, form label, a, input {
+h1, h2, h3, h4, h5, h6, p, span, label, a, input {
 	margin-top: 0.3em;
 	margin-bottom: 0.5em;
 }
@@ -133,8 +133,8 @@ pre span::before {
 	margin-right: 0.5em;
 }
 
-form label {
-	display: inline-block;
+label {
+	display: block;
 }
 
 .setting-preview {
@@ -445,7 +445,7 @@ form {
 	background-color: rgba(0, 0, 0, 0);
 }
 
-button, .css-file, form textarea, form input, form select, .code pre, progress {
+button, .css-file, form textarea, input, form select, .code pre, progress {
 	border-style: solid;
 	border-radius: var(--const-element-rounding) 0 var(--const-element-rounding) 0;
 	border-color: var(--var-c-text);
@@ -453,7 +453,7 @@ button, .css-file, form textarea, form input, form select, .code pre, progress {
 	border-width: 0.15em;
 }
 
-button, .css-file, form textarea, form input, form select, .code pre {
+button, .css-file, form textarea, input, form select, .code pre {
 	font-family: 'Fira Sans', sans-serif;
 	color: var(--var-c-text);
 	font-size: 1em;
@@ -468,7 +468,7 @@ button, .css-file {
 	break-inside: avoid-column;
 }
 
-form textarea, form input {
+form textarea, input {
 	resize: none;
 	overflow: auto;
 }
@@ -509,63 +509,25 @@ progress::-moz-progress-bar {
 }
 
 /* Radio button */
-
-.css-radio {
-	display: block;
+input[type="checkbox"],
+input[type="radio"] {
+	appearance: none;
 	position: relative;
-	padding-left: 1.5em;
-	padding-bottom: 0.5em;
-	margin-bottom: 0;
-	cursor: pointer;
-	font-size: 1em;
-	-webkit-user-select: none;
-	user-select: none;
-}
-
-/* Hide the browser's default radio button */
-
-.css-radio input {
-	display: none;
-	cursor: pointer;
-}
-
-/* Create a custom radio button */
-
-.check-mark {
-	border-width: 0.15em;
-	border-style: solid;
-	position: absolute;
-	top: -0.15em;
-	left: 0;
-	height: 1em;
+	display: inline-block;
 	width: 1em;
+	height: 1em;
+	border: 0.15em solid var(--var-c-text);
+	vertical-align: middle;
+}
+
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+	background-color: var(--var-c-text);
+	box-shadow: inset 0 0 0 0.25em var(--var-c-primary);
+}
+
+input[type='radio'] {
 	border-radius: 50%;
-	border-color: var(--var-c-text);
-}
-
-/* Create the indicator (the dot/circle - hidden when not checked) */
-
-.check-mark::after {
-	content: "";
-	position: absolute;
-	display: none;
-}
-
-/* Style the indicator (dot/circle) */
-
-.css-radio .check-mark::after {
-	top: 0.15em;
-	left: 0.15em;
-	width: 0.4em;
-	height: 0.4em;
-	border-radius: 50%;
-	background: var(--var-c-text);
-}
-
-/* Show the indicator (dot/circle) when checked */
-
-.css-radio input:checked~.check-mark::after {
-	display: block;
 }
 
 /* File Upload icon */
