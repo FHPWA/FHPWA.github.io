@@ -17,11 +17,11 @@
   },
   "homepage": "https://github.com/fhpwa/fhpwa.github.io#readme",
   "devDependencies": {
-    "eslint": "^6.8.0",
+    "eslint": "^7.17.0",
     "eslint-config-google": "^0.14.0"
   },
   "dependencies": {
-    "axios": "^0.19.2",
-    "mustache": "^4.0.1"
+    "axios": "^0.21.1",
+    "mustache": "^4.1.0"
   }
 }
