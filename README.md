@@ -6,17 +6,17 @@
 [![Commit activity](https://img.shields.io/github/commit-activity/m/FHPWA/fhpwa.github.io.svg?style=for-the-badge)](../../commits/master)
 [![Last commit](https://img.shields.io/github/last-commit/FHPWA/fhpwa.github.io.svg?style=for-the-badge)](../../commits/master)
 
-# fredhappyface.com
+# fhpwa.github.io
 
 <img src="readme-assets/icons/name.png" alt="Project Icon" width="750">
 
 FredHappyface App Launcher provides links to web-based projects at
-https://fredhappyface.com/home. Holds common CSS and JS used by
+https://fhpwa.github.io/home. Holds common CSS and JS used by
 other web projects.
 
 
 ## Language information
-fredhappyface.com is built with HTML5 and CSS3
+fhpwa.github.io is built with HTML5 and CSS3
 
 
 ## commonsrc
@@ -27,7 +27,7 @@ of how these can be used.
 Alternatively, if you'd rather hit the ground running, run the following at the
 root of your project.
 ```bash
-wget https://fredhappyface.com/commonsrc/build.js
+wget https://fhpwa.github.io/commonsrc/build.js
 ```
 
 Be sure to include the template files under src/ and a config for base and the

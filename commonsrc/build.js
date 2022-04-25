@@ -13,7 +13,7 @@ const cheerio = require("cheerio");
  */
 async function getTemplate(templateName) {
 	try {
-		const response = await axios.get("https://fredhappyface.com/commonsrc/" + templateName);
+		const response = await axios.get("https://fhpwa.github.io/commonsrc/" + templateName);
 		return response.data;
 	} catch (error) {
 		console.log(error);

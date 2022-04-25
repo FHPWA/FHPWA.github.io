@@ -10,7 +10,7 @@ const path = require("path");
  */
 function getTemplate(templateName) {
 	return new Promise(function(resolve, reject) {
-		request("https://fredhappyface.com/commonsrc/" + templateName,
+		request("https://fhpwa.github.io/commonsrc/" + templateName,
 			{ json: false }, function(error, res, body) {
 				if (error) {
 					reject(error);
