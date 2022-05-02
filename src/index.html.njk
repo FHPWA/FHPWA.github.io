@@ -1,0 +1,23 @@
+---
+title: Home
+layout: base
+tags: page
+permalink: index.html
+scripts: []
+date: 2000-01-01
+---
+
+
+<h1>Home</h1>
+
+<p>See below for a list of web apps with links under the FHPWA github organisation. Tap/ click on one of the headings to go to the app</p>
+
+{%- for item in fhpwa -%}
+
+
+<a href="{{item.name}}/item.html"><h2>{{item.name}}</h2></a>
+<img src="{{item.name}}/images/appicons/squircle-256.png" alt="{{item.name}}">
+<p>{{item.description}}</p>
+
+
+{%- endfor -%}
