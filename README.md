@@ -1,9 +1,8 @@
-[![Github top language](https://img.shields.io/github/languages/top/FHPWA/FHPWA.github.io.svg?style=for-the-badge)](../../)
-[![Repository size](https://img.shields.io/github/repo-size/FHPWA/FHPWA.github.io.svg?style=for-the-badge)](../../)
-[![Issues](https://img.shields.io/github/issues/FHPWA/FHPWA.github.io.svg?style=for-the-badge)](../../issues)
-[![License](https://img.shields.io/github/license/FHPWA/FHPWA.github.io.svg?style=for-the-badge)](/LICENSE.md)
-[![Commit activity](https://img.shields.io/github/commit-activity/m/FHPWA/FHPWA.github.io.svg?style=for-the-badge)](../../commits/master)
-[![Last commit](https://img.shields.io/github/last-commit/FHPWA/FHPWA.github.io.svg?style=for-the-badge)](../../commits/master)
+[![Github top language](https://img.shields.io/github/languages/top/FHPWA/FHPWA.github.io.svg?style=for-the-badge&cacheSeconds=28800)](../../)
+[![Issues](https://img.shields.io/github/issues/FHPWA/FHPWA.github.io.svg?style=for-the-badge&cacheSeconds=28800)](../../issues)
+[![License](https://img.shields.io/github/license/FHPWA/FHPWA.github.io.svg?style=for-the-badge&cacheSeconds=28800)](/LICENSE.md)
+[![Commit activity](https://img.shields.io/github/commit-activity/m/FHPWA/FHPWA.github.io.svg?style=for-the-badge&cacheSeconds=28800)](../../commits/master)
+[![Last commit](https://img.shields.io/github/last-commit/FHPWA/FHPWA.github.io.svg?style=for-the-badge&cacheSeconds=28800)](../../commits/master)
 
 <!-- omit in TOC -->
 # FHPWA.github.io
